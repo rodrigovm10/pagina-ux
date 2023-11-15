@@ -1,0 +1,96 @@
+/* paginaInicio.css */
+
+.homepage {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 28px;
+    color: #103e6e;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    text-align: justify;
+}
+
+.search-bar {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 70%;
+    margin-right: 10px;
+}
+
+.search-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    flex: 1;
+    background-color: #ffffff;
+    border: 1px solid rgb(158, 216, 201);
+    padding: 20px;
+    margin-right: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex; /* Para alinear elementos verticalmente */
+    flex-direction: column; /* Para alinear elementos verticalmente */
+    align-items: center; /* Para alinear elementos verticalmente */
+    border-radius: 10px; /* Bordes redondeados para las cards */
+}
+
+.card h2 {
+    font-size: 20px;
+    color: #333;
+}
+
+.card p {
+    font-size: 16px;
+    color: #666;
+    text-align: justify;
+    margin-top: 10px; /* Espaciado superior para el texto */
+}
+
+.valores-card ul {
+    list-style-type: disc; /* Viñetas para los valores */
+    padding-left: 5px; /* Espaciado izquierdo de las viñetas */
+    text-align: left; /* Alinear el texto de las viñetas a la izquierda */
+}
+
+/* En tu archivo de estilos CSS */
+.image-container {
+    text-align: center;
+    margin: 20px 0; /* Ajusta el margen según sea necesario */
+  }
+  
+  .university-image {
+    max-width: 100%; /* Ajusta el ancho máximo de la imagen */
+    height: auto; /* Ajusta la altura automáticamente para mantener la proporción */
+  }
+  
