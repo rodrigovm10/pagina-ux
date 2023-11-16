@@ -1,4 +1,4 @@
-import { Box, Flex, Image, Link } from '@chakra-ui/react'
+import { Box, Flex, Grid, GridItem, Image, Link } from '@chakra-ui/react'
 import logo from '../assets/logoutng.webp'
 import { NAV_FOOTER } from '../utilities/constants'
 export function Footer() {
@@ -14,26 +14,36 @@ export function Footer() {
           alt='logo de la utng'
         />
       </Box>
-      <Flex
+      <Grid
+        gridTemplateRows={2}
         gap='1rem'
         alignItems='center'>
-        {NAV_FOOTER.map((nav, i) => (
+        <GridItem>
+          <Flex gap='1rem'>
+            {NAV_FOOTER.map((nav, i) => (
+              <Link
+                color='#fff'
+                opacity='0.8'
+                _hover={{ opacity: '1' }}
+                key={i}
+                href='#'>
+                {nav}
+              </Link>
+            ))}
+          </Flex>
+        </GridItem>
+        <Flex justifyContent='center'>
           <Link
+            w='100%'
+            href='#'
+            textAlign='center'
+            bg='#00259A'
             color='#fff'
-            opacity='0.8'
-            _hover={{ opacity: '1' }}
-            key={i}
-            href='#'>
-            {nav}
+            p='0.1rem 2rem'>
+            Mapa del sitio
           </Link>
-        ))}
-        {/* <Box
-          bg='#00259A'
-          color='#fff'
-          p='0.1rem 2rem'>
-          Mapa del sitio
-        </Box> */}
-      </Flex>
+        </Flex>
+      </Grid>
     </Flex>
   )
 }
