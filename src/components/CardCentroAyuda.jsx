@@ -1,7 +1,7 @@
 import { Button, Flex, Heading, Image, Stack } from '@chakra-ui/react'
 import chicaCentroAyuda from '../assets/chicaCentroAyuda.png'
 
-export function CardCentroAyuda() {
+export function CardCentroAyuda({ handleClickOpen }) {
   return (
     <Flex
       position='relative'
@@ -21,6 +21,7 @@ export function CardCentroAyuda() {
           Centro de ayuda
         </Heading>
         <Button
+          onClick={handleClickOpen}
           w='10rem'
           p='1.5rem'
           textAlign='center'

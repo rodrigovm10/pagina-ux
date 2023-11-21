@@ -5,7 +5,7 @@ export function NavFlotante() {
     <Flex
       position='fixed'
       bottom={40}
-      right={5}
+      left={5}
       flexDirection='column'>
       <Link
         href='#'
