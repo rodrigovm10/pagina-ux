@@ -1,6 +1,6 @@
+import React, { useState } from "react";
 import {
   Card,
-  CardBody,
   SimpleGrid,
   CardHeader,
   Heading,
@@ -9,22 +9,17 @@ import {
   Button,
   Image,
   Box,
-  Highlight,
-  useDisclosure,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalCloseButton,
-  ModalBody,
-  ModalFooter,
 } from "@chakra-ui/react";
 import { Footer } from "../components/Footer.jsx";
 import { Header } from "../components/Header.jsx";
 
 export function Calendario() {
-  const { isOpen, onOpen, onClose } = useDisclosure();
   const currentMonth = new Date().toLocaleString("es", { month: "long" });
+  const [expandedCard, setExpandedCard] = useState(null);
+
+  const toggleCardExpansion = (cardId) => {
+    setExpandedCard(expandedCard === cardId ? null : cardId);
+  };
   return (
     <>
       <Header />
@@ -36,7 +31,6 @@ export function Calendario() {
           <>
             <Image
               w="full"
-              h="500px"
               objectFit="cover"
               borderRadius="1rem"
               src="https://media.istockphoto.com/id/1370276409/es/foto/hombre-asi%C3%A1tico-de-cuello-blanco-marcando-la-fecha-en-el-calendario-del-escritorio.jpg?s=612x612&w=0&k=20&c=L-fRHj1PoZHZ_VJviN_iw9PIEK8N_KcFO8QWiJBmZjQ="
@@ -53,123 +47,106 @@ export function Calendario() {
               </Heading>
             </CardHeader>
             <CardHeader>
-              <Heading size="md">17 de Diciembre</Heading>
-            </CardHeader>
-            <CardBody>
+              <Heading size="md" mb="1rem">
+                Feria de Empleo y Prácticas Profesionales
+              </Heading>
+              <Text>Fecha: 1 de diciembre</Text>
               <Text>
-                Organiza el Duatlón Málaga 2023 y la Copa de Andalucía
-                Universitaria
+                Actividades: Stands de empresas, entrevistas en el lugar,
+                talleres de desarrollo profesional.
               </Text>
-            </CardBody>
-            <CardFooter>
-              <Button>View here</Button>
-            </CardFooter>
+            </CardHeader>
             <CardHeader>
-              <Heading size="md">17 de Diciembre</Heading>
-            </CardHeader>
-            <CardBody>
+              <Heading size="md" mb="1rem">
+                Festival Cultural de Invierno
+              </Heading>
+              <Text>Fecha: 4 diciembre</Text>
               <Text>
-                Organiza el Duatlón Málaga 2023 y la Copa de Andalucía
-                Universitaria
+                Actividades: Puestos de comida internacional, actuaciones
+                musicales y danzas, exposiciones de arte.
               </Text>
-            </CardBody>
-            <CardFooter>
-              <Button>View here</Button>
-            </CardFooter>
+            </CardHeader>
           </Card>
           <Card>
             <CardHeader>
-              <Heading size="md">17 de Diciembre</Heading>
-            </CardHeader>
-            <CardBody>
+              <Heading size="md" mb="1rem">
+                Seminario de Estrés y Manejo del Tiempo
+              </Heading>
+              <Text>Fecha: 5 diciembre</Text>
               <Text>
-                Organiza el Duatlón Málaga 2023 y la Copa de Andalucía
-                Universitaria
+                Actividades: Sesiones de asesoramiento, técnicas de relajación,
+                planificación del tiempo.
               </Text>
-            </CardBody>
-            <CardFooter>
-              <Button>View here</Button>
-            </CardFooter>
+            </CardHeader>
           </Card>
           <Card>
             <CardHeader>
-              <Heading size="md">17 de Diciembre</Heading>
-            </CardHeader>
-            <CardBody>
+              <Heading size="md" mb="1rem">
+                Torneo Deportivo Interfacultades
+              </Heading>
+              <Text>Fecha: 6 diciembre</Text>
               <Text>
-                Organiza el Duatlón Málaga 2023 y la Copa de Andalucía
-                Universitaria
+                Actividades: Competencias en diferentes deportes, ceremonia de
+                premiación, actividades recreativas.
               </Text>
-            </CardBody>
-            <CardFooter>
-              <Button>View here</Button>
-            </CardFooter>
+            </CardHeader>
           </Card>
           <Card>
             <CardHeader>
-              <Heading size="md">30 de Noviembre</Heading>
-            </CardHeader>
-            <CardBody>
+              <Heading size="md" mb="1rem">
+                Exposición de Proyectos de Fin de Semestre
+              </Heading>
+              <Text>Fecha: 7 diciembre</Text>
               <Text>
-                Conferencia inaugural de la Semana del Cómic: "Usted está
-                leyendo cómics: ¡¿pero qué hace?!
+                Actividades: Presentaciones de proyectos, demostraciones
+                prácticas, sesiones de retroalimentación.
               </Text>
-            </CardBody>
-            <CardFooter>
-              <Button>View here</Button>
-            </CardFooter>
+            </CardHeader>
           </Card>
           <Card>
             <CardHeader>
-              <Heading size="md">8 de Diciembre</Heading>
-            </CardHeader>
-            <CardBody>
+              <Heading size="md" mb="1rem">
+                Taller de Escritura Creativa
+              </Heading>
+              <Text>Fecha: 8 diciembre</Text>
               <Text>
-                Semana del Cómic de La Laguna, incluyendo conferencias, talleres
-                y seminarios.
+                Actividades: Puestos de comida internacional, actuaciones
+                musicales y danzas, exposiciones de arte.
               </Text>
-            </CardBody>
-            <CardFooter>
-              <Button>View here</Button>
-            </CardFooter>
+            </CardHeader>
           </Card>
           <Card>
             <CardHeader>
-              <Heading size="md">17 de Diciembre</Heading>
-            </CardHeader>
-            <CardBody>
+              <Heading size="md" mb="1rem">
+                Maratón de Código y Hackathon
+              </Heading>
+              <Text>Fecha: 11 diciembre</Text>
               <Text>
-                Organiza el Duatlón Málaga 2023 y la Copa de Andalucía
-                Universitaria
+                Actividades: Desarrollo de proyectos de software, talleres de
+                programación, premiación a las mejores soluciones.
               </Text>
-            </CardBody>
-            <CardFooter>
-              <Button>View here</Button>
-            </CardFooter>
+            </CardHeader>
           </Card>
-          <Card align="center" justify="center">
-            <CardFooter>
-              <Button colorScheme="blue">
-                <Text fontSize="6xl" marginBottom="1rem" marginTop="0.3rem">
-                  +
+          <Card>
+            <CardHeader>
+              {expandedCard === "FeriaEmpleo" && (
+                <Text>
+                  Más detalles de la Feria de Empleo...
+                  {/* Aquí puedes agregar más información */}
                 </Text>
-              </Button>
-            </CardFooter>
+              )}
+            </CardHeader>
+            <>
+              <CardFooter align="center" justify="center">
+                <Button colorScheme="blue">
+                  <Text fontSize="6xl" marginBottom="1rem">
+                    +
+                  </Text>
+                </Button>
+              </CardFooter>
+            </>
           </Card>
         </SimpleGrid>
-        <Modal isOpen={isOpen} onClose={onClose}>
-          <ModalOverlay />
-          <ModalContent>
-            <ModalHeader>Información Adicional</ModalHeader>
-            <ModalCloseButton />
-            <ModalBody>holis</ModalBody>
-            <ModalFooter>
-              <Button colorScheme="blue" mr={3} onClick={onClose}>
-                Cerrar
-              </Button>
-            </ModalFooter>
-          </ModalContent>
-        </Modal>
       </Box>
       <Footer />
     </>
