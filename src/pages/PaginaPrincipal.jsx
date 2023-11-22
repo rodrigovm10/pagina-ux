@@ -10,7 +10,7 @@ export function PaginaPrincipal() {
     <>
       <Header />
       <Flex
-        maxW='70%'
+        maxW='90%'
         m='0 auto'
         flexDir='column'
         justifyContent='center'
@@ -53,7 +53,7 @@ export function PaginaPrincipal() {
         </Text>
         <Flex
           flexDir={{ base: 'column', lg: 'row' }}
-          gap='2rem'
+          gap={{ base: '1rem', lg: '2rem' }}
           alignItems={{ base: 'center', lg: 'stretch' }}>
           <CardPPrincipal
             wLg='15rem'
@@ -67,7 +67,7 @@ export function PaginaPrincipal() {
           />
           <CardPPrincipal
             wLg='15rem'
-            wBase='10rem'
+            wBase='100%'
             title='Valores'
             text='Trabajo en equipo Comunicación Honestidad Respeto'
           />
