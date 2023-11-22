@@ -4,16 +4,19 @@ import chicoCentroAyuda from '../assets/chicoCentroAyuda.png'
 export function CardCentroAyuda2({ handleClickOpen }) {
   return (
     <>
-      <Flex alignItems='center'>
+      <Flex
+        alignItems='center'
+        flexDir={{ base: 'column', md: 'row', lg: 'row' }}>
         <Stack
+          border='1px solid #00259A'
           bg='rgba(255, 255, 255, 0.75)'
-          w='20rem'
+          w={{ base: '22rem', md: '20rem', lg: '20rem' }}
           p='2rem'
           justifyContent='center'
           alignItems='center'>
           <Heading
             as='h2'
-            fontSize='1.4rem'>
+            size='md'>
             Chatea con nosotros
           </Heading>
           <Text>Resuelve tus dudas. Nuestro equipo de asesores te brindará la información que requieras</Text>
@@ -23,8 +26,8 @@ export function CardCentroAyuda2({ handleClickOpen }) {
           backdropFilter='blur(2px)'
           src={chicoCentroAyuda}
           alt='chicoCentroAyuda'
-          w='30rem'
-          h='11rem'
+          w='22rem'
+          h='10.6rem'
           objectFit='cover'
         />
       </Flex>
@@ -33,7 +36,6 @@ export function CardCentroAyuda2({ handleClickOpen }) {
         w='12rem'
         p='1rem'
         textAlign='center'
-        wordBreak='break-all'
         bg='#00259A'
         _hover={{ bg: '#001F7E' }}
         color='#fff'>

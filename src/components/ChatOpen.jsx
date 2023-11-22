@@ -1,7 +1,7 @@
-import { Box, Flex, Image, Input, Text } from '@chakra-ui/react'
-import chat from '../assets/chat.png'
+import { Box, Flex, Input, Text } from '@chakra-ui/react'
 import enviar from '../assets/enviar.png'
 import { useEffect, useState } from 'react'
+import { Send } from '../assets/Icons'
 
 export function ChatOpen({ onClick }) {
   const [message, setMessage] = useState('')
@@ -9,9 +9,8 @@ export function ChatOpen({ onClick }) {
   // const [messagesBot, setMessageBot] = useState([])
 
   useEffect(() => {
-    messages.reverse()[0] === '¿Que puedo encontrar en el calendario?'
-      ? setMessages(prevMessages => [...prevMessages, 'hola'])
-      : ''
+    if (messages[messages.length - 1] === '¿Que puedo encontrar en el calendario?')
+      setMessages(prevMessages => [...prevMessages, 'hola'])
   }, [messages])
 
   const handleChange = e => {
@@ -30,11 +29,13 @@ export function ChatOpen({ onClick }) {
     <Box
       bg='#00259A'
       borderRadius={10}
-      w='20rem'
+      w='12rem'
       h='20rem'
       mr='2rem'
-      display='flex' // Añadir display flex
-      flexDirection='column' // Establecer la dirección como columna
+      display='flex'
+      flexDirection='column'
+      justifyContent='center'
+      position='relative' //
     >
       <Flex
         justifyContent='center'
@@ -42,10 +43,6 @@ export function ChatOpen({ onClick }) {
         pt='1rem'
         onClick={onClick}
         cursor='pointer'>
-        <Image
-          src={chat}
-          objectFit='contain'
-        />
         <Text
           fontWeight='500'
           fontSize='1.3rem'
@@ -56,14 +53,16 @@ export function ChatOpen({ onClick }) {
       </Flex>
       <Flex
         flexDir='column'
+        mt='1rem'
         overflowY={'auto'}>
         {messages.map((message, i) => {
-          if (message.length % 2 === 0) {
+          if (message.length % 2 !== 0) {
             return (
               <Text
                 textAlign='left'
                 key={i}
                 color='#fff'
+                p='0.5rem'
                 bg='rgba(0, 0, 0, 0.6)'>
                 {message}
               </Text>
@@ -74,6 +73,7 @@ export function ChatOpen({ onClick }) {
                 textAlign='right'
                 key={i}
                 color='#fff'
+                p='0.5rem'
                 bg='rgba(255, 255,255, 0.6)'>
                 {message}
               </Text>
@@ -83,9 +83,11 @@ export function ChatOpen({ onClick }) {
       </Flex>
       <Flex
         alignSelf='flexEnd'
-        gap='2rem'>
+        alignContent='flex-end'
+        mt='auto'
+        mb={'0.2rem'}>
         <form
-          style={{ display: 'flex', gap: '2rem' }}
+          style={{ display: 'flex', gap: '1rem' }}
           onSubmit={e => handleSend(message, e)}>
           <Input
             value={message}
@@ -96,14 +98,15 @@ export function ChatOpen({ onClick }) {
             maxW='80%'
             h='1.5rem'
           />
-          <Image
+          <Box
             onClick={() => sendMessage(message)}
             alignSelf='center'
             src={enviar}
             w='1.8rem'
             objectFit='contain'
-            cursor='pointer'
-          />
+            cursor='pointer'>
+            <Send />
+          </Box>
         </form>
       </Flex>
     </Box>

@@ -2,6 +2,7 @@ import { Box, Flex, Grid, GridItem, Image, Text } from '@chakra-ui/react'
 import logo from '../assets/logoutng.webp'
 import { NAV_FOOTER } from '../utilities/constants'
 import { Link } from 'react-router-dom'
+import { Facebook, Instagram, YouTube } from '../assets/Icons'
 
 export function Footer() {
   return (
@@ -10,8 +11,8 @@ export function Footer() {
       bg='#00A887'
       p='1.5rem'
       justifyContent='space-between'
-      flexDir={{ base: 'column', lg: 'row' }}
-      gap={{ sm: '6rem', md: '2rem', lg: '1rem' }}
+      flexDir={{ base: 'column', sm: 'column', lg: 'row' }}
+      gap={{ base: '8rem', sm: '6rem', md: '2rem', lg: '1rem' }}
       alignItems='center'>
       <Box>
         <Image
@@ -21,12 +22,12 @@ export function Footer() {
       </Box>
       <Grid
         gridTemplateRows={2}
-        gap={{ base: '6rem', md: '3rem', lg: '1.2rem' }}
+        gap={{ base: '7rem', sm: '6rem', md: '3rem', lg: '1.2rem' }}
         alignItems='center'>
         <GridItem>
           <Flex
             gap='1rem'
-            flexDir={{ sm: 'column', md: 'row', lg: 'row' }}>
+            flexDir={{ base: 'column', sm: 'column', md: 'row', lg: 'row' }}>
             {NAV_FOOTER.map((nav, i) => (
               <Text
                 textAlign={{ base: 'center', lg: 'left' }}
@@ -38,6 +39,13 @@ export function Footer() {
                 <Link to={nav.to}>{nav.navName}</Link>
               </Text>
             ))}
+            <Flex
+              justifyContent='center'
+              gap='1rem'>
+              <Facebook />
+              <Instagram />
+              <YouTube />
+            </Flex>
           </Flex>
         </GridItem>
         <Flex justifyContent='center'>

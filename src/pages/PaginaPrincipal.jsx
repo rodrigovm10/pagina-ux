@@ -10,7 +10,7 @@ export function PaginaPrincipal() {
     <>
       <Header />
       <Flex
-        maxW='90%'
+        maxW='80vw'
         m='0 auto'
         flexDir='column'
         justifyContent='center'
@@ -37,15 +37,17 @@ export function PaginaPrincipal() {
           src={imgPrincipal}
           objectFit='contain'
           maxW='70vw'
-          h='30rem'
+          w='90rem'
         />
         <Heading
           as='h1'
-          fontSize='2rem'
+          size='xl'
           textAlign='center'>
           ¡Bienvenidos a la Universidad Tecnologica del Norte de Guanajuato!
         </Heading>
-        <Text w='68vw'>
+        <Text
+          w='68vw'
+          textAlign='justify'>
           La educación va más allá de la memorización; es un camino para inspirar, innovar y transformar. Cada libro que
           abres te lleva a un nuevo mundo, y cada práctica que realizas te ayuda a moldear el tuyo. Estamos emocionados
           de que te unas a nuestra comunidad y compartas nuestro compromiso con la excelencia académica y los valores
