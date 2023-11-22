@@ -9,12 +9,25 @@ import {
   Text,
   CardFooter,
   Button,
+  Flex,
+  Link,
+  Icon,
 } from "@chakra-ui/react";
+import { MdPhone } from 'react-icons/md';
 import Modal from "react-bootstrap/Modal";
-/* import Button from 'react-bootstrap/Button';
- */ import { Footer } from "../components/Footer.jsx";
+import { Footer } from "../components/Footer.jsx";
 import { Header } from "../components/Header.jsx";
 import { useState } from "react";
+import logo from "../assets/logoutng.webp";
+
+const cardsData = [
+  { title: 'JÓVENES EMBARAZADAS Y MADRES' },
+  { title: 'CONCURSO DE ORATORIA' },
+  { title: 'FESTIVAL DE LA MUERTE "GALERÍA DE MURALES DÍA DE MUERTOS" 2023' },
+  { title: 'CONVOCATORIA CONCURSO DE CANCIÓN "A TODOS TUS MUERTOS"' },
+  { title: 'MULTIPLICADORES DE LA PAZ "5TA. GENERACIÓN"' },
+  { title: 'FINANCIAMIENTO EDUCATIVO GTO (MEDIA SUPERIOR Y SUPERIOR)' }
+];
 
 export function Becas() {
   const [show, setShow] = useState(false);
@@ -32,7 +45,7 @@ export function Becas() {
 
   return (
     <>
-      <Header></Header>
+      <Header/>
       <Box p="3rem">
         <SimpleGrid
           spacing={6}
@@ -103,7 +116,32 @@ export function Becas() {
             <Modal.Header closeButton>
               <Modal.Title>Información de Becas</Modal.Title>
             </Modal.Header>
-            <Modal.Body>Becas academicas</Modal.Body>
+            <Modal.Body>
+              <p><strong>Requisitos:</strong></p>
+              <ul>
+                <li>Ser alumno regular del cuatrimestre</li>
+                <li>No contar con otro tipo de estímulo o apoyo económico</li>
+                <li>Obtener un promedio mínimo de ocho en el cuatrimestre anterior sin adeudo de materias al momento de realizar la solicitud</li>
+                <li>Realizar una entrevista con el Subdirector de Servicios Escolares.</li>
+                <li>Solicitud debidamente llenada y firmada por el director del área académica correspondiente, con los siguientes documentos:</li>
+                <ul>
+                  <li>Comprobante de ingresos económicos familiares;</li>
+                  <li>Carta redactada por el alumno donde exponga las principales razones por las que solicita el apoyo por necesidad apremiante firmada por el solicitante y por el padre o jefe de familia.</li>
+                </ul>
+              </ul>
+              <p><strong>Nota:</strong></p>
+              <p>Una vez concluido el periodo de la convocatoria el área de Servicios Escolares solicitara al director de área académica correspondiente, la realización de la visita de campo por parte del tutor académico entregando un reporte que valide o no la necesidad del apoyo.</p>
+
+              <form>
+                <div className="form-group">
+                  <label htmlFor="inputField">Ingresa aqui tu numero de control para aplicar a la beca</label>
+                  <input type="text" className="form-control" id="inputField" placeholder="Ingresa tu numero de control" />
+                </div>
+                <Button variant="primary" type="submit">
+                  Aplicar
+                </Button>
+              </form>
+            </Modal.Body>
             <Modal.Footer>
               <Button variant="secondary" onClick={handleClose}>
                 Cerrar
@@ -131,7 +169,32 @@ export function Becas() {
             <Modal.Header closeButton>
               <Modal.Title>Información de Becas</Modal.Title>
             </Modal.Header>
-            <Modal.Body>Becas no academicas</Modal.Body>
+            <Modal.Body>
+              <p><strong>Requisitos:</strong></p>
+              <ul>
+                <li>Ser alumno regular del cuatrimestre</li>
+                <li>No contar con otro tipo de estímulo o apoyo económico</li>
+                <li>Obtener un promedio mínimo de ocho en el cuatrimestre anterior sin adeudo de materias al momento de realizar la solicitud</li>
+                <li>Realizar una entrevista con el Subdirector de Servicios Escolares.</li>
+                <li>Solicitud debidamente llenada y firmada por el director del área académica correspondiente, con los siguientes documentos:</li>
+                <ul>
+                  <li>Comprobante de ingresos económicos familiares;</li>
+                  <li>Carta redactada por el alumno donde exponga las principales razones por las que solicita el apoyo por necesidad apremiante firmada por el solicitante y por el padre o jefe de familia.</li>
+                </ul>
+              </ul>
+              <p><strong>Nota:</strong></p>
+              <p>Una vez concluido el periodo de la convocatoria el área de Servicios Escolares solicitara al director de área académica correspondiente, la realización de la visita de campo por parte del tutor académico entregando un reporte que valide o no la necesidad del apoyo.</p>
+
+              <form>
+                <div className="form-group">
+                  <label htmlFor="inputField">Ingresa aqui tu numero de control para aplicar a la beca</label>
+                  <input type="text" className="form-control" id="inputField" placeholder="Ingresa tu numero de control" />
+                </div>
+                <Button variant="primary" type="submit">
+                  Aplicar
+                </Button>
+              </form>
+            </Modal.Body>
             <Modal.Footer>
               <Button variant="secondary" onClick={handleCloseCul}>
                 Cerrar
@@ -140,14 +203,13 @@ export function Becas() {
           </Modal>
           <Card>
             <CardHeader>
-              <Heading size="md"> APOYO POR RENDIMIENTO ACADÉMICO </Heading>
+              <Heading size="md"> APOYO POR NECESIDAD APREMIANTE </Heading>
             </CardHeader>
             <CardBody>
               <Text>
-                Consiste en la exención de un porcentaje del pago de la
-                inscripción cuatrimestral a los alumnos de la Universidad y se
-                establece conforme a los siguientes cuatrimestres, promedios y
-                porcentajes de excención:
+              Consiste en la ministración mensual no reembolsable de una cantidad de dinero,
+              a los alumnos con promedio mínimo de ocho y necesidad económica extrema que
+              ponga en riesgo la continuidad de sus estudios en la Universidad.
               </Text>
             </CardBody>
             <CardFooter>
@@ -158,7 +220,32 @@ export function Becas() {
             <Modal.Header closeButton>
               <Modal.Title>Información de Becas</Modal.Title>
             </Modal.Header>
-            <Modal.Body>Becas pobre academicas</Modal.Body>
+            <Modal.Body>
+              <p><strong>Requisitos:</strong></p>
+              <ul>
+                <li>Ser alumno regular del cuatrimestre</li>
+                <li>No contar con otro tipo de estímulo o apoyo económico</li>
+                <li>Obtener un promedio mínimo de ocho en el cuatrimestre anterior sin adeudo de materias al momento de realizar la solicitud</li>
+                <li>Realizar una entrevista con el Subdirector de Servicios Escolares.</li>
+                <li>Solicitud debidamente llenada y firmada por el director del área académica correspondiente, con los siguientes documentos:</li>
+                <ul>
+                  <li>Comprobante de ingresos económicos familiares;</li>
+                  <li>Carta redactada por el alumno donde exponga las principales razones por las que solicita el apoyo por necesidad apremiante firmada por el solicitante y por el padre o jefe de familia.</li>
+                </ul>
+              </ul>
+              <p><strong>Nota:</strong></p>
+              <p>Una vez concluido el periodo de la convocatoria el área de Servicios Escolares solicitara al director de área académica correspondiente, la realización de la visita de campo por parte del tutor académico entregando un reporte que valide o no la necesidad del apoyo.</p>
+
+              <form>
+                <div className="form-group">
+                  <label htmlFor="inputField">Ingresa aqui tu numero de control para aplicar a la beca</label>
+                  <input type="text" className="form-control" id="inputField" placeholder="Ingresa tu numero de control" />
+                </div>
+                <Button variant="primary" type="submit">
+                  Aplicar
+                </Button>
+              </form>
+            </Modal.Body>
             <Modal.Footer>
               <Button variant="secondary" onClick={handleCloseAca}>
                 Cerrar
@@ -166,6 +253,37 @@ export function Becas() {
             </Modal.Footer>
           </Modal>
         </SimpleGrid>
+        {/* Card de becas externas */}
+        <Box bg="gray.200" p={5}>
+            <Text fontSize="xl" mb={5}>Convocatorias y becas gubernamentales</Text>
+            <SimpleGrid columns={[1, null, 3]} spacing={5}>
+              {cardsData.map((card, index) => (
+                <Box key={index} borderWidth="1px" borderRadius="lg" overflow="hidden" p={5} bg="white">
+                  <Text textAlign="center">{card.title}</Text>
+                </Box>
+              ))}
+            </SimpleGrid>
+          </Box>
+          <br/>
+        {/* Card de contacto */}
+        <Box maxW="100%" borderWidth="1px" borderRadius="lg" overflow="hidden" bg="gray.100" p={10}>
+          <Flex align="center" justify="space-between">
+            <Flex align="center">
+              <Image src={logo} alt="Logo" />
+              <Box ml="3">
+                <Text fontWeight="bold">Diana Berenice Cuellar González</Text>
+                <Link href="mailto:diana.cuellar@utng.edu.mx" isExternal>
+                  diana.cuellar@utng.edu.mx
+                </Link>
+                <Text fontSize="sm">Atención de lunes a viernes de 8:00 a 16:00 hrs</Text>
+              </Box>
+            </Flex>
+            <Box textAlign="right">
+              <Text>Tel:18 2 55 00 ext. 1254</Text>
+              <Icon as={MdPhone} boxSize="6" />
+            </Box>
+          </Flex>
+        </Box>
       </Box>
       <Footer />
     </>
