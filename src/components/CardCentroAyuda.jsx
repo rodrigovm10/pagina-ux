@@ -8,9 +8,16 @@ export function CardCentroAyuda({ handleClickOpen }) {
       alignItems='center'
       gap='2rem'>
       <Stack
-        bg='rgba(255, 255, 255, 0.75)'
+        bg={{
+          base: 'rgba(255, 255, 255, 0)',
+          sm: 'rgba(255, 255, 255, 0.75)',
+          md: 'rgba(255, 255, 255, 0.75)',
+          lg: 'rgba(255, 255, 255, 0.75)'
+        }}
         h='100%'
         position='absolute'
+        top={{ base: 20, md: 0, lg: 0 }}
+        left={{ base: 59, md: 0, lg: 0 }}
         zIndex='1'
         p='2rem'
         justifyContent='center'
@@ -25,7 +32,6 @@ export function CardCentroAyuda({ handleClickOpen }) {
           w='10rem'
           p='1.5rem'
           textAlign='center'
-          wordBreak='break-all'
           bg='#00259A'
           _hover={{ bg: '#001F7E' }}
           color='#fff'>

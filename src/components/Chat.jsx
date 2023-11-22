@@ -8,8 +8,7 @@ export function Chat({ isOpen, handleClickOpen }) {
       as='button'
       bg='#00259A'
       borderRadius='0.3rem'
-      p='0.3rem 6rem'
-      mr='1rem'
+      p='0.3rem 5rem'
       cursor='pointer'>
       <Image />
       <Text color='#fff'>Chat</Text>
