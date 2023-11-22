@@ -7,6 +7,7 @@ import { Calendario } from "../src/components/Calendario.jsx";
 import { Reinscripciones } from "../src/components/Reinscripsiones.jsx";
 
 import { PaginaPrincipal } from "./pages/PaginaPrincipal.jsx";
+import BolsaTrabajo from "./pages/BolsaTrabajo.jsx";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: "/reinscripciones",
     element: <Reinscripciones />,
+  },
+  {
+    path: "/bolsa-de-trabajo",
+    element: <BolsaTrabajo />,
   },
 ]);
 
