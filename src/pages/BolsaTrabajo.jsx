@@ -6,10 +6,10 @@ import { Search } from '../assets/Icons.jsx'
 
 function BolsaTrabajo() {
   const jobs = [
-    { id: 1, title: 'Desarrollador de Software', description: 'Puesto de Desarrollador FullStack medio tiempo - Home Office', image: '/src/assets/chambaaa.jpg' },
-    { id: 2, title: 'Enfermera', description: 'Puesto de enfermera general en el IMSS medio tiempo', image: '/src/assets/chambaaa.jpg'  },
-    { id: 3, title: 'Piscador', description: 'Puesto de piscador de fresas medio tiempo', image: '/src/assets/chambaaa.jpg'  },
-    { id: 4, title: 'Mesero', description: 'Puesto de mesero medio tiempo', image: '/src/assets/chambaaa.jpg'  },
+    { id: 1, title: 'Desarrollador de Software', description: 'Puesto de Desarrollador FullStack medio tiempo - Home Office', image: '/src/assets/chambaaa.jpg', pago: "10,000-12,000/Mes" },
+    { id: 2, title: 'Enfermera', description: 'Puesto de enfermera general en el IMSS medio tiempo', image: '/src/assets/chambaaa.jpg' ,pago: "8,000-10,000/Mes" },
+    { id: 3, title: 'Piscador', description: 'Puesto de piscador de fresas medio tiempo', image: '/src/assets/chambaaa.jpg' ,pago: "8,000-9,000/Mes" },
+    { id: 4, title: 'Mesero', description: 'Puesto de mesero medio tiempo', image: '/src/assets/chambaaa.jpg',pago: "6,000-12,000/Mes"  },
     // Más ofertas de trabajo...
   ];
 
@@ -62,12 +62,12 @@ function BolsaTrabajo() {
           {jobs.map((job) => (
             <Flex
               key={job.id}
-              borderWidth="1px"
-              borderRadius="lg"
-              boxShadow="md"
+              borderRadius="5"
+              sx={{ border: '1px solid #00259A' }}
+              boxShadow='2xl'
               cursor="pointer"
-              mb="4"
-              width="650px"
+              mb="1rem"
+              width="700px"
             >
               {/* Imagen a la izquierda */}
               <Box flex="0 0 auto">
@@ -85,6 +85,7 @@ function BolsaTrabajo() {
                   {job.title}
                 </Heading>
                 <Text fontSize="sm">{job.description}</Text>
+                <Text fontSize="sm">{job.pago}</Text>
                 {/* Iconos de redes sociales */}
                 <Flex mt="4" justifyContent="right">
                   <FaFacebook size={24} />
