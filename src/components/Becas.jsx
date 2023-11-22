@@ -10,10 +10,26 @@ import {
   CardFooter,
   Button,
 } from "@chakra-ui/react";
-import { Footer } from "../components/Footer.jsx";
+import Modal from "react-bootstrap/Modal";
+/* import Button from 'react-bootstrap/Button';
+ */ import { Footer } from "../components/Footer.jsx";
 import { Header } from "../components/Header.jsx";
+import { useState } from "react";
 
 export function Becas() {
+  const [show, setShow] = useState(false);
+  const [showCul, setShowCul] = useState(false);
+  const [showAca, setShowAca] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const handleCloseCul = () => setShowCul(false);
+  const handleShowCul = () => setShowCul(true);
+
+  const handleCloseAca = () => setShowAca(false);
+  const handleShowAca = () => setShowAca(true);
+
   return (
     <>
       <Header></Header>
@@ -28,7 +44,7 @@ export function Becas() {
               w="full"
               objectFit="cover"
               borderRadius="1rem"
-              src="https://media.istockphoto.com/id/1370276409/es/foto/hombre-asi%C3%A1tico-de-cuello-blanco-marcando-la-fecha-en-el-calendario-del-escritorio.jpg?s=612x612&w=0&k=20&c=L-fRHj1PoZHZ_VJviN_iw9PIEK8N_KcFO8QWiJBmZjQ="
+              src="https://media.istockphoto.com/id/1292319470/es/vector/concepto-de-celebraci%C3%B3n-de-graduados-con-mujer-feliz-estudiante.jpg?s=2048x2048&w=is&k=20&c=R_2Rz9KrpGWC-5vi4rMavBV449pIP-3EHcN-9IbPEmQ="
               alt="Calendario UTNG"
             />
           </>
@@ -69,47 +85,89 @@ export function Becas() {
         >
           <Card>
             <CardHeader>
-              <Heading size="md"> Customer dashboard</Heading>
+              <Heading size="md"> APOYO ALIMENTICIO </Heading>
             </CardHeader>
             <CardBody>
               <Text>
-                View a summary of all your customers over the last month.
+                Consiste en la ministración de una comida al día en la
+                Universidad a los alumnos de la modalidad escolarizada, los
+                solicitantes deberán entregar el formato de canalización del
+                tutor académico para tener derecho a la solicitud del apoyo.
               </Text>
             </CardBody>
             <CardFooter>
-              <Button>View here</Button>
+              <Button onClick={handleShow}>Aplicar</Button>
             </CardFooter>
           </Card>
+          <Modal show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+              <Modal.Title>Información de Becas</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>Becas academicas</Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={handleClose}>
+                Cerrar
+              </Button>
+            </Modal.Footer>
+          </Modal>
           <Card>
             <CardHeader>
-              <Heading size="md"> Customer dashboard</Heading>
+              <Heading size="md"> APOYO DEPORTIVO Y CULTURAL </Heading>
             </CardHeader>
             <CardBody>
               <Text>
-                View a summary of all your customers over the last month.
+                Consiste en la exención del 100% en el pago de la inscripción
+                cuatrimestral para los alumnos del primero al quinto
+                cuatrimestre y del 50% para los alumnos del séptimo al onceavo
+                cuatrimestre, que sean seleccionados para representar a la
+                Universidad en eventos deportivos o culturales oficiales.
               </Text>
             </CardBody>
             <CardFooter>
-              <Button>View here</Button>
+              <Button onClick={handleShowCul}> Aplicar </Button>
             </CardFooter>
           </Card>
+          <Modal show={showCul} onHide={handleCloseCul}>
+            <Modal.Header closeButton>
+              <Modal.Title>Información de Becas</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>Becas no academicas</Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={handleCloseCul}>
+                Cerrar
+              </Button>
+            </Modal.Footer>
+          </Modal>
           <Card>
             <CardHeader>
-              <Heading size="md"> Customer dashboard</Heading>
+              <Heading size="md"> APOYO POR RENDIMIENTO ACADÉMICO </Heading>
             </CardHeader>
             <CardBody>
               <Text>
-                View a summary of all your customers over the last month.
+                Consiste en la exención de un porcentaje del pago de la
+                inscripción cuatrimestral a los alumnos de la Universidad y se
+                establece conforme a los siguientes cuatrimestres, promedios y
+                porcentajes de excención:
               </Text>
             </CardBody>
             <CardFooter>
-              <Button>View here</Button>
+              <Button onClick={handleShowAca}>Aplicar</Button>
             </CardFooter>
           </Card>
+          <Modal show={showAca} onHide={handleCloseAca}>
+            <Modal.Header closeButton>
+              <Modal.Title>Información de Becas</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>Becas pobre academicas</Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={handleCloseAca}>
+                Cerrar
+              </Button>
+            </Modal.Footer>
+          </Modal>
         </SimpleGrid>
       </Box>
-
-      <Footer></Footer>
+      <Footer />
     </>
   );
 }
