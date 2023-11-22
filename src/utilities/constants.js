@@ -14,3 +14,48 @@ export const NAV_FOOTER = [
   { to: '/terminos-y-condiciones', navName: 'Términos y condiciones' },
   { to: '/aviso-de-privacidad', navName: 'Aviso de privacidad' }
 ]
+
+export const CARDS_CALENDAR = [
+  {
+    id: 1,
+    title: 'Seminario de Estrés y Manejo del Tiempo',
+    date: ['Fecha: ', '5 diciembre'],
+    description: ['Actividades: ', 'Sesiones de asesoramiento, técnicas de relajación, planificación del tiempo']
+  },
+  {
+    id: 2,
+    title: 'Torneo Deportivo Interfacultades',
+    date: ['Fecha: ', '6 diciembre'],
+    description: [
+      'Actividades: ',
+      'Competencias en diferentes deportes, ceremonia de premiación, actividades recreativas.'
+    ]
+  },
+  {
+    id: 3,
+    title: 'Exposición de Proyectos de Fin de Semestre',
+    date: ['Fecha: ', '7 diciembre'],
+    description: [
+      'Actividades: ',
+      'Presentaciones de proyectos, demostraciones prácticas, sesiones de retroalimentación.'
+    ]
+  },
+  {
+    id: 4,
+    title: 'Taller de Escritura Creativa',
+    date: ['Fecha: ', '8 diciembre'],
+    description: [
+      'Actividades: ',
+      'Puestos de comida internacional, actuaciones musicales y danzas, exposiciones de arte.'
+    ]
+  },
+  {
+    id: 5,
+    title: 'Maratón de Código y Hackathon',
+    date: ['Fecha: ', '11 diciembre'],
+    description: [
+      'Actividades: ',
+      'Desarrollo de proyectos de software, talleres de programación, premiación a las mejores soluciones.'
+    ]
+  }
+]
