@@ -1,5 +1,5 @@
-import { Box, Flex, Input } from '@chakra-ui/react'
-import { Send } from '../assets/Icons'
+import { Flex, Input } from '@chakra-ui/react'
+import { Send, Trash } from '../assets/Icons'
 
 export function InputChat({ message, handleSend, handleChange, sendMessage }) {
   return (
@@ -9,7 +9,7 @@ export function InputChat({ message, handleSend, handleChange, sendMessage }) {
       mt='auto'
       mb={'0.2rem'}>
       <form
-        style={{ display: 'flex', gap: '3rem' }}
+        style={{ display: 'flex', gap: '0.5rem' }}
         onSubmit={e => handleSend(message, e)}>
         <Input
           value={message}
@@ -18,17 +18,18 @@ export function InputChat({ message, handleSend, handleChange, sendMessage }) {
           alignSelf='center'
           bg='#fff'
           maxW='90%'
+          w='15rem'
           p='0'
-          // w='13rem'
           h='1.5rem'
         />
-        <Box
+        <Flex
           onClick={() => sendMessage(message)}
           alignSelf='center'
-          w='1.8rem'
+          // w='1.8rem'
           cursor='pointer'>
+          <Trash />
           <Send />
-        </Box>
+        </Flex>
       </form>
     </Flex>
   )

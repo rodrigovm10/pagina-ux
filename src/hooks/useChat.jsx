@@ -6,10 +6,20 @@ export function useChat() {
 
   useEffect(() => {
     const lastMessage = messages[messages.length - 1]
-    if (lastMessage === 'No puedo responder esa pregunta. Favor de contactar con Tal, para aclaraciones') return
-    if (lastMessage === '¿Que puedo encontrar en el calendario?') {
+    if (
+      lastMessage === 'Eventos y noticias del mes actual.' ||
+      lastMessage === 'No puedo responder esa pregunta. Favor de contactar con Tal, para aclaraciones.' ||
+      lastMessage === '¿En qué puedo ayudarte?'
+    )
+      return
+    if (lastMessage === '¿Qué puedo encontrar en el calendario?') {
       setMessages(prevMessages => [...prevMessages, 'Eventos y noticias del mes actual'])
       return
+    } else {
+      setMessages(prevMessages => [
+        ...prevMessages,
+        'No puedo responder esa pregunta. Favor de contactar con Tal, para aclaraciones.'
+      ])
     }
   }, [messages])
 
@@ -26,5 +36,9 @@ export function useChat() {
     setMessage('')
   }
 
-  return { messages, message, handleChange, handleSend, sendMessage }
+  const deleteChat = () => {
+    setMessages('¿En qué puedo ayudarte?')
+  }
+
+  return { messages, message, handleChange, handleSend, sendMessage, deleteChat }
 }
