@@ -5,7 +5,7 @@ export function CardCentroAyuda({ handleClickOpen }) {
   return (
     <Flex
       position='relative'
-      alignItems='center'
+      alignItems='flex-end'
       gap='2rem'>
       <Stack
         bg={{
@@ -14,20 +14,22 @@ export function CardCentroAyuda({ handleClickOpen }) {
           md: 'rgba(255, 255, 255, 0.75)',
           lg: 'rgba(255, 255, 255, 0.75)'
         }}
-        h='100%'
+        h={{ base: '100%', md: '100%', lg: '100%' }}
         position='absolute'
-        top={{ base: 20, md: 0, lg: 0 }}
-        left={{ base: 59, md: 0, lg: 0 }}
+        top='0'
+        left='0'
         zIndex='1'
         p='2rem'
         justifyContent='center'
         alignItems='center'>
         <Heading
+          opacity={{ base: 0, sm: 1, md: 1, lg: 1, xl: 1 }}
           as='h2'
-          fontSize='1.4rem'>
+          size='lg'>
           Centro de ayuda
         </Heading>
         <Button
+          opacity={{ base: 0, sm: 1, md: 1, lg: 1, xl: 1 }}
           onClick={handleClickOpen}
           w='10rem'
           p='1.5rem'

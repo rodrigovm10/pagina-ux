@@ -1,37 +1,16 @@
-import { Box, Flex, Input, Text } from '@chakra-ui/react'
-import enviar from '../assets/enviar.png'
-import { useEffect, useState } from 'react'
-import { Send } from '../assets/Icons'
+import { Box, Flex, Text } from '@chakra-ui/react'
+import { useChat } from '../hooks/useChat'
+import { InputChat } from './InputChat'
+import { ChatMessages } from './ChatMessages'
 
 export function ChatOpen({ onClick }) {
-  const [message, setMessage] = useState('')
-  const [messages, setMessages] = useState(['¿En qué puedo ayudarte?'])
-  // const [messagesBot, setMessageBot] = useState([])
-
-  useEffect(() => {
-    if (messages[messages.length - 1] === '¿Que puedo encontrar en el calendario?')
-      setMessages(prevMessages => [...prevMessages, 'hola'])
-  }, [messages])
-
-  const handleChange = e => {
-    setMessage(e.target.value)
-  }
-
-  const handleSend = (message, e) => {
-    e.preventDefault()
-    sendMessage(message)
-  }
-  const sendMessage = message => {
-    setMessages(prevMessages => [...prevMessages, message])
-    setMessage('')
-  }
+  const { messages, message, handleChange, handleSend, sendMessage } = useChat()
   return (
     <Box
       bg='#00259A'
-      borderRadius={10}
-      w='12rem'
+      borderRadius={6}
+      w='20rem'
       h='20rem'
-      mr='2rem'
       display='flex'
       flexDirection='column'
       justifyContent='center'
@@ -51,64 +30,13 @@ export function ChatOpen({ onClick }) {
           Soporte
         </Text>
       </Flex>
-      <Flex
-        flexDir='column'
-        mt='1rem'
-        overflowY={'auto'}>
-        {messages.map((message, i) => {
-          if (message.length % 2 !== 0) {
-            return (
-              <Text
-                textAlign='left'
-                key={i}
-                color='#fff'
-                p='0.5rem'
-                bg='rgba(0, 0, 0, 0.6)'>
-                {message}
-              </Text>
-            )
-          } else {
-            return (
-              <Text
-                textAlign='right'
-                key={i}
-                color='#fff'
-                p='0.5rem'
-                bg='rgba(255, 255,255, 0.6)'>
-                {message}
-              </Text>
-            )
-          }
-        })}
-      </Flex>
-      <Flex
-        alignSelf='flexEnd'
-        alignContent='flex-end'
-        mt='auto'
-        mb={'0.2rem'}>
-        <form
-          style={{ display: 'flex', gap: '1rem' }}
-          onSubmit={e => handleSend(message, e)}>
-          <Input
-            value={message}
-            onChange={handleChange}
-            ml='1rem'
-            alignSelf='center'
-            bg='#fff'
-            maxW='80%'
-            h='1.5rem'
-          />
-          <Box
-            onClick={() => sendMessage(message)}
-            alignSelf='center'
-            src={enviar}
-            w='1.8rem'
-            objectFit='contain'
-            cursor='pointer'>
-            <Send />
-          </Box>
-        </form>
-      </Flex>
+      <ChatMessages messages={messages} />
+      <InputChat
+        message={message}
+        handleChange={handleChange}
+        handleSend={handleSend}
+        sendMessage={sendMessage}
+      />
     </Box>
   )
 }

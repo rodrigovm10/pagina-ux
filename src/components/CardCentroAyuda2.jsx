@@ -10,7 +10,7 @@ export function CardCentroAyuda2({ handleClickOpen }) {
         <Stack
           border='1px solid #00259A'
           bg='rgba(255, 255, 255, 0.75)'
-          w={{ base: '22rem', md: '20rem', lg: '20rem' }}
+          w={{ base: '20rem', md: '20rem', lg: '20rem' }}
           p='2rem'
           justifyContent='center'
           alignItems='center'>
@@ -19,14 +19,16 @@ export function CardCentroAyuda2({ handleClickOpen }) {
             size='md'>
             Chatea con nosotros
           </Heading>
-          <Text>Resuelve tus dudas. Nuestro equipo de asesores te brindará la información que requieras</Text>
+          <Text textAlign='justify'>
+            Resuelve tus dudas. Nuestro equipo de asesores te brindará la información que requieras
+          </Text>
         </Stack>
         <Image
           border='1px solid #000'
           backdropFilter='blur(2px)'
           src={chicoCentroAyuda}
           alt='chicoCentroAyuda'
-          w='22rem'
+          w='20rem'
           h='10.6rem'
           objectFit='cover'
         />
