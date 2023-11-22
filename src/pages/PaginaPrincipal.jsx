@@ -41,7 +41,7 @@ export function PaginaPrincipal() {
         />
         <Heading
           as='h1'
-          size='xl'
+          size={{ base: 'md', lg: 'xl' }}
           textAlign='center'>
           ¡Bienvenidos a la Universidad Tecnologica del Norte de Guanajuato!
         </Heading>
