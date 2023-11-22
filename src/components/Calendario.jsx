@@ -127,24 +127,33 @@ export function Calendario() {
               </Text>
             </CardHeader>
           </Card>
-          <Card>
-            <CardHeader>
-              {expandedCard === "FeriaEmpleo" && (
+          <Card align="center" justify="center">
+            {expandedCard !== "FeriaEmpleo" && (
+              <>
+                <CardFooter>
+                  <Button
+                    colorScheme="blue"
+                    onClick={() => toggleCardExpansion("FeriaEmpleo")}
+                  >
+                    <Text fontSize="6xl" marginBottom="1rem">
+                      +
+                    </Text>
+                  </Button>
+                </CardFooter>
+              </>
+            )}
+            {expandedCard === "FeriaEmpleo" && (
+              <CardHeader>
+                <Heading size="md" mb="1rem">
+                  Conferencia Sobre React por la Empresa Optimen
+                </Heading>
+                <Text>Fecha: 12 diciembre en Aerovisual Edificio F</Text>
                 <Text>
-                  Más detalles de la Feria de Empleo...
-                  {/* Aquí puedes agregar más información */}
+                  Actividades: Presentaciones técnicas, sesión de preguntas y
+                  respuestas, y un taller práctico.
                 </Text>
-              )}
-            </CardHeader>
-            <>
-              <CardFooter align="center" justify="center">
-                <Button colorScheme="blue">
-                  <Text fontSize="6xl" marginBottom="1rem">
-                    +
-                  </Text>
-                </Button>
-              </CardFooter>
-            </>
+              </CardHeader>
+            )}
           </Card>
         </SimpleGrid>
       </Box>

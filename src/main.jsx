@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { CentroAyuda } from "./pages/CentroAyuda";
 import { Calendario } from "../src/components/Calendario.jsx";
 import { Reinscripciones } from "../src/components/Reinscripsiones.jsx";
+import { Becas } from "../src/components/Becas.jsx";
 
 import { PaginaPrincipal } from "./pages/PaginaPrincipal.jsx";
 
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: "/reinscripciones",
     element: <Reinscripciones />,
+  },
+  {
+    path: "/becas",
+    element: <Becas />,
   },
 ]);
 
