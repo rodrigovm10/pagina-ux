@@ -1,6 +1,6 @@
 import { Card, CardBody } from "@chakra-ui/react";
 
-export default function Reinscripsiones() {
+export function Reinscripciones() {
   return (
     <>
       <Card>

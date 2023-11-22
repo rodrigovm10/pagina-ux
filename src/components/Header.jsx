@@ -1,6 +1,7 @@
-import { Box, Flex, Image, Link } from '@chakra-ui/react'
+import { Box, Flex, Image, Text } from '@chakra-ui/react'
 import logo from '../assets/logoutng.webp'
 import { NAV_HEADER } from '../utilities/constants'
+import { Link } from 'react-router-dom'
 export function Header() {
   return (
     <Flex
@@ -18,14 +19,14 @@ export function Header() {
         gap='1rem'
         alignItems='center'>
         {NAV_HEADER.map((nav, i) => (
-          <Link
+          <Text
             color='#fff'
             opacity='0.8'
             _hover={{ opacity: '1' }}
             key={i}
             href='#'>
-            {nav}
-          </Link>
+            <Link to={nav.to}>{nav.navName}</Link>
+          </Text>
         ))}
       </Flex>
     </Flex>
