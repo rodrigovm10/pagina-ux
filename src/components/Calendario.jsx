@@ -23,21 +23,19 @@ export function Calendario() {
   return (
     <>
       <Header />
-      <Box p="3rem">
+      <Box p="3rem" w="90%" m="0 auto">
         <SimpleGrid
           spacing={6}
           templateColumns="repeat(auto-fill, minmax(500px, 1fr))"
         >
-          <>
-            <Image
-              w="full"
-              objectFit="cover"
-              borderRadius="1rem"
-              src="https://media.istockphoto.com/id/1370276409/es/foto/hombre-asi%C3%A1tico-de-cuello-blanco-marcando-la-fecha-en-el-calendario-del-escritorio.jpg?s=612x612&w=0&k=20&c=L-fRHj1PoZHZ_VJviN_iw9PIEK8N_KcFO8QWiJBmZjQ="
-              alt="Calendario UTNG"
-            />
-          </>
-          <Card>
+          <Image
+            w={{ base: "60%", sm: "full", md: "full", lg: "full" }}
+            objectFit="cover"
+            borderRadius="1rem"
+            src="https://media.istockphoto.com/id/1370276409/es/foto/hombre-asi%C3%A1tico-de-cuello-blanco-marcando-la-fecha-en-el-calendario-del-escritorio.jpg?s=612x612&w=0&k=20&c=L-fRHj1PoZHZ_VJviN_iw9PIEK8N_KcFO8QWiJBmZjQ="
+            alt="Calendario UTNG"
+          />
+          <Card maxW={{ base: "60%", lg: "full" }}>
             <CardHeader>
               <Heading size="md">
                 Noticias
@@ -67,7 +65,7 @@ export function Calendario() {
               </Text>
             </CardHeader>
           </Card>
-          <Card>
+          <Card maxW={{ base: "60%", lg: "full" }}>
             <CardHeader>
               <Heading size="md" mb="1rem">
                 Seminario de Estrés y Manejo del Tiempo
@@ -79,7 +77,7 @@ export function Calendario() {
               </Text>
             </CardHeader>
           </Card>
-          <Card>
+          <Card maxW={{ base: "60%", lg: "full" }}>
             <CardHeader>
               <Heading size="md" mb="1rem">
                 Torneo Deportivo Interfacultades
@@ -91,7 +89,7 @@ export function Calendario() {
               </Text>
             </CardHeader>
           </Card>
-          <Card>
+          <Card maxW={{ base: "60%", lg: "full" }}>
             <CardHeader>
               <Heading size="md" mb="1rem">
                 Exposición de Proyectos de Fin de Semestre
@@ -103,7 +101,7 @@ export function Calendario() {
               </Text>
             </CardHeader>
           </Card>
-          <Card>
+          <Card maxW={{ base: "60%", lg: "full" }}>
             <CardHeader>
               <Heading size="md" mb="1rem">
                 Taller de Escritura Creativa
@@ -115,7 +113,7 @@ export function Calendario() {
               </Text>
             </CardHeader>
           </Card>
-          <Card>
+          <Card maxW={{ base: "60%", lg: "full" }}>
             <CardHeader>
               <Heading size="md" mb="1rem">
                 Maratón de Código y Hackathon
@@ -127,7 +125,11 @@ export function Calendario() {
               </Text>
             </CardHeader>
           </Card>
-          <Card align="center" justify="center">
+          <Card
+            align="center"
+            justify="center"
+            maxW={{ base: "60%", lg: "full" }}
+          >
             {expandedCard !== "FeriaEmpleo" && (
               <>
                 <CardFooter>
