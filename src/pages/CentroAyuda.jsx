@@ -4,11 +4,14 @@ import { CardCentroAyuda2 } from '../components/CardCentroAyuda2'
 import { NavFlotante } from '../components/NavFlotante'
 import { Chat } from '../components/Chat'
 import { useOpenChat } from '../hooks/useOpenChat'
+import { Footer } from '../components/Footer.jsx'
+import { Header } from '../components/Header.jsx'
 
 export function CentroAyuda() {
   const { isOpen, handleClickOpen } = useOpenChat()
   return (
     <>
+      <Header />
       <Flex
         alignItems='center'
         justifyContent='center'
@@ -30,6 +33,7 @@ export function CentroAyuda() {
         </Box>
       </Flex>
       <NavFlotante />
+      <Footer />
     </>
   )
 }
