@@ -18,12 +18,24 @@ export const NAV_FOOTER = [
 export const CARDS_CALENDAR = [
   {
     id: 1,
+    title: 'Feria de Empleo y Prácticas Profesionales',
+    date: ['Fecha: ', '1 diciembre'],
+    description: ['Actividades: ', ' Stands de empresas, entrevistas en el lugar, talleres de desarrollo profesional.']
+  },
+  {
+    id: 2,
+    title: 'Festival Cultural de Invierno',
+    date: ['Fecha: ', '4 diciembre'],
+    description: ['Actividades: ', ' Puestos de comida internacional, actuaciones musicales y danzas, exposiciones de arte.']
+  },
+  {
+    id: 3,
     title: 'Seminario de Estrés y Manejo del Tiempo',
     date: ['Fecha: ', '5 diciembre'],
     description: ['Actividades: ', 'Sesiones de asesoramiento, técnicas de relajación, planificación del tiempo']
   },
   {
-    id: 2,
+    id: 4,
     title: 'Torneo Deportivo Interfacultades',
     date: ['Fecha: ', '6 diciembre'],
     description: [
@@ -32,7 +44,7 @@ export const CARDS_CALENDAR = [
     ]
   },
   {
-    id: 3,
+    id: 5,
     title: 'Exposición de Proyectos de Fin de Semestre',
     date: ['Fecha: ', '7 diciembre'],
     description: [
@@ -41,7 +53,7 @@ export const CARDS_CALENDAR = [
     ]
   },
   {
-    id: 4,
+    id: 6,
     title: 'Taller de Escritura Creativa',
     date: ['Fecha: ', '8 diciembre'],
     description: [
@@ -50,12 +62,21 @@ export const CARDS_CALENDAR = [
     ]
   },
   {
-    id: 5,
+    id: 7,
     title: 'Maratón de Código y Hackathon',
     date: ['Fecha: ', '11 diciembre'],
     description: [
       'Actividades: ',
       'Desarrollo de proyectos de software, talleres de programación, premiación a las mejores soluciones.'
+    ]
+  },
+  {
+    id: 8,
+    title: 'Conferencia Sobre React por la Empresa Optimen',
+    date: ['Fecha: ', '12 diciembre'],
+    description: [
+      'Actividades: ',
+      'Presentaciones técnicas, sesión de preguntas y respuestas, y un taller práctico.'
     ]
   }
 ]

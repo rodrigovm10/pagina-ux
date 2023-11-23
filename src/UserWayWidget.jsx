@@ -1,20 +1,20 @@
-import { useEffect } from 'react'
+import { useEffect } from "react";
 
 const UserWayWidget = () => {
   useEffect(() => {
-    const script = document.createElement('script')
-    script.src = 'https://cdn.userway.org/widget.js'
-    script.dataset.account = '1piGO8HDpF'
-    script.async = true
+    const script = document.createElement("script");
+    script.src = "https://cdn.userway.org/widget.js";
+    script.dataset.account = "1piGO8HDpF";
+    script.async = true;
 
-    document.head.appendChild(script)
+    document.head.appendChild(script);
 
     return () => {
-      document.head.removeChild(script)
-    }
-  }, [])
+      document.head.removeChild(script);
+    };
+  }, []);
 
-  return null
-}
+  return null;
+};
 
-export default UserWayWidget
+export default UserWayWidget;
