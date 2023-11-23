@@ -1,5 +1,5 @@
-import { Flex, Input, Textarea } from '@chakra-ui/react'
-import { Send, Trash } from '../assets/Icons'
+import { Flex, Input } from '@chakra-ui/react'
+import { Send } from '../assets/Icons'
 
 export function InputChat({ message, handleSend, handleChange, sendMessage }) {
   return (
