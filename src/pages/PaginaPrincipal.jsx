@@ -4,6 +4,7 @@ import { Header } from '../components/Header.jsx'
 import imgPrincipal from '../assets/paginaPrincipal.png'
 import { CardPPrincipal } from '../components/CardPPrincipal.jsx'
 import { Search } from '../assets/Icons.jsx'
+import { Link } from 'react-router-dom'
 
 export function PaginaPrincipal() {
   return (
@@ -17,6 +18,12 @@ export function PaginaPrincipal() {
         alignItems='center'
         mt='2rem'
         gap={{ base: '1.3rem', lg: '2rem' }}>
+        <Heading
+          as='h1'
+          size={{ base: 'md', lg: 'xl' }}
+          textAlign='center'>
+          ¡Bienvenidos a la Universidad Tecnologica del Norte de Guanajuato!
+        </Heading>
         <form>
           <Box position='relative'>
             <Box
@@ -33,18 +40,14 @@ export function PaginaPrincipal() {
             />
           </Box>
         </form>
+
         <Image
           src={imgPrincipal}
           objectFit='contain'
           maxW='70vw'
           w='90rem'
         />
-        <Heading
-          as='h1'
-          size={{ base: 'md', lg: 'xl' }}
-          textAlign='center'>
-          ¡Bienvenidos a la Universidad Tecnologica del Norte de Guanajuato!
-        </Heading>
+
         <Text
           w='68vw'
           textAlign='justify'>
@@ -71,7 +74,7 @@ export function PaginaPrincipal() {
             wLg='15rem'
             wBase='100%'
             title='Valores'
-            text='Trabajo en equipo Comunicación Honestidad Respeto'
+            text={`Trabajo\nComunicación\nHonestidad\nRespeto`}
           />
         </Flex>
       </Flex>

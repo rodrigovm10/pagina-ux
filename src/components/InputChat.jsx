@@ -22,12 +22,18 @@ export function InputChat({ message, handleSend, handleChange, sendMessage }) {
           p='0'
           h='1.5rem'
         />
-        <Flex
+        {/* <Flex
           onClick={() => sendMessage(message)}
           alignSelf='center'
           // w='1.8rem'
           cursor='pointer'>
           <Trash />
+        </Flex> */}
+        <Flex
+          onClick={() => sendMessage(message)}
+          alignSelf='center'
+          // w='1.8rem'
+          cursor='pointer'>
           <Send />
         </Flex>
       </form>
