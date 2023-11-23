@@ -1,18 +1,4 @@
-import {
-  Card,
-  CardBody,
-  Box,
-  SimpleGrid,
-  Image,
-  CardHeader,
-  Heading,
-  Text,
-  CardFooter,
-  Button,
-  Flex,
-  Link,
-  Icon
-} from '@chakra-ui/react'
+import { Card, CardBody, Box, SimpleGrid, Image, CardHeader, Heading, Text, CardFooter, Button, Flex, Link, Icon } from '@chakra-ui/react'
 import { MdPhone } from 'react-icons/md'
 import Modal from 'react-bootstrap/Modal'
 import { Footer } from '../components/Footer.jsx'
@@ -29,9 +15,7 @@ const cardsData = [
   { title: 'FINANCIAMIENTO EDUCATIVO GTO (MEDIA SUPERIOR Y SUPERIOR)' }
 ]
 
-
-
-  function Becas() {
+function Becas() {
 
   const [show, setShow] = useState(false)
   const [showCul, setShowCul] = useState(false)
@@ -73,7 +57,7 @@ const cardsData = [
               </Heading>
             </CardHeader>
             <CardHeader>
-              <Text>
+              <Text textAlign="justify">
                 Las becas universitarias cumplen una función crucial en el mundo de la educación superior al desempeñar
                 múltiples roles interconectados. En primer lugar, actúan como un mecanismo efectivo para abrir las
                 puertas de la educación superior a una amplia variedad de estudiantes, independientemente de su
@@ -103,7 +87,7 @@ const cardsData = [
               <Heading size='md'> APOYO ALIMENTICIO </Heading>
             </CardHeader>
             <CardBody>
-              <Text>
+              <Text textAlign="justify">
                 Consiste en la ministración de una comida al día en la Universidad a los alumnos de la modalidad
                 escolarizada, los solicitantes deberán entregar el formato de canalización del tutor académico para
                 tener derecho a la solicitud del apoyo.
@@ -182,7 +166,7 @@ const cardsData = [
               <Heading size='md'> APOYO DEPORTIVO Y CULTURAL </Heading>
             </CardHeader>
             <CardBody>
-              <Text>
+              <Text textAlign="justify">
                 Consiste en la exención del 100% en el pago de la inscripción cuatrimestral para los alumnos del primero
                 al quinto cuatrimestre y del 50% para los alumnos del séptimo al onceavo cuatrimestre, que sean
                 seleccionados para representar a la Universidad en eventos deportivos o culturales oficiales.
@@ -261,7 +245,7 @@ const cardsData = [
               <Heading size='md'> APOYO POR NECESIDAD APREMIANTE </Heading>
             </CardHeader>
             <CardBody>
-              <Text>
+              <Text textAlign="justify">
                 Consiste en la ministración mensual no reembolsable de una cantidad de dinero, a los alumnos con
                 promedio mínimo de ocho y necesidad económica extrema que ponga en riesgo la continuidad de sus estudios
                 en la Universidad.
@@ -368,7 +352,7 @@ const cardsData = [
           borderWidth='1px'
           borderRadius='lg'
           overflow='hidden'
-          bg='gray.100'
+          bg='#159b80'
           p={10}>
           <Flex
             align='center'

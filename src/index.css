@@ -14,14 +14,10 @@
   .div1 { grid-area: 2 / 1 / 5 / 2; }
   .div2 { grid-area: 2 / 2 / 5 / 6; }
 
-  .uwy .uai img:not(.check_on), body .uwy .uai img:not(.check_on) {
-    height: 500px;
-    width: 500px;
-    display: block;
-    padding: 0!important;
-    margin: 0!important;
-    background: 0 0!important;
-    border: none!important;
-    opacity: 1!important;
-    visibility: visible!important;
-}
+  body .uwy .uai .usr { 
+    position: fixed; /* o `absolute`, según tu estructura de layout */
+    bottom: 50px; /* ajusta esto para mover hacia arriba o abajo */
+    right: 10px; /* ajusta esto para mover hacia izquierda o derecha */
+    z-index: 1000; /* asegúrate de que sea superior a otros elementos para que no se oculte detrás de ellos */
+    color: #159b80;
+  }
