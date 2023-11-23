@@ -29,7 +29,10 @@ const cardsData = [
   { title: 'FINANCIAMIENTO EDUCATIVO GTO (MEDIA SUPERIOR Y SUPERIOR)' }
 ]
 
-export function Becas() {
+
+
+  function Becas() {
+
   const [show, setShow] = useState(false)
   const [showCul, setShowCul] = useState(false)
   const [showAca, setShowAca] = useState(false)
@@ -399,3 +402,5 @@ export function Becas() {
     </>
   )
 }
+
+export default Becas;
