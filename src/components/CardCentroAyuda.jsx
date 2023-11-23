@@ -35,7 +35,12 @@ export function CardCentroAyuda({ handleClickOpen }) {
           p='1.5rem'
           textAlign='center'
           bg='#00259A'
-          _hover={{ bg: '#001F7E' }}
+          _hover={{
+            color: 'rgba(255, 255, 255,1)',
+            backgroundColor: '#00259A',
+            boxShadow: '0 4px 16px #001F7E',
+            transition: 'all 0.2s ease'
+          }}
           color='#fff'>
           Iniciar <br />
           Conversación

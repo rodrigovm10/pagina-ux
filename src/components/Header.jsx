@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react'
 import {
   Box,
   Flex,
@@ -10,6 +9,8 @@ import {
   MenuList,
   MenuItem,
   IconButton
+  // useColorMode,
+  // Button
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import logo from '../assets/logoutng.webp'
@@ -19,9 +20,8 @@ import { Link, useLocation } from 'react-router-dom'
 export function Header() {
   const [isLessThan768px] = useMediaQuery('(max-width: 768px)')
   const location = useLocation()
-  useEffect(() => {
-    console.log(location)
-  }, [location])
+
+  // const { colorMode, toggleColorMode } = useColorMode()
   return (
     <Flex
       bg='#00259A'
@@ -74,6 +74,21 @@ export function Header() {
               </Link>
             </Box>
           ))}
+
+          {/* {colorMode === 'light' ? (
+            <Button
+              cursor='pointer'
+              onClick={toggleColorMode}
+              color='#fff'>
+              Blanco
+            </Button>
+          ) : (
+            <Button
+              cursor='pointer'
+              onClick={toggleColorMode}>
+              Negro
+            </Button>
+          )} */}
         </Flex>
       )}
     </Flex>

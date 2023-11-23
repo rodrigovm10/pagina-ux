@@ -1,23 +1,33 @@
-import { Flex, Text } from '@chakra-ui/react'
+import { Box, Flex, Text } from '@chakra-ui/react'
 
 export function ChatMessages({ messages }) {
   return (
     <Flex
       flexDir='column'
       mt='1rem'
-      gap='1rem'
-      overflowY={'auto'}>
+      gap='0.4rem'
+      overflow={'hidden auto'}
+      scrollBehavior='smooth'
+      p='0 1rem'
+      overscrollBehavior='contain'>
       {messages.map((message, i) => {
         const isUserMessage = i % 2 !== 0
         return (
-          <Text
+          <Box
             key={i}
-            textAlign={isUserMessage ? 'right' : 'left'}
-            color={isUserMessage ? '#000' : '#fff'}
-            p='0.5rem'
-            bg={isUserMessage ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.6)'}>
-            {message}
-          </Text>
+            maxW='75%'
+            bg={isUserMessage ? '#00259A' : 'rgb(236, 236, 236)'}
+            whiteSpace='pre-wrap'
+            wordBreak='break-word'
+            overflowWrap='break-word'
+            borderRadius='0 0.8rem 0.8rem'
+            p='1rem'>
+            <Text
+              textAlign={isUserMessage ? 'right' : 'left'}
+              color={isUserMessage ? '#fff' : '#rgba(0, 0,0, 0.5)'}>
+              {message}
+            </Text>
+          </Box>
         )
       })}
     </Flex>

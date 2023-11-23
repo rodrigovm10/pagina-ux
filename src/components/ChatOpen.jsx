@@ -7,8 +7,10 @@ export function ChatOpen({ onClick }) {
   const { messages, message, handleChange, handleSend, sendMessage } = useChat()
   return (
     <Box
-      bg='#00259A'
-      borderRadius={6}
+      bg='#fff'
+      border='1px solid #000'
+      boxShadow='2xl'
+      borderRadius={3}
       w='20rem'
       h='20rem'
       display='flex'
@@ -21,12 +23,12 @@ export function ChatOpen({ onClick }) {
         alignItems='center'
         pt='1rem'
         onClick={onClick}
+        bg='#00259A'
         cursor='pointer'>
         <Text
           fontWeight='500'
-          fontSize='1.3rem'
-          color='#fff'
-          alignSelf='center'>
+          fontSize='1.2rem'
+          color='#fff'>
           Soporte
         </Text>
       </Flex>

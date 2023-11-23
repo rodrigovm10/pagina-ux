@@ -29,7 +29,7 @@ export function CardCentroAyuda2({ handleClickOpen }) {
           src={chicoCentroAyuda}
           alt='chicoCentroAyuda'
           w='20rem'
-          h='10.6rem'
+          h='12.1rem'
           objectFit='cover'
         />
       </Flex>
@@ -39,7 +39,12 @@ export function CardCentroAyuda2({ handleClickOpen }) {
         p='1rem'
         textAlign='center'
         bg='#00259A'
-        _hover={{ bg: '#001F7E' }}
+        _hover={{
+          color: 'rgba(255, 255, 255,1)',
+          backgroundColor: '#00259A',
+          boxShadow: '0 4px 16px #001F7E',
+          transition: 'all 0.2s ease'
+        }}
         color='#fff'>
         Iniciar Conversación
       </Button>
