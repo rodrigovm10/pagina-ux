@@ -25,7 +25,7 @@ export function PaginaPrincipal() {
           ¡Bienvenidos a la Universidad Tecnologica del Norte de Guanajuato!
         </Heading>
         <form>
-          <Box position='relative'>
+          <Box position='relative' borderWidth='2px'>
             <Box
               position='absolute'
               right={3}

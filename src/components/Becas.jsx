@@ -1,24 +1,12 @@
-import {
-  Card,
-  CardBody,
-  Box,
-  SimpleGrid,
-  Image,
-  CardHeader,
-  Heading,
-  Text,
-  CardFooter,
-  Button,
-  Flex,
-  Link,
-  Icon
-} from '@chakra-ui/react'
-import { MdPhone } from 'react-icons/md'
-import Modal from 'react-bootstrap/Modal'
-import { Footer } from '../components/Footer.jsx'
-import { Header } from '../components/Header.jsx'
-import { useState } from 'react'
-import logo from '../assets/logoutng.webp'
+import { Card, CardBody, Box, SimpleGrid, Image, CardHeader, Heading, Text, CardFooter, Button, Flex, Link, Icon } from '@chakra-ui/react'
+import { MdPhone } from 'react-icons/md';
+import Modal from 'react-bootstrap/Modal';
+import { Footer } from '../components/Footer.jsx';
+import { Header } from '../components/Header.jsx';
+import { useState } from 'react';
+import logo from '../assets/logoutng.webp';
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 const cardsData = [
   { title: 'JÓVENES EMBARAZADAS Y MADRES' },
@@ -29,19 +17,55 @@ const cardsData = [
   { title: 'FINANCIAMIENTO EDUCATIVO GTO (MEDIA SUPERIOR Y SUPERIOR)' }
 ]
 
-export function Becas() {
-  const [show, setShow] = useState(false)
-  const [showCul, setShowCul] = useState(false)
-  const [showAca, setShowAca] = useState(false)
+function Becas() {
+  const navigate = useNavigate();
+  const [controlNumber, setControlNumber] = useState('');
+  const [show, setShow] = useState(false);
+  const [showCul, setShowCul] = useState(false);
+  const [showAca, setShowAca] = useState(false);
 
-  const handleClose = () => setShow(false)
-  const handleShow = () => setShow(true)
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
-  const handleCloseCul = () => setShowCul(false)
-  const handleShowCul = () => setShowCul(true)
+  const handleCloseCul = () => setShowCul(false);
+  const handleShowCul = () => setShowCul(true);
 
-  const handleCloseAca = () => setShowAca(false)
-  const handleShowAca = () => setShowAca(true)
+  const handleCloseAca = () => setShowAca(false);
+  const handleShowAca = () => setShowAca(true);
+
+  const handleInputChange = (e) => {
+    const { value } = e.target;
+    // Asegúrate de que solo se acepten números y que la longitud no exceda de 10 caracteres
+    if (value === '' || (value.match(/^[0-9]+$/) && value.length <= 10)) {
+      setControlNumber(value);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (controlNumber.length === 10) {
+      // Si la validación es exitosa, muestra el SweetAlert
+      Swal.fire({
+        title: '¡Éxito!',
+        text: 'Tu información se guardó correctamente, te llegará un correo con los siguientes pasos',
+        icon: 'success',
+        confirmButtonText: 'Ok'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          navigate('/');
+        }
+      });
+    } else {
+      // Si la validación falla, muestra un mensaje de error
+      Swal.fire({
+        title: 'Error',
+        text: 'El número de control debe tener exactamente 10 dígitos',
+        icon: 'error',
+        confirmButtonText: 'Ok'
+      });
+    }
+  };
+  
 
   return (
     <>
@@ -52,25 +76,23 @@ export function Becas() {
           templateColumns='repeat(auto-fill, minmax(500px, 1fr))'
           p='1rem'>
           <>
-            <Image
-              w='full'
-              objectFit='cover'
-              borderRadius='1rem'
-              src='https://media.istockphoto.com/id/1292319470/es/vector/concepto-de-celebraci%C3%B3n-de-graduados-con-mujer-feliz-estudiante.jpg?s=2048x2048&w=is&k=20&c=R_2Rz9KrpGWC-5vi4rMavBV449pIP-3EHcN-9IbPEmQ='
-              alt='Calendario UTNG'
-            />
+          <Image
+            w='full'
+            objectFit='cover'
+            borderRadius='1rem'
+            src='https://media.istockphoto.com/id/1292319470/es/vector/concepto-de-celebraci%C3%B3n-de-graduados-con-mujer-feliz-estudiante.jpg?s=2048x2048&w=is&k=20&c=R_2Rz9KrpGWC-5vi4rMavBV449pIP-3EHcN-9IbPEmQ='
+            alt='Calendario UTNG'
+            className='zoom'
+          />
           </>
           <Card>
             <CardHeader>
-              <Heading
-                size='2xl'
-                align='center'
-                justify='center'>
+              <Heading size='2xl' align='center' justify='center'>
                 Becas
               </Heading>
             </CardHeader>
             <CardHeader>
-              <Text>
+              <Text textAlign="justify">
                 Las becas universitarias cumplen una función crucial en el mundo de la educación superior al desempeñar
                 múltiples roles interconectados. En primer lugar, actúan como un mecanismo efectivo para abrir las
                 puertas de la educación superior a una amplia variedad de estudiantes, independientemente de su
@@ -100,19 +122,17 @@ export function Becas() {
               <Heading size='md'> APOYO ALIMENTICIO </Heading>
             </CardHeader>
             <CardBody>
-              <Text>
+              <Text textAlign="justify">
                 Consiste en la ministración de una comida al día en la Universidad a los alumnos de la modalidad
                 escolarizada, los solicitantes deberán entregar el formato de canalización del tutor académico para
                 tener derecho a la solicitud del apoyo.
               </Text>
             </CardBody>
             <CardFooter>
-              <Button onClick={handleShow}>Aplicar</Button>
+              <Button onClick={handleShow} bg='#159b80'>Aplicar</Button>
             </CardFooter>
           </Card>
-          <Modal
-            show={show}
-            onHide={handleClose}>
+          <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
               <Modal.Title>Información de Becas</Modal.Title>
             </Modal.Header>
@@ -148,20 +168,22 @@ export function Becas() {
                 área académica correspondiente, la realización de la visita de campo por parte del tutor académico
                 entregando un reporte que valide o no la necesidad del apoyo.
               </p>
-
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className='form-group'>
-                  <label htmlFor='inputField'>Ingresa aqui tu numero de control para aplicar a la beca</label>
+                  <label htmlFor='inputField'>Ingresa aquí tu número de control para aplicar a la beca</label>
                   <input
                     type='text'
                     className='form-control'
                     id='inputField'
-                    placeholder='Ingresa tu numero de control'
+                    placeholder='Ingresa tu número de control'
+                    value={controlNumber}
+                    onChange={handleInputChange}
                   />
                 </div>
                 <Button
                   variant='primary'
-                  type='submit'>
+                  type='submit'
+                  bg='#159b80'>
                   Aplicar
                 </Button>
               </form>
@@ -179,14 +201,14 @@ export function Becas() {
               <Heading size='md'> APOYO DEPORTIVO Y CULTURAL </Heading>
             </CardHeader>
             <CardBody>
-              <Text>
+              <Text textAlign="justify">
                 Consiste en la exención del 100% en el pago de la inscripción cuatrimestral para los alumnos del primero
                 al quinto cuatrimestre y del 50% para los alumnos del séptimo al onceavo cuatrimestre, que sean
                 seleccionados para representar a la Universidad en eventos deportivos o culturales oficiales.
               </Text>
             </CardBody>
             <CardFooter>
-              <Button onClick={handleShowCul}> Aplicar </Button>
+              <Button onClick={handleShowCul} bg='#159b80'> Aplicar </Button>
             </CardFooter>
           </Card>
           <Modal
@@ -239,8 +261,7 @@ export function Becas() {
                   />
                 </div>
                 <Button
-                  variant='primary'
-                  type='submit'>
+                  variant='primary' type='submit' bg='#159b80'>
                   Aplicar
                 </Button>
               </form>
@@ -258,14 +279,14 @@ export function Becas() {
               <Heading size='md'> APOYO POR NECESIDAD APREMIANTE </Heading>
             </CardHeader>
             <CardBody>
-              <Text>
+              <Text textAlign="justify">
                 Consiste en la ministración mensual no reembolsable de una cantidad de dinero, a los alumnos con
                 promedio mínimo de ocho y necesidad económica extrema que ponga en riesgo la continuidad de sus estudios
                 en la Universidad.
               </Text>
             </CardBody>
             <CardFooter>
-              <Button onClick={handleShowAca}>Aplicar</Button>
+              <Button onClick={handleShowAca} bg='#159b80'>Aplicar</Button>
             </CardFooter>
           </Card>
           <Modal
@@ -306,20 +327,23 @@ export function Becas() {
                 área académica correspondiente, la realización de la visita de campo por parte del tutor académico
                 entregando un reporte que valide o no la necesidad del apoyo.
               </p>
-
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className='form-group'>
-                  <label htmlFor='inputField'>Ingresa aqui tu numero de control para aplicar a la beca</label>
+                  <label htmlFor='inputField'>Ingresa aquí tu número de control para aplicar a la beca</label>
                   <input
                     type='text'
                     className='form-control'
                     id='inputField'
-                    placeholder='Ingresa tu numero de control'
+                    placeholder='Ingresa tu número de control'
+                    value={controlNumber}
+                    onChange={handleInputChange}
                   />
                 </div>
+                <br/>
                 <Button
                   variant='primary'
-                  type='submit'>
+                  type='submit'
+                  bg='#159b80'>
                   Aplicar
                 </Button>
               </form>
@@ -365,7 +389,7 @@ export function Becas() {
           borderWidth='1px'
           borderRadius='lg'
           overflow='hidden'
-          bg='gray.100'
+          bg='#159b80'
           p={10}>
           <Flex
             align='center'
@@ -399,3 +423,5 @@ export function Becas() {
     </>
   )
 }
+
+export default Becas;
