@@ -3,7 +3,7 @@ import { MdPhone } from 'react-icons/md';
 import Modal from 'react-bootstrap/Modal';
 import { Footer } from '../components/Footer.jsx';
 import { Header } from '../components/Header.jsx';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import logo from '../assets/logoutng.webp';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
@@ -32,6 +32,35 @@ function Becas() {
 
   const handleCloseAca = () => setShowAca(false);
   const handleShowAca = () => setShowAca(true);
+
+    const [timeLeft, setTimeLeft] = useState(null);
+  
+    useEffect(() => {
+      // Establecer la fecha y hora de finalización (3 días a partir de ahora)
+      const endTime = new Date();
+      endTime.setDate(endTime.getDate() + 3);
+  
+      // Actualizar el temporizador cada segundo
+      const interval = setInterval(() => {
+        const now = new Date();
+        const difference = endTime - now;
+  
+        // Convertir la diferencia de tiempo en días, horas, minutos y segundos
+        const d = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((difference % (1000 * 60)) / 1000);
+  
+        setTimeLeft(`${d} días ${h} horas ${m} minutos ${s} segundos`);
+  
+        if (difference < 0) {
+          clearInterval(interval);
+          setTimeLeft("Tiempo expirado");
+        }
+      }, 1000);
+  
+      return () => clearInterval(interval);
+    }, []);
 
   const handleInputChange = (e) => {
     const { value } = e.target;
@@ -119,7 +148,7 @@ function Becas() {
           p='1rem'>
           <Card>
             <CardHeader>
-              <Heading size='md'> APOYO ALIMENTICIO </Heading>
+              <Heading size='md'>APOYO ALIMENTICIO</Heading>
             </CardHeader>
             <CardBody>
               <Text textAlign="justify">
@@ -127,9 +156,12 @@ function Becas() {
                 escolarizada, los solicitantes deberán entregar el formato de canalización del tutor académico para
                 tener derecho a la solicitud del apoyo.
               </Text>
+              <Text fontSize="md" fontWeight="bold">
+                Tiempo Restante: {timeLeft}
+              </Text>
             </CardBody>
             <CardFooter>
-              <Button onClick={handleShow} bg='#159b80'>Aplicar</Button>
+              <Button color="white" bg='#159b80' >Aplicar</Button>
             </CardFooter>
           </Card>
           <Modal show={show} onHide={handleClose}>
