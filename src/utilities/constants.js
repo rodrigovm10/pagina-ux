@@ -80,3 +80,11 @@ export const CARDS_CALENDAR = [
     ]
   }
 ]
+export const CARDS_CALENDARIO = [
+  {
+    id: 1,
+    title: 'Bienvenido al Calendario de la Universidad',
+    date: ['', ''],
+    description: ['', ' Usted está actualmente en la sección del Calendario dentro de nuestro sistema de correo electrónico universitario. Aquí, puede gestionar y visualizar todos sus eventos académicos y actividades universitarias de manera organizada y eficiente. Este apartado está diseñado para ayudarle a mantenerse organizado y al tanto de sus responsabilidades y eventos universitarios. Por favor, utilice esta herramienta para planificar y organizar su tiempo de manera efectiva durante su vida académica en nuestra universidad.',]
+  },
+]
