@@ -16,8 +16,7 @@ export function ChatOpen({ onClick }) {
       display='flex'
       flexDirection='column'
       justifyContent='center'
-      position='relative' //
-    >
+      position='relative'>
       <Flex
         justifyContent='center'
         alignItems='center'

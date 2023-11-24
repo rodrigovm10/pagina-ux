@@ -22,7 +22,7 @@ export function Footer() {
       </Box>
       <Grid
         gridTemplateRows={2}
-        gap={{ base: '7rem', sm: '6rem', md: '3rem', lg: '1.2rem' }}
+        gap={{ base: '9rem', sm: '6rem', md: '4rem', lg: '1.2rem' }}
         alignItems='center'>
         <GridItem>
           <Flex

@@ -14,14 +14,15 @@ export function ChatMessages({ messages }) {
         const isUserMessage = i % 2 !== 0
         return (
           <Box
+            alignSelf={isUserMessage ? 'flex-end' : 'flex-start'}
             key={i}
             maxW='75%'
             bg={isUserMessage ? '#00259A' : 'rgb(236, 236, 236)'}
             whiteSpace='pre-wrap'
             wordBreak='break-word'
             overflowWrap='break-word'
-            borderRadius='0 0.8rem 0.8rem'
-            p='1rem'>
+            borderRadius={isUserMessage ? '8px 0 8px 8px' : '0 8px 8px'}
+            p='0.5rem'>
             <Text
               textAlign={isUserMessage ? 'right' : 'left'}
               color={isUserMessage ? '#fff' : '#rgba(0, 0,0, 0.5)'}>

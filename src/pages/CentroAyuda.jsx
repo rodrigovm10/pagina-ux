@@ -26,8 +26,8 @@ export function CentroAyuda() {
           Tu educación no se detiene
         </Heading>
         <Text
-          textAlign='center'
-          w='60%'
+          textAlign={{ base: 'justify', lg: 'center' }}
+          w={{ base: '80%', lg: '60%' }}
           borderBottom='2px solid #00259A'
           pb='1.3rem'>
           Deseamos darte más posibilidades para que continúes superándote, conoce las ventajas de nuestro proceso de
@@ -37,7 +37,7 @@ export function CentroAyuda() {
         <Box
           position={'fixed'}
           bottom={0}
-          right={0}
+          right={{ base: 45, md: 0, lg: 0 }}
           zIndex={1}
           alignSelf={{ base: 'center', lg: 'flex-end' }}>
           <Chat
