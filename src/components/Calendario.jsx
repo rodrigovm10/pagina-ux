@@ -44,11 +44,9 @@ export function Calendario() {
   };
 
   const getEventsForDay = (selectedDay) => {
-    // Formatea la fecha seleccionada para comparación
     const formattedSelectedDay = selectedDay.toISOString().split("T")[0];
 
     const events = CARDS_CALENDAR.filter((event) => {
-      // Extrae la fecha del evento y conviértela a un formato comparable
       const [dayPart, monthPart] = event.date[1].split(" ");
       const monthNames = [
         "enero",
@@ -70,10 +68,8 @@ export function Calendario() {
         monthIndex,
         parseInt(dayPart)
       );
-
       return eventDate.toISOString().split("T")[0] === formattedSelectedDay;
     });
-
     return events;
   };
 
