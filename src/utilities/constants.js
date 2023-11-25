@@ -19,25 +19,25 @@ export const CARDS_CALENDAR = [
   {
     id: 1,
     title: 'Feria de Empleo y Prácticas Profesionales',
-    date: ['Fecha: ', '1 diciembre'],
+    date: ['Fecha: ', '1 noviembre'],
     description: ['Actividades: ', ' Stands de empresas, entrevistas en el lugar, talleres de desarrollo profesional.']
   },
   {
     id: 2,
     title: 'Festival Cultural de Invierno',
-    date: ['Fecha: ', '4 diciembre'],
+    date: ['Fecha: ', '2 noviembre'],
     description: ['Actividades: ', ' Puestos de comida internacional, actuaciones musicales y danzas, exposiciones de arte.']
   },
   {
     id: 3,
     title: 'Seminario de Estrés y Manejo del Tiempo',
-    date: ['Fecha: ', '5 diciembre'],
+    date: ['Fecha: ', '3 noviembre'],
     description: ['Actividades: ', 'Sesiones de asesoramiento, técnicas de relajación, planificación del tiempo']
   },
   {
     id: 4,
     title: 'Torneo Deportivo Interfacultades',
-    date: ['Fecha: ', '6 diciembre'],
+    date: ['Fecha: ', '6 noviembre'],
     description: [
       'Actividades: ',
       'Competencias en diferentes deportes, ceremonia de premiación, actividades recreativas.'
@@ -46,7 +46,7 @@ export const CARDS_CALENDAR = [
   {
     id: 5,
     title: 'Exposición de Proyectos de Fin de Semestre',
-    date: ['Fecha: ', '7 diciembre'],
+    date: ['Fecha: ', '7 noviembre'],
     description: [
       'Actividades: ',
       'Presentaciones de proyectos, demostraciones prácticas, sesiones de retroalimentación.'
@@ -55,7 +55,7 @@ export const CARDS_CALENDAR = [
   {
     id: 6,
     title: 'Taller de Escritura Creativa',
-    date: ['Fecha: ', '8 diciembre'],
+    date: ['Fecha: ', '8 noviembre'],
     description: [
       'Actividades: ',
       'Puestos de comida internacional, actuaciones musicales y danzas, exposiciones de arte.'
@@ -64,7 +64,7 @@ export const CARDS_CALENDAR = [
   {
     id: 7,
     title: 'Maratón de Código y Hackathon',
-    date: ['Fecha: ', '11 diciembre'],
+    date: ['Fecha: ', '9 noviembre'],
     description: [
       'Actividades: ',
       'Desarrollo de proyectos de software, talleres de programación, premiación a las mejores soluciones.'
@@ -73,18 +73,11 @@ export const CARDS_CALENDAR = [
   {
     id: 8,
     title: 'Conferencia Sobre React por la Empresa Optimen',
-    date: ['Fecha: ', '12 diciembre'],
+    date: ['Fecha: ', '10 noviembre'],
     description: [
       'Actividades: ',
       'Presentaciones técnicas, sesión de preguntas y respuestas, y un taller práctico.'
     ]
   }
 ]
-export const CARDS_CALENDARIO = [
-  {
-    id: 1,
-    title: 'Bienvenido al Calendario de la Universidad',
-    date: ['', ''],
-    description: ['', ' Usted está actualmente en la sección del Calendario dentro de nuestro sistema de correo electrónico universitario. Aquí, puede gestionar y visualizar todos sus eventos académicos y actividades universitarias de manera organizada y eficiente. Este apartado está diseñado para ayudarle a mantenerse organizado y al tanto de sus responsabilidades y eventos universitarios. Por favor, utilice esta herramienta para planificar y organizar su tiempo de manera efectiva durante su vida académica en nuestra universidad.',]
-  },
-]
+
