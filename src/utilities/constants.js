@@ -19,28 +19,33 @@ export const CARDS_CALENDAR = [
   {
     id: 1,
     title: 'Feria de Empleo y Prácticas Profesionales',
-    date: ['Fecha: ', '1 diciembre'],
+    date: ['Fecha: ', '1 noviembre'],
     description: ['Actividades: ', ' Stands de empresas, entrevistas en el lugar, talleres de desarrollo profesional.']
   },
   {
     id: 2,
     title: 'Festival Cultural de Invierno',
+<<<<<<< HEAD
     date: ['Fecha: ', '4 diciembre'],
     description: [
       'Actividades: ',
       ' Puestos de comida internacional, actuaciones musicales y danzas, exposiciones de arte.'
     ]
+=======
+    date: ['Fecha: ', '2 noviembre'],
+    description: ['Actividades: ', ' Puestos de comida internacional, actuaciones musicales y danzas, exposiciones de arte.']
+>>>>>>> main
   },
   {
     id: 3,
     title: 'Seminario de Estrés y Manejo del Tiempo',
-    date: ['Fecha: ', '5 diciembre'],
+    date: ['Fecha: ', '3 noviembre'],
     description: ['Actividades: ', 'Sesiones de asesoramiento, técnicas de relajación, planificación del tiempo']
   },
   {
     id: 4,
     title: 'Torneo Deportivo Interfacultades',
-    date: ['Fecha: ', '6 diciembre'],
+    date: ['Fecha: ', '6 noviembre'],
     description: [
       'Actividades: ',
       'Competencias en diferentes deportes, ceremonia de premiación, actividades recreativas.'
@@ -49,7 +54,7 @@ export const CARDS_CALENDAR = [
   {
     id: 5,
     title: 'Exposición de Proyectos de Fin de Semestre',
-    date: ['Fecha: ', '7 diciembre'],
+    date: ['Fecha: ', '7 noviembre'],
     description: [
       'Actividades: ',
       'Presentaciones de proyectos, demostraciones prácticas, sesiones de retroalimentación.'
@@ -58,7 +63,7 @@ export const CARDS_CALENDAR = [
   {
     id: 6,
     title: 'Taller de Escritura Creativa',
-    date: ['Fecha: ', '8 diciembre'],
+    date: ['Fecha: ', '8 noviembre'],
     description: [
       'Actividades: ',
       'Puestos de comida internacional, actuaciones musicales y danzas, exposiciones de arte.'
@@ -67,7 +72,7 @@ export const CARDS_CALENDAR = [
   {
     id: 7,
     title: 'Maratón de Código y Hackathon',
-    date: ['Fecha: ', '11 diciembre'],
+    date: ['Fecha: ', '9 noviembre'],
     description: [
       'Actividades: ',
       'Desarrollo de proyectos de software, talleres de programación, premiación a las mejores soluciones.'
@@ -76,6 +81,7 @@ export const CARDS_CALENDAR = [
   {
     id: 8,
     title: 'Conferencia Sobre React por la Empresa Optimen',
+<<<<<<< HEAD
     date: ['Fecha: ', '12 diciembre'],
     description: ['Actividades: ', 'Presentaciones técnicas, sesión de preguntas y respuestas, y un taller práctico.']
   }
@@ -96,6 +102,13 @@ export const TEXTS_CARD = [
         text: 'Asesores en el área de becas',
         description: ' Diana Berenice Cuellar González - diana.cuellar@utng.com.mx - 18 2 55 00 ext. 1254'
       }
+=======
+    date: ['Fecha: ', '10 noviembre'],
+    description: [
+      'Actividades: ',
+      'Presentaciones técnicas, sesión de preguntas y respuestas, y un taller práctico.'
+>>>>>>> main
     ]
   }
 ]
+
