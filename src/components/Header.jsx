@@ -14,6 +14,7 @@ import { HamburgerIcon } from '@chakra-ui/icons'
 import logo from '../assets/logoutng.webp'
 import { NAV_HEADER } from '../utilities/constants'
 import { Link, useLocation } from 'react-router-dom'
+import '../styles/animations.css'
 
 export function Header() {
   const [isLessThan768px] = useMediaQuery('(max-width: 768px)')
@@ -60,13 +61,13 @@ export function Header() {
             <Box
               key={i}
               color='#fff'
-              opacity='0.8'
-              _hover={{ opacity: '1' }}
-              borderBottom={location.pathname === nav.to ? '2px solid #fff' : ''}>
+              transition='all ease-out 0.4s'
+              opacity={location.pathname === nav.to ? '1' : '0.8'}
+              _hover={{ opacity: '1', transform: 'translateY(-5px)' }}>
               <Link
                 to={nav.to}
                 style={{ textDecoration: 'none', color: 'inherit' }}>
-                <Text>{nav.navName}</Text>
+                <Text borderBottom={location.pathname === nav.to ? '2px solid #fff' : ''}>{nav.navName}</Text>
               </Link>
             </Box>
           ))}

@@ -26,7 +26,10 @@ export const CARDS_CALENDAR = [
     id: 2,
     title: 'Festival Cultural de Invierno',
     date: ['Fecha: ', '4 diciembre'],
-    description: ['Actividades: ', ' Puestos de comida internacional, actuaciones musicales y danzas, exposiciones de arte.']
+    description: [
+      'Actividades: ',
+      ' Puestos de comida internacional, actuaciones musicales y danzas, exposiciones de arte.'
+    ]
   },
   {
     id: 3,
@@ -74,9 +77,25 @@ export const CARDS_CALENDAR = [
     id: 8,
     title: 'Conferencia Sobre React por la Empresa Optimen',
     date: ['Fecha: ', '12 diciembre'],
-    description: [
-      'Actividades: ',
-      'Presentaciones técnicas, sesión de preguntas y respuestas, y un taller práctico.'
+    description: ['Actividades: ', 'Presentaciones técnicas, sesión de preguntas y respuestas, y un taller práctico.']
+  }
+]
+
+export const TEXTS_CARD = [
+  {
+    id: 1,
+    title: 'Becas',
+    texts: [
+      {
+        id: 1,
+        text: 'Becas con las que contamos',
+        description: 'Apoyo alimenticio Apoyo deportivo y cultural, apoyo por necesidad apremiante'
+      },
+      {
+        id: 2,
+        text: 'Asesores en el área de becas',
+        description: ' Diana Berenice Cuellar González - diana.cuellar@utng.com.mx - 18 2 55 00 ext. 1254'
+      }
     ]
   }
 ]

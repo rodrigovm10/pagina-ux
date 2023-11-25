@@ -15,10 +15,13 @@ export function Footer() {
       gap={{ base: '8rem', sm: '6rem', md: '2rem', lg: '1rem' }}
       alignItems='center'>
       <Box>
-        <Image
-          src={logo}
-          alt='logo de la utng'
-        />
+        <Link to='/'>
+          <Image
+            cursor='pointer'
+            src={logo}
+            alt='logo de la utng'
+          />
+        </Link>
       </Box>
       <Grid
         gridTemplateRows={2}

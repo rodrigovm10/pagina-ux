@@ -4,7 +4,6 @@ import { Header } from '../components/Header.jsx'
 import imgPrincipal from '../assets/paginaPrincipal.png'
 import { CardPPrincipal } from '../components/CardPPrincipal.jsx'
 import { Search } from '../assets/Icons.jsx'
-import { Link } from 'react-router-dom'
 
 export function PaginaPrincipal() {
   return (
@@ -22,10 +21,12 @@ export function PaginaPrincipal() {
           as='h1'
           size={{ base: 'md', lg: 'xl' }}
           textAlign='center'>
-          ¡Bienvenidos a la Universidad Tecnologica del Norte de Guanajuato!
+          ¡Bienvenidos a la Universidad Tecnológica del Norte de Guanajuato!
         </Heading>
         <form>
-          <Box position='relative' borderWidth='2px'>
+          <Box
+            position='relative'
+            borderWidth='2px'>
             <Box
               position='absolute'
               right={3}
@@ -50,6 +51,7 @@ export function PaginaPrincipal() {
 
         <Text
           w='68vw'
+          fontSize='1.1rem'
           textAlign='justify'>
           La educación va más allá de la memorización; es un camino para inspirar, innovar y transformar. Cada libro que
           abres te lleva a un nuevo mundo, y cada práctica que realizas te ayuda a moldear el tuyo. Estamos emocionados
@@ -62,17 +64,22 @@ export function PaginaPrincipal() {
           alignItems={{ base: 'center', lg: 'stretch' }}>
           <CardPPrincipal
             wLg='15rem'
+            wMd='100%'
+            wBase='15rem'
             title='Misión'
             text='Somos una institución de Educación Superior Tecnológica dedicada a la formación integral de profesionales líderes en los niveles de Técnico Superior Universitario y Licenciatura, ofreciendo programas educativos de excelencia.'
           />
           <CardPPrincipal
             wLg='30rem'
+            wMd='100%'
+            wBase='15rem'
             title='Visión'
             text='Para el año 2026, la Universidad Tecnológica del Norte de Guanajuato se destacará a nivel nacional e internacional por la formación de egresados altamente competitivos que se integran exitosamente al ámbito laboral, destacando por su sólida formación humana e integral. Nos enfocamos en promover la igualdad y la no discriminación, el desarrollo sostenible y la preservación del medio ambiente, así como el respeto de los derechos humanos.'
           />
           <CardPPrincipal
             wLg='15rem'
-            wBase='100%'
+            wMd='100%'
+            wBase='15rem'
             title='Valores'
             text={`Trabajo\nComunicación\nHonestidad\nRespeto`}
           />

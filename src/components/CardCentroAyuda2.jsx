@@ -38,12 +38,14 @@ export function CardCentroAyuda2({ handleClickOpen }) {
         w='12rem'
         p='1rem'
         textAlign='center'
-        bg='#00259A'
+        bg='#001F7E'
+        border='2px solid #000'
+        borderRadius='4'
+        boxShadow='inset 0 0 0 50px #001f7e'
+        transition='ease-out 0.4s'
         _hover={{
-          color: 'rgba(255, 255, 255,1)',
-          backgroundColor: '#00259A',
-          boxShadow: '0 4px 16px #001F7E',
-          transition: 'all 0.2s ease'
+          color: '#000',
+          boxShadow: ' inset 400px 50px 0 0 #fff'
         }}
         color='#fff'>
         Iniciar Conversación
