@@ -208,12 +208,4 @@ const GlobalStyles = createGlobalStyle`
       border-radius: 200px; 
     }
   }
-
-  .react-calendar__tile--active,
-  .react-calendar__tile--active:enabled:hover,
-  .react-calendar__tile--active:enabled:focus {
-    background: #1640D6;
-    color: white; 
-    border-radius: 200px; 
-  }
 `;
