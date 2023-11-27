@@ -19,6 +19,18 @@ import { CardCalendario } from "./CardCalendario.jsx";
 import { Search } from "../assets/Icons.jsx";
 import Calendar from "react-calendar";
 import styled, { createGlobalStyle } from "styled-components";
+const vacaciones = [
+  "2023-12-18",
+  "2023-12-19",
+  "2023-12-20",
+  "2023-12-21",
+  "2023-12-22",
+  "2023-12-26",
+  "2023-12-27",
+  "2023-12-28",
+  "2023-12-29",
+];
+const holidays = ["2023-11-01", "2023-11-02", "2023-11-20", "2023-12-25"];
 
 export function Calendario() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -71,6 +83,27 @@ export function Calendario() {
     return events;
   };
 
+  const isHoliday = (date) => {
+    const formattedDate = date.toISOString().split("T")[0];
+    return holidays.includes(formattedDate);
+  };
+
+  const isVacaciones = (date) => {
+    const formattedDate = date.toISOString().split("T")[0];
+    return vacaciones.includes(formattedDate);
+  };
+
+  const tileClassName = ({ date, view }) => {
+    if (view === "month") {
+      if (isHoliday(date)) {
+        return "holiday";
+      }
+      if (isVacaciones(date)) {
+        return "vacaciones";
+      }
+    }
+  };
+
   return (
     <>
       <Header />
@@ -97,7 +130,11 @@ export function Calendario() {
         >
           <>
             <GlobalStyles />
-            <Calendar onChange={handleDayClick} value={value} />
+            <Calendar
+              onChange={handleDayClick}
+              value={value}
+              tileClassName={tileClassName}
+            />
           </>
           {selectedDayEvents.length > 0 ? (
             selectedDayEvents.map((event) => (
@@ -213,5 +250,22 @@ const GlobalStyles = createGlobalStyle`
     background: #1640D6;
     color: white; 
     border-radius: 200px; 
+  }
+  
+  .holiday {
+    background-color: red; 
+    border-radius: 200px; 
+    color: white;
+    &:hover {
+      background-color: red;
+    }
+  }
+
+  .vacaciones {
+    background-color: #EEEEEE; 
+    color: black;
+    &:hover {
+      background-color: #EEEEEE;
+    }
   }
 `;
