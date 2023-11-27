@@ -1,7 +1,4 @@
 import { useState } from 'react'
-<<<<<<< HEAD
-import { Input, InputGroup, InputLeftElement, Box, Image, SimpleGrid, Heading, Flex } from '@chakra-ui/react'
-=======
 import {
   Input,
   InputGroup,
@@ -17,57 +14,11 @@ import {
   CardFooter,
   Button
 } from '@chakra-ui/react'
->>>>>>> main
 import { Footer } from '../components/Footer.jsx'
 import { Header } from '../components/Header.jsx'
 import { CARDS_CALENDAR } from '../utilities/constants.js'
 import { CardCalendario } from './CardCalendario.jsx'
 import { Search } from '../assets/Icons.jsx'
-<<<<<<< HEAD
-
-export function Calendario() {
-  const [expandedCard, setExpandedCard] = useState(null)
-  const [searchTerm, setSearchTerm] = useState('')
-
-  const toggleCardExpansion = cardId => {
-    setExpandedCard(expandedCard === cardId ? null : cardId)
-  }
-
-  const handleSearchChange = event => {
-    setSearchTerm(event.target.value)
-  }
-
-  const filteredCards = CARDS_CALENDAR.filter(card => card.title.toLowerCase().includes(searchTerm.toLowerCase()))
-  return (
-    <>
-      <Header />
-      <Box
-        p='2rem'
-        w='90%'
-        m='0 auto'>
-        <Heading
-          size='lg'
-          textAlign='center'>
-          Calendario
-        </Heading>
-        <Flex justifyContent='center'>
-          <Image
-            height='20rem'
-            w={{ base: '80vw', sm: 'full', md: 'full', lg: '80rem' }}
-            bgPosition='center'
-            objectFit='cover'
-            borderRadius={7}
-            mb='1rem'
-            src='https://media.istockphoto.com/id/1370276409/es/foto/hombre-asi%C3%A1tico-de-cuello-blanco-marcando-la-fecha-en-el-calendario-del-escritorio.jpg?s=612x612&w=0&k=20&c=L-fRHj1PoZHZ_VJviN_iw9PIEK8N_KcFO8QWiJBmZjQ='
-            alt='Calendario UTNG'
-          />
-        </Flex>
-
-        <InputGroup>
-          <InputLeftElement
-            pointerEvents='none'
-            children={<Search />} // Assuming Search is a React component
-=======
 import Calendar from 'react-calendar'
 import styled, { createGlobalStyle } from 'styled-components'
 
@@ -124,7 +75,6 @@ export function Calendario() {
           <InputLeftElement
             pointerEvents='none'
             children={<Search />}
->>>>>>> main
           />
           <Input
             placeholder='Search events...'
@@ -135,9 +85,6 @@ export function Calendario() {
         </InputGroup>
         <SimpleGrid
           spacing={6}
-<<<<<<< HEAD
-          templateColumns='repeat(auto-fill, minmax(500px, 1fr))'>
-=======
           mb='1.5rem'
           templateColumns={{
             base: 'repeat(auto-fill, minmax(250px, 1fr))',
@@ -203,7 +150,6 @@ export function Calendario() {
             lg: 'repeat(auto-fill, minmax(400px, 1fr))',
             xl: 'repeat(auto-fill, minmax(500px, 1fr))'
           }}>
->>>>>>> main
           {filteredCards.map(card => (
             <CardCalendario
               key={card.id}
