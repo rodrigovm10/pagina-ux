@@ -1,6 +1,5 @@
-import { Box, Flex, Heading, Text, Card, CardHeader, CardBody } from '@chakra-ui/react'
+import { Box, Flex } from '@chakra-ui/react'
 import { CardCentroAyuda } from '../components/CardCentroAyuda'
-import { CardCentroAyuda2 } from '../components/CardCentroAyuda2'
 import { Chat } from '../components/Chat'
 import { useOpenChat } from '../hooks/useOpenChat'
 import { Footer } from '../components/Footer.jsx'
@@ -23,20 +22,6 @@ export function CentroAyuda() {
 					gap='2rem'
 					mb='2rem'>
 					<CardInfoCentroAyuda />
-					<Heading
-						as='h1'
-						size='lg'>
-						Tu educación no se detiene
-					</Heading>
-					<Text
-						textAlign={{ base: 'justify', lg: 'center' }}
-						w={{ base: '80%', lg: '60%' }}
-						borderBottom='2px solid #00259A'
-						pb='1.3rem'>
-						Deseamos darte más posibilidades para que continúes superándote, conoce las ventajas de nuestro proceso de
-						admisión desde casa y la manera en la que puedes seguir estudiando.
-					</Text>
-					<CardCentroAyuda2 handleClickOpen={handleClickOpen} />
 					<Box
 						position={'fixed'}
 						bottom={0}
@@ -50,7 +35,6 @@ export function CentroAyuda() {
 					</Box>
 				</Flex>
 			</Box>
-
 			<Footer />
 		</>
 	)

@@ -2,7 +2,7 @@ import { Heading, Text, Card, CardHeader, CardBody } from '@chakra-ui/react'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-export function CardTitulacionCentroAyuda() {
+export function CardEstadiasCentroAyuda() {
 	const [selectedText, setSelectedText] = useState(null)
 
 	const handleShowInformation = text => {
@@ -18,13 +18,13 @@ export function CardTitulacionCentroAyuda() {
 					size='md'
 					textAlign='center'
 					borderBottom='1px solid #d3dce3'>
-					Titulación
+					Estadías
 				</Heading>
 			</CardHeader>
 			<CardBody px='0'>
 				<div>
 					<Text
-						onClick={() => handleShowInformation('Requisitos')}
+						onClick={() => handleShowInformation('Periodo')}
 						cursor='pointer'
 						mb={'auto'}
 						mt={'auto'}
@@ -37,9 +37,9 @@ export function CardTitulacionCentroAyuda() {
 						_hover={{
 							color: '#007BFF'
 						}}>
-						Requisitos para el proceso de titulación
+						Periodo de estadías
 						<AnimatePresence>
-							{selectedText === 'Requisitos' && (
+							{selectedText === 'Periodo' && (
 								<motion.div
 									initial={{ height: 0, opacity: 0 }}
 									animate={{ height: 'auto', opacity: 1 }}
@@ -51,15 +51,10 @@ export function CardTitulacionCentroAyuda() {
 										fontWeight='400'
 										color='rgba(0, 0, 0, 0.74)'
 										pb='1rem'>
-										<span style={{ fontWeight: 'bold' }}>1.-</span> Carta de acreditación de estadías original.
-										(D-SAC-03) <br />
-										<span style={{ fontWeight: 'bold' }}>2.-</span> Un (1) reporte o memoria de estadía en formato
-										electrónico (CD) por proyecto (firmado por el asesor académico y especificando su número de cédula
-										profesional). <br />
-										<span style={{ fontWeight: 'bold' }}>3.-</span>Formato de liberación de adeudos y responsabilidades
-										F-BSE-08(Descargar). <br />
-										<span style={{ fontWeight: 'bold' }}>4.-</span>2 fotografías tamaño título y 6 fotografías tamaño
-										infantil.
+										<span style={{ fontWeight: 'bold' }}>Cuatrimestre Enero - Abril:</span> Estadías de ingeniería
+										<br />
+										<span style={{ fontWeight: 'bold' }}>Cuatriestre Mayo - Agosto:</span> Estadías de TSU - Estadías de
+										ingeniería
 										<br />
 									</Text>
 								</motion.div>
@@ -69,7 +64,7 @@ export function CardTitulacionCentroAyuda() {
 				</div>
 				<div>
 					<Text
-						onClick={() => handleShowInformation('Costo')}
+						onClick={() => handleShowInformation('Tiempo')}
 						cursor='pointer'
 						mb={'auto'}
 						mt={'1rem'}
@@ -82,9 +77,9 @@ export function CardTitulacionCentroAyuda() {
 						_hover={{
 							color: '#007BFF'
 						}}>
-						Costo titulación
+						Duración de estadías
 						<AnimatePresence>
-							{selectedText === 'Costo' && (
+							{selectedText === 'Tiempo' && (
 								<motion.div
 									initial={{ height: 0, opacity: 0 }}
 									animate={{ height: 'auto', opacity: 1 }}
@@ -96,7 +91,7 @@ export function CardTitulacionCentroAyuda() {
 										fontWeight='400'
 										color='rgba(0, 0, 0, 0.74)'
 										pb='1rem'>
-										$2,287.00
+										Trece a quince semanas, con un mínimo de 480 horas y un máximo de 525 horas.
 									</Text>
 								</motion.div>
 							)}
@@ -105,7 +100,7 @@ export function CardTitulacionCentroAyuda() {
 				</div>
 				<div>
 					<Text
-						onClick={() => handleShowInformation('Características')}
+						onClick={() => handleShowInformation('Registro')}
 						cursor='pointer'
 						mb={'auto'}
 						mt={'1rem'}
@@ -113,14 +108,14 @@ export function CardTitulacionCentroAyuda() {
 						pb='1rem'
 						color={selectedText === '' ? '#007BFF' : '#00259A'}
 						fontWeight='500'
-						borderBottom={'1px solid #d3dce3'}
 						fontSize='1.1rem'
+						borderBottom={'1px solid #d3dce3'}
 						_hover={{
 							color: '#007BFF'
 						}}>
-						Características de las fotografías
+						Registro de empresa buscada por el estudiante
 						<AnimatePresence>
-							{selectedText === 'Características' && (
+							{selectedText === 'Registro' && (
 								<motion.div
 									initial={{ height: 0, opacity: 0 }}
 									animate={{ height: 'auto', opacity: 1 }}
@@ -130,16 +125,18 @@ export function CardTitulacionCentroAyuda() {
 										fontSize='1rem'
 										textAlign='justify'
 										fontWeight='400'
-										color='rgba(0, 0, 0, 0.74)'>
-										<span style={{ fontWeight: 'bold' }}>Tamaño título: </span> Ovaladas (6 x 9 cm)
+										color='rgba(0, 0, 0, 0.74)'
+										pb='1rem'>
+										En caso de traer una empresa por tu cuenta debe estar validada por tu coordinador y llevar los
+										siguientes datos al área de practicas y estadías ubicada en el edificio C planta baja. <br />
+										<span style={{ fontWeight: 'bold' }}>1.- </span> Nombre de la empresa <br />
+										<span style={{ fontWeight: 'bold' }}>2.- </span> Dirección y ciudad de la empresa <br />
+										<span style={{ fontWeight: 'bold' }}>3.- </span> Nombre del contacto
 										<br />
-										<span style={{ fontWeight: 'bold' }}>Tamaño infantil: </span> (2 x 2.5cm)
+										<span style={{ fontWeight: 'bold' }}>4.- </span> Cargo del contacto
 										<br />
-										<span style={{ fontWeight: 'bold' }}>Características: </span>Recientes, blanco y negro, fondo
-										blanco, con retoque, impresas en papel mate, con pegamento adherible, debidamente recortadas. De
-										frente, rostro serio, frente y orejas despejadas.
+										<span style={{ fontWeight: 'bold' }}>5.- </span> Teléfono y e-mail del contacto
 										<br />
-										<span style={{ fontWeight: 'bold' }}>Ojo: </span>(NO DIGITALES, NO INSTANTÁNEAS O URGENTES)
 									</Text>
 								</motion.div>
 							)}
@@ -160,7 +157,7 @@ export function CardTitulacionCentroAyuda() {
 						_hover={{
 							color: '#007BFF'
 						}}>
-						Asesor en el área de titulación
+						Asesor en el área de estadías
 						<AnimatePresence>
 							{selectedText === 'Asesor' && (
 								<motion.div
@@ -173,11 +170,11 @@ export function CardTitulacionCentroAyuda() {
 										textAlign='justify'
 										fontWeight='400'
 										color='rgba(0, 0, 0, 0.74)'>
-										<span style={{ fontWeight: 'bold' }}>Nombre: </span>Itzel Ivone Jiménez Gutiérrez.
+										<span style={{ fontWeight: 'bold' }}>Nombre: </span>Jorge Rogelio García.
 										<br />
-										<span style={{ fontWeight: 'bold' }}>Correo: </span> itzel.jimenez@utng.edu.mx
+										<span style={{ fontWeight: 'bold' }}>Correo: </span> jorge.garcia@utng.edu.mx
 										<br />
-										<span style={{ fontWeight: 'bold' }}>Número de télefono: </span>Tel:18 2 55 00 ext. 1251
+										<span style={{ fontWeight: 'bold' }}>Número de télefono: </span>Tel:18 2 55 00 ext. 1355
 										<br />
 										<span style={{ fontWeight: 'bold' }}>Horario de atención: </span> Lunes a viernes de 8:00 a 16:00
 									</Text>

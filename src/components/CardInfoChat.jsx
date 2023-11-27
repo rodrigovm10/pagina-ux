@@ -2,7 +2,7 @@ import { Heading, Text, Card, CardHeader, CardBody } from '@chakra-ui/react'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-export function CardBecasCentroAyuda() {
+export function CardInfoChat() {
 	const [selectedText, setSelectedText] = useState(null)
 
 	const handleShowInformation = text => {
@@ -18,13 +18,13 @@ export function CardBecasCentroAyuda() {
 					size='md'
 					textAlign='center'
 					borderBottom='1px solid #d3dce3'>
-					Becas
+					Chat de la UTNG
 				</Heading>
 			</CardHeader>
 			<CardBody px='0'>
 				<div>
 					<Text
-						onClick={() => handleShowInformation('Becas con las que contamos')}
+						onClick={() => handleShowInformation('Descripcion')}
 						cursor='pointer'
 						mb={'auto'}
 						mt={'auto'}
@@ -37,9 +37,9 @@ export function CardBecasCentroAyuda() {
 						_hover={{
 							color: '#007BFF'
 						}}>
-						Becas con las que contamos
+						Uso del chat
 						<AnimatePresence>
-							{selectedText === 'Becas con las que contamos' && (
+							{selectedText === 'Descripcion' && (
 								<motion.div
 									initial={{ height: 0, opacity: 0 }}
 									animate={{ height: 'auto', opacity: 1 }}
@@ -51,9 +51,8 @@ export function CardBecasCentroAyuda() {
 										fontWeight='400'
 										color='rgba(0, 0, 0, 0.74)'
 										pb='1rem'>
-										<span style={{ fontWeight: 'bold' }}>1.-</span> Apoyo alimenticio <br />
-										<span style={{ fontWeight: 'bold' }}>2.-</span> Apoyo deportivo y cultural <br />
-										<span style={{ fontWeight: 'bold' }}>3.-</span> Apoyo apoyo por necesidad apremiante
+										Utiliza el chat para resolver alguna de tus dudas que no hayas encontrado. Nuestro equipo de
+										asesores te brindará la información que requieras.
 									</Text>
 								</motion.div>
 							)}
@@ -62,7 +61,7 @@ export function CardBecasCentroAyuda() {
 				</div>
 				<div>
 					<Text
-						onClick={() => handleShowInformation('Asesores en el área de becas')}
+						onClick={() => handleShowInformation('Como')}
 						cursor='pointer'
 						mb={'auto'}
 						mt={'1rem'}
@@ -74,9 +73,9 @@ export function CardBecasCentroAyuda() {
 						_hover={{
 							color: '#007BFF'
 						}}>
-						Asesores en el área de becas
+						¿Comó usar el chat?
 						<AnimatePresence>
-							{selectedText === 'Asesores en el área de becas' && (
+							{selectedText === 'Como' && (
 								<motion.div
 									initial={{ height: 0, opacity: 0 }}
 									animate={{ height: 'auto', opacity: 1 }}
@@ -86,25 +85,19 @@ export function CardBecasCentroAyuda() {
 										fontSize='1rem'
 										textAlign='justify'
 										fontWeight='400'
-										color='rgba(0, 0, 0, 0.74)'
-										borderBottom={'1px solid #d3dce3'}
-										pb='1rem'>
-										<span style={{ fontWeight: 'bold' }}>Nombre: </span>Diana Berenice Cuellar González <br />
-										<span style={{ fontWeight: 'bold' }}>Correo: </span>diana.cuellar@utng.com.mx <br />
-										<span style={{ fontWeight: 'bold' }}>Número de télefono: </span>18 2 55 00 ext. 1254 <br />
-										<span style={{ fontWeight: 'bold' }}>Horario de atención: </span> Lunes a viernes de 8:00 a 16:00
-									</Text>
-									<Text
-										fontSize='1rem'
-										textAlign='justify'
-										fontWeight='400'
 										color='rgba(0, 0, 0, 0.74)'>
-										<span style={{ fontWeight: 'bold' }}>Nombre: </span>Lucía Isabel López Aguilar
+										<span style={{ fontWeight: 'bold' }}>1.- </span>
+										{"Dirigite hasta arriba y da clic en el botón 'Iniciar conversación'"}
 										<br />
-										<span style={{ fontWeight: 'bold' }}>Correo: </span>lucia.lopez@utng.edu.mx
+										<span style={{ fontWeight: 'bold' }}>2.- </span>En la parte de abajo a la derecha se abrira el chat.
 										<br />
-										<span style={{ fontWeight: 'bold' }}>Número de télefono: </span>18 2 55 00 ext. 1254 <br />
-										<span style={{ fontWeight: 'bold' }}>Horario de atención: </span> Lunes a viernes de 8:00 a 16:00
+										<span style={{ fontWeight: 'bold' }}>3.1.- </span>Selecciona una opción de la cual tengas dudas.
+										<br />
+										<span style={{ fontWeight: 'bold' }}>3.2.- </span>
+										{"En caso de seleccionar la opción 'Otros', responder a la respuesta proporcionada por el chat."}
+										<br />
+										<span style={{ fontWeight: 'bold' }}>4.- </span>Proporciona un correo y serás respondido para llevar
+										un seguimiento de tu duda.
 									</Text>
 								</motion.div>
 							)}
