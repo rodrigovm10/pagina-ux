@@ -2,13 +2,12 @@ import { Image, Flex, Heading, Text, Box } from '@chakra-ui/react'
 import { Footer } from '../components/Footer.jsx'
 import { Header } from '../components/Header.jsx'
 import imgPrincipal from '../assets/paginaPrincipal.png'
-// import { CardPPrincipal } from '../components/CardPPrincipal.jsx'
 import { Search } from '../assets/Icons.jsx'
 import Autocomplete from '../components/Autocomplete.jsx'
 import { OPTIONS_AUTOCOMPLETE_PAGINA_P } from '../utilities/constants.js'
-import { TextToSpeech } from '../components/TextToSpeech.jsx'
 import '../styles/card.css'
 import { SpeechToText } from '../components/SpeechToText.jsx'
+import { MenuCircular } from '../components/MenuCirular.jsx'
 
 export function PaginaPrincipal() {
 	const handleSelect = selectedOption => {
@@ -32,19 +31,7 @@ export function PaginaPrincipal() {
 					¡Bienvenidos a la Universidad Tecnológica del Norte de Guanajuato!
 				</Heading>
 				<SpeechToText />
-				<TextToSpeech
-					text={`¡Bienvenidos a la Universidad Tecnológica del Norte de Guanajuato!
-              La educación va más allá de la memorización; es un camino para inspirar, innovar y transformar. Cada libro que abres te lleva a un nuevo mundo, y cada práctica que realizas te ayuda a moldear el tuyo. Estamos emocionados de que te unas a nuestra comunidad y compartas nuestro compromiso con la excelencia académica y los valores fundamentales que nos guían.
-              Misión: Somos una institución de Educación Superior Tecnológica dedicada a la formación integral de profesionales líderes en los niveles de Técnico Superior Universitario y Licenciatura, ofreciendo programas educativos de excelencia.
-              Visión: Para el año 2026, la Universidad Tecnológica del Norte de Guanajuato se destacará a nivel nacional e internacional por la formación de egresados altamente competitivos que se integran exitosamente al ámbito laboral, destacando por su sólida formación humana e integral. Nos enfocamos en promover la igualdad y la no discriminación, el desarrollo sostenible y la preservación del medio ambiente, así como el respeto de los derechos humanos.
-              Valores: 
-              1.- Trabajo
-              2.- Comunicación
-              3.- Honestidad
-              4.- Respeto
-            `}
-				/>
-
+				<MenuCircular />
 				<form>
 					<Box
 						position='relative'

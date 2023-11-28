@@ -5,7 +5,7 @@ import { useOpenChat } from '../hooks/useOpenChat'
 import { Footer } from '../components/Footer.jsx'
 import { Header } from '../components/Header.jsx'
 import { CardInfoCentroAyuda } from '../components/CardInfoCentroAyuda.jsx'
-import { TextToSpeech } from '../components/TextToSpeech.jsx'
+import { MenuCircular } from '../components/MenuCirular.jsx'
 
 export function CentroAyuda() {
 	const { isOpen, handleClickOpen } = useOpenChat()
@@ -23,19 +23,7 @@ export function CentroAyuda() {
 					gap='2rem'
 					mb='2rem'>
 					<CardInfoCentroAyuda />
-					<TextToSpeech
-						text={`
-					
-					Primer apartado 'Uso del chat'. Descripción del apartado: 
-					Utiliza el chat para resolver alguna de tus dudas que no hayas encontrado. Nuestro equipo de asesores te brindará la información que requieras.
-					Segundo apartado '¿Comó usar el chat?'. Descripción del apartado:
-						1.- Dirigite hasta arriba y da clic en el botón 'Iniciar conversación'
-						2.- En la parte de abajo a la derecha se abrira el chat.
-						3.1.- Selecciona una opción de la cual tengas dudas.
-						3.2.- En caso de seleccionar la opción 'Otros', responder a la respuesta proporcionada por el chat.
-						4.- Proporciona un correo y serás respondido para llevar un seguimiento de tu duda.
-					`}
-					/>
+					<MenuCircular />
 					<Box
 						position={'fixed'}
 						bottom={0}

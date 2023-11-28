@@ -11,41 +11,42 @@ import { PaginaPrincipal } from './pages/PaginaPrincipal.jsx'
 import BolsaTrabajo from './pages/BolsaTrabajo.jsx'
 import UserWayWidget from './UserWayWidget.jsx'
 import Becas from './components/becas.jsx'
+import { MenuCircular } from './components/MenuCirular.jsx'
 
 const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <PaginaPrincipal />
-  },
-  {
-    path: '/centro-de-ayuda',
-    element: <CentroAyuda />
-  },
-  {
-    path: '/calendario',
-    element: <Calendario />
-  },
-  {
-    path: '/reinscripciones',
-    element: <Reinscripciones />
-  },
-  {
-    path: '/bolsa-de-trabajo',
-    element: <BolsaTrabajo />
-  },
-  {
-    path: '/becas',
-    element: <Becas />
-  },
-  {
-    path: '/estadias',
-    element: <p>Pagina no existente</p>
-  }
+	{
+		path: '/',
+		element: <PaginaPrincipal />
+	},
+	{
+		path: '/centro-de-ayuda',
+		element: <CentroAyuda />
+	},
+	{
+		path: '/calendario',
+		element: <Calendario />
+	},
+	{
+		path: '/reinscripciones',
+		element: <Reinscripciones />
+	},
+	{
+		path: '/bolsa-de-trabajo',
+		element: <BolsaTrabajo />
+	},
+	{
+		path: '/becas',
+		element: <Becas />
+	},
+	{
+		path: '/estadias',
+		element: <p>Pagina no existente</p>
+	}
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <ChakraProvider>
-    <UserWayWidget />
-    <RouterProvider router={router} />
-  </ChakraProvider>
+	<ChakraProvider>
+		<UserWayWidget />
+		<RouterProvider router={router} />
+	</ChakraProvider>
 )

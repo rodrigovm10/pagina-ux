@@ -41,11 +41,11 @@ export function TextToSpeech({ text }) {
 		if ('speechSynthesis' in window) {
 			setSynth(speechSynthesis)
 		}
-	}, [flag])
+	}, [flag, text])
 
 	return (
-		<Box>
-			<Flex>
+		<Box mt='2rem'>
+			<Flex gap='2rem'>
 				<Button onClick={onClickPlay}>Play</Button>
 				<Button onClick={onClickPause}>Pause</Button>
 				<Button onClick={onClickStop}>Stop</Button>

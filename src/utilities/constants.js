@@ -158,3 +158,58 @@ export const OPTIONS_AUTOCOMPLETE_PAGINA_P = [
 	{ text: 'Movilidad estudiantil', url: '/movilidad-estudiantil' },
 	{ text: 'Movilidad estudiantil (centro de ayuda)', url: '/centro-de-ayuda' }
 ]
+
+export const TEXTS_TO_SPEECH = {
+	'/': `
+					Página principal.
+					Barra de navegación. Inicio, Becas, Estadías, Calendario, Reinscripciones, Bolsa de trabajo, Movilidad estudiantil.
+					Párrafo como título: ¡Bienvenidos a la Universidad Tecnológica del Norte de Guanajuato!
+					Búscador. Imagen de un libro abierto y saliendo de él unas letras.
+					Siguiente párrafo: La educación va más allá de la memorización; es un camino para inspirar, innovar y transformar. Cada libro que abres te lleva a un nuevo mundo, y cada práctica que realizas te ayuda a moldear el tuyo. Estamos emocionados de que te unas a nuestra comunidad y compartas nuestro compromiso con la excelencia académica y los valores fundamentales que nos guían.
+					Tres tarjetas con los títulos de misión, visión y valores.
+					Primera tarjeta: Misión: Somos una institución de Educación Superior Tecnológica dedicada a la formación integral de profesionales líderes en los niveles de Técnico Superior Universitario y Licenciatura, ofreciendo programas educativos de excelencia.
+					Segunda tarjeta: Visión: Para el año 2026, la Universidad Tecnológica del Norte de Guanajuato se destacará a nivel nacional e internacional por la formación de egresados altamente competitivos que se integran exitosamente al ámbito laboral, destacando por su sólida formación humana e integral. Nos enfocamos en promover la igualdad y la no discriminación, el desarrollo sostenible y la preservación del medio ambiente, así como el respeto de los derechos humanos.
+					Tercera tarjeta: Valores: 
+					1.- Trabajo
+					2.- Comunicación
+					3.- Honestidad
+					4.- Respeto
+					Navegación inferior, imagen de la UTNG, Inicio, Centro de ayuda, Términos y condiciones, Aviso de privacidad, Redes sociales: Facebook, Instagram y Twitter, Botón con el texto: mapa del siito.`,
+
+	'/centro-de-ayuda': `
+					Centro de ayuda.
+					Barra de navegación. Inicio, Becas, Estadías, Calendario, Reinscripciones, Bolsa de trabajo, Movilidad estudiantil.
+					Imagen con 2 párrafos en su interior y un botón.
+					Primer párrafo: Te damos la bienvenida al centro de ayuda de la UTNG.
+					Segundo párrafo: ¿Qué podemos hacer por ti? Botón con texto de 'Iniciar Conversación'.
+					Primera tarjeta con el título de becas
+					Primer apartado 'Uso del chat'. Descripción del apartado: 
+					Utiliza el chat para resolver alguna de tus dudas que no hayas encontrado. Nuestro equipo de asesores te brindará la información que requieras.
+					Segundo apartado '¿Comó usar el chat?'. Descripción del apartado:
+						1.- Dirigite hasta arriba y da clic en el botón 'Iniciar conversación'
+						2.- En la parte de abajo a la derecha se abrira el chat.
+						3.1.- Selecciona una opción de la cual tengas dudas.
+						3.2.- En caso de seleccionar la opción 'Otros', responder a la respuesta proporcionada por el chat.
+						4.- Proporciona un correo y serás respondido para llevar un seguimiento de tu duda.
+
+					Navegación inferior, imagen de la UTNG, Inicio, Centro de ayuda, Términos y condiciones, Aviso de privacidad, Redes sociales: Facebook, Instagram y Twitter, Botón con el texto: mapa del siito.
+					`,
+	'/calendario': `
+					Calendario.
+					Barra de navegación. Inicio, Becas, Estadías, Calendario, Reinscripciones, Bolsa de trabajo, Movilidad estudiantil.
+					Imagen con 2 párrafos en su interior y un botón.
+					Primer párrafo: Te damos la bienvenida al centro de ayuda de la UTNG.
+					Segundo párrafo: ¿Qué podemos hacer por ti? Botón con texto de 'Iniciar Conversación'.
+					Primera tarjeta con el título de becas
+					Primer apartado 'Uso del chat'. Descripción del apartado: 
+					Utiliza el chat para resolver alguna de tus dudas que no hayas encontrado. Nuestro equipo de asesores te brindará la información que requieras.
+					Segundo apartado '¿Comó usar el chat?'. Descripción del apartado:
+						1.- Dirigite hasta arriba y da clic en el botón 'Iniciar conversación'
+						2.- En la parte de abajo a la derecha se abrira el chat.
+						3.1.- Selecciona una opción de la cual tengas dudas.
+						3.2.- En caso de seleccionar la opción 'Otros', responder a la respuesta proporcionada por el chat.
+						4.- Proporciona un correo y serás respondido para llevar un seguimiento de tu duda.
+
+					Navegación inferior, imagen de la UTNG, Inicio, Centro de ayuda, Términos y condiciones, Aviso de privacidad, Redes sociales: Facebook, Instagram y Twitter, Botón con el texto: mapa del siito.
+					`
+}
