@@ -1,5 +1,5 @@
 import { Box, Text } from '@chakra-ui/react'
-import { ChatOpen } from './ChatOpen'
+import { ChatOpenComponent } from './ChatOpen'
 
 export function Chat({ isOpen, handleClickOpen }) {
 	return !isOpen ? (
@@ -18,6 +18,6 @@ export function Chat({ isOpen, handleClickOpen }) {
 			</Text>
 		</Box>
 	) : (
-		<ChatOpen onClick={handleClickOpen} />
+		<ChatOpenComponent onClick={handleClickOpen} />
 	)
 }

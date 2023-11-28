@@ -4,6 +4,7 @@ import { CardTitulacionCentroAyuda } from './CardTitulacionCentroAyuda'
 import { CardEstadiasCentroAyuda } from './CardEstadiasCentroAyuda'
 import { CardMovilidadEstudiantil } from './CardMovilidadEstudiantil'
 import { CardInfoChat } from './CardInfoChat'
+import { TextToSpeech } from './TextToSpeech'
 
 export function CardInfoCentroAyuda() {
 	return (
@@ -12,10 +13,10 @@ export function CardInfoCentroAyuda() {
 			gridTemplateColumns='repeat(2, 1fr)'
 			gap='5rem'>
 			<CardBecasCentroAyuda />
-			<CardTitulacionCentroAyuda />
+			<CardInfoChat />
 			<CardEstadiasCentroAyuda />
 			<CardMovilidadEstudiantil />
-			<CardInfoChat />
+			<CardTitulacionCentroAyuda />
 		</Grid>
 	)
 }

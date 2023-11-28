@@ -1,6 +1,5 @@
-import { Box, Button, Flex, Heading, Image, Input, Stack, Text } from '@chakra-ui/react'
+import { Button, Flex, Heading, Image, Stack, Text } from '@chakra-ui/react'
 import centroAyuda from '../assets/centro-ayuda.jpg'
-import { Search } from '../assets/Icons'
 
 export function CardCentroAyuda({ handleClickOpen }) {
 	return (

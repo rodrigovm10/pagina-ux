@@ -4,7 +4,7 @@ import { InputChat } from './InputChat'
 import { ChatMessages } from './ChatMessages'
 import { AnimatePresence, motion } from 'framer-motion'
 
-export function ChatOpen({ onClick }) {
+export function ChatOpenComponent({ onClick }) {
 	const { messages, message, handleChange, handleSend, sendMessage } = useChat()
 	return (
 		<AnimatePresence>

@@ -142,3 +142,19 @@ export const TEXTS_CARD = [
 		]
 	}
 ]
+
+export const OPTIONS_AUTOCOMPLETE_PAGINA_P = [
+	{ text: 'Asesor área de becas(centro de ayuda)', url: '/centro-de-ayuda' },
+	{ text: 'Becas', url: '/becas' },
+	{ text: 'Becas con las que contamos', url: '/becas' },
+	{ text: 'Becas con las que contamos (centro de ayuda)', url: '/centro-de-ayuda' },
+	{ text: 'Calendario', url: '/calendario' },
+	{ text: 'Centro de ayuda', url: '/centro-de-ayuda' },
+	{ text: 'Convocatorias gubernamentales', url: '/becas' },
+	{ text: 'Chat', url: '/centro-de-ayuda' },
+	{ text: 'Estadías', url: '/estadias' },
+	{ text: 'Periodo estadías (centro de ayuda)', url: '/centro-de-ayuda' },
+	{ text: 'Ofertas laborales', url: '/Bolsa de trabajo' },
+	{ text: 'Movilidad estudiantil', url: '/movilidad-estudiantil' },
+	{ text: 'Movilidad estudiantil (centro de ayuda)', url: '/centro-de-ayuda' }
+]
