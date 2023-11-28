@@ -13,6 +13,7 @@ import {
   CardBody,
   Circle,
   Grid,
+  VStack,
 } from "@chakra-ui/react";
 import { Footer } from "../components/Footer.jsx";
 import { Header } from "../components/Header.jsx";
@@ -160,30 +161,30 @@ export function Calendario() {
           />
         </InputGroup>
         <Grid templateColumns="repeat(6, 1fr)" gap={1} mb="1rem">
-          <Box display="flex" alignItems="center">
+          <VStack spacing="4px" alignItems="center">
             <Circle size="30px" bg="red" color="white"></Circle>
-            <Text marginLeft="8px">Suspensión de labores</Text>
-          </Box>
-          <Box display="flex" alignItems="center">
-            <Circle size="40px" bg="blue" color="white"></Circle>
-            <Text marginLeft="8px">Día seleccionado</Text>
-          </Box>
-          <Box display="flex" alignItems="center">
-            <Circle size="40px" bg="grey" color="white"></Circle>
+            <Text>Suspensión de labores</Text>
+          </VStack>
+          <VStack spacing="4px" alignItems="center">
+            <Circle size="30px" bg="blue" color="white"></Circle>
+            <Text>Día seleccionado</Text>
+          </VStack>
+          <VStack spacing="4px" alignItems="center">
+            <Circle size="30px" bg="#EEEEEE" color="white"></Circle>
             <Text marginLeft="8px">Vacaciones</Text>
-          </Box>
-          <Box display="flex" alignItems="center">
-            <Circle size="40px" bg="green" color="white"></Circle>
+          </VStack>
+          <VStack spacing="4px" alignItems="center">
+            <Circle size="30px" bg="#16FF00" color="white"></Circle>
             <Text marginLeft="8px">Fin de cursos</Text>
-          </Box>
-          <Box display="flex" alignItems="center">
-            <Circle size="40px" bg="green" color="white"></Circle>
-            <Text marginLeft="8px">Fin de cursos</Text>
-          </Box>
-          <Box display="flex" alignItems="center">
-            <Circle size="40px" bg="pink" color="white"></Circle>
+          </VStack>
+          <VStack spacing="4px" alignItems="center">
+            <Circle size="30px" bg="#00A9FF" color="white"></Circle>
+            <Text marginLeft="8px">Inicio de cursos</Text>
+          </VStack>
+          <VStack spacing="4px" alignItems="center">
+            <Circle size="30px" bg="#F875AA" color="white"></Circle>
             <Text marginLeft="8px">Solicitar becas internas</Text>
-          </Box>
+          </VStack>
         </Grid>
         <SimpleGrid
           spacing={6}
