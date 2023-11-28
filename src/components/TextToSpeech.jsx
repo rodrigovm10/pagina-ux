@@ -9,7 +9,10 @@ export function TextToSpeech({ text }) {
 		if (!flag) {
 			setFlag(true)
 
-			let utterance = new SpeechSynthesisUtterance(text)
+			let utterance = new SpeechSynthesisUtterance(
+				text +
+					'Finalmente, en el pie de página, se repite el logo de la universidad con las opciones de navegación y acceso a más información como Centro de ayuda, Términos y condiciones, Aviso de privacidad y Mapa del sitio, todo esto sobre un fondo verde.'
+			)
 			utterance.voice = synth.getVoices()[0]
 			utterance.onend = () => {
 				setFlag(false)

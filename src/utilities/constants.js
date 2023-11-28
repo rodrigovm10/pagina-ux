@@ -258,54 +258,106 @@ export const OPTIONS_AUTOCOMPLETE_PAGINA_P = [
 export const TEXTS_TO_SPEECH = {
 	'/': `
 					Página principal.
-					Barra de navegación. Inicio, Becas, Estadías, Calendario, Reinscripciones, Bolsa de trabajo, Movilidad estudiantil.
-					Párrafo como título: ¡Bienvenidos a la Universidad Tecnológica del Norte de Guanajuato!
-					Búscador. Imagen de un libro abierto y saliendo de él unas letras.
-					Siguiente párrafo: La educación va más allá de la memorización; es un camino para inspirar, innovar y transformar. Cada libro que abres te lleva a un nuevo mundo, y cada práctica que realizas te ayuda a moldear el tuyo. Estamos emocionados de que te unas a nuestra comunidad y compartas nuestro compromiso con la excelencia académica y los valores fundamentales que nos guían.
-					Tres tarjetas con los títulos de misión, visión y valores.
-					Primera tarjeta: Misión: Somos una institución de Educación Superior Tecnológica dedicada a la formación integral de profesionales líderes en los niveles de Técnico Superior Universitario y Licenciatura, ofreciendo programas educativos de excelencia.
-					Segunda tarjeta: Visión: Para el año 2026, la Universidad Tecnológica del Norte de Guanajuato se destacará a nivel nacional e internacional por la formación de egresados altamente competitivos que se integran exitosamente al ámbito laboral, destacando por su sólida formación humana e integral. Nos enfocamos en promover la igualdad y la no discriminación, el desarrollo sostenible y la preservación del medio ambiente, así como el respeto de los derechos humanos.
-					Tercera tarjeta: Valores: 
+					En la parte superior, se encuentra un menú de navegación con una Imagen de la UTNG y opciones como Inicio, Becas, Estadías, Calendario, Reinscripciones, Bolsa de trabajo, y Movilidad estudiantil, destacados en una barra azul.
+					El título principal dice "¡Bienvenidos a la Universidad Tecnológica del Norte de Guanajuato!" seguido por un campo de búsqueda.
+					La sección media muestra una imagen con letras alfabéticas dispersas y burbujas con letras 'A', 'B', 'C', y 'D' en un tono celeste más destacado, sobre un fondo de color gris claro. Justo debajo, hay una imagen de un libro abierto, simbolizando la educación.
+					Más abajo se encuentra un texto que dice lo siguiente: La educación va más allá de la memorización; es un camino para inspirar, innovar y transformar. Cada libro que abres te lleva a un nuevo mundo, y cada práctica que realizas te ayuda a moldear el tuyo. Estamos emocionados de que te unas a nuestra comunidad y compartas nuestro compromiso con la excelencia académica y los valores fundamentales que nos guían.
+					Seguido del texto anterior hay tres columnas que habla sobre la Misión, Visión y los valores de la institución.
+					Primera columna: Misión: Somos una institución de Educación Superior Tecnológica dedicada a la formación integral de profesionales líderes en los niveles de Técnico Superior Universitario y Licenciatura, ofreciendo programas educativos de excelencia.
+					Segunda columna: Visión: Para el año 2026, la Universidad Tecnológica del Norte de Guanajuato se destacará a nivel nacional e internacional por la formación de egresados altamente competitivos que se integran exitosamente al ámbito laboral, destacando por su sólida formación humana e integral. Nos enfocamos en promover la igualdad y la no discriminación, el desarrollo sostenible y la preservación del medio ambiente, así como el respeto de los derechos humanos.
+					Tercera columna: Valores: 
 					1.- Trabajo
 					2.- Comunicación
 					3.- Honestidad
 					4.- Respeto
-					Navegación inferior, imagen de la UTNG, Inicio, Centro de ayuda, Términos y condiciones, Aviso de privacidad, Redes sociales: Facebook, Instagram y Twitter, Botón con el texto: mapa del siito.`,
+					`,
 
 	'/centro-de-ayuda': `
 					Centro de ayuda.
-					Barra de navegación. Inicio, Becas, Estadías, Calendario, Reinscripciones, Bolsa de trabajo, Movilidad estudiantil.
-					Imagen con 2 párrafos en su interior y un botón.
-					Primer párrafo: Te damos la bienvenida al centro de ayuda de la UTNG.
-					Segundo párrafo: ¿Qué podemos hacer por ti? Botón con texto de 'Iniciar Conversación'.
-					Primera tarjeta con el título de becas
-					Primer apartado 'Uso del chat'. Descripción del apartado: 
+					En la parte superior, se encuentra un menú de navegación con una Imagen de la UTNG y opciones como Inicio, Becas, Estadías, Calendario, Reinscripciones, Bolsa de trabajo, y Movilidad estudiantil, destacados en una barra azul.
+					En el cuerpo principal, se presenta un mensaje de bienvenida que dice "Te damos la bienvenida al centro de ayuda de la UTNG" seguido por una gran pregunta en negrita: "¿Qué podemos hacer por ti?" debajo de la cual hay un botón que invita a iniciar una conversación, todo esto sobre un fondo desenfocado que muestra lo que parece ser el equipo de un centro de llamadas.
+					Más abajo, hay cuadros interactivos que ofrecen diferentes opciones de ayuda relacionadas con Becas, Chat de la UTNG, Estadías, Movilidad estudiantil y Titulación. Cada uno de estos cuadros contiene enlaces a subsecciones como "Becas con las que contamos", "Periodo de estadías", "¿Qué necesito para postularme a la beca?" y "Requisitos para el proceso de titulación".
+
+					El primer cuadro interactivo con el título "Becas", tiene dos subsecciones, la primer es: "Becas con las que contamos", la cual tiene la siguiente información:
+					1.- Apoyo alimenticio
+					2.- Apoyo deportivo y cultural
+					3.- Apoyo apoyo por necesidad apremiante
+					La segunda subsección es: "Asesores en el área de becas", la cual tiene la siguiente información: 
+					Primer asesor:
+					Nombre: Diana Berenice Cuellar González
+					Correo: diana.cuellar@utng.com.mx
+					Número de télefono: 18 2 55 00 ext. 1254
+					Horario de atención: Lunes a viernes de 8:00 a 16:00
+					Segundo asesor:
+					Nombre: Lucía Isabel López Aguilar
+					Correo: lucia.lopez@utng.edu.mx
+					Número de télefono: 18 2 55 00 ext. 1254
+					Horario de atención: Lunes a viernes de 8:00 a 16:00
+
+					El segundo cuadro interactivo con el título "Chat de la UTNG", tiene dos subsecciones, la primera es: "Uso del chat" 
+					la cual tiene la siguiente información: 
 					Utiliza el chat para resolver alguna de tus dudas que no hayas encontrado. Nuestro equipo de asesores te brindará la información que requieras.
-					Segundo apartado '¿Comó usar el chat?'. Descripción del apartado:
+					La segunda subsección es: "¿Comó usar el chat?", la cual tiene la siguiente información:
 						1.- Dirigite hasta arriba y da clic en el botón 'Iniciar conversación'
 						2.- En la parte de abajo a la derecha se abrira el chat.
 						3.1.- Selecciona una opción de la cual tengas dudas.
 						3.2.- En caso de seleccionar la opción 'Otros', responder a la respuesta proporcionada por el chat.
 						4.- Proporciona un correo y serás respondido para llevar un seguimiento de tu duda.
 
-					Navegación inferior, imagen de la UTNG, Inicio, Centro de ayuda, Términos y condiciones, Aviso de privacidad, Redes sociales: Facebook, Instagram y Twitter, Botón con el texto: mapa del siito.
+					El tercer cuadro interactivo con el título "Estadías", tiene cuatro subsecciones, la primera es: "Periodo de estadías" 
+					la cual tiene la siguiente información: 
+					Cuatrimestre Enero - Abril: Estadías de ingeniería
+					Cuatriestre Mayo - Agosto: Estadías de TSU - Estadías de ingeniería.
+					La segunda subsección es: "Duración de estadías" la cual tiene la siguiente información:
+					Trece a quince semanas, con un mínimo de 480 horas y un máximo de 525 horas.
+					La tercera subsección es: "Registro de empresa buscada por el estudiante" la cual tiene la siguiente información:
+					En caso de traer una empresa por tu cuenta debe estar validada por tu coordinador y llevar los siguientes datos al área de practicas y estadías ubicada en el edificio C planta baja.
+						1.- Nombre de la empresa
+						2.- Dirección y ciudad de la empresa
+						3.- Nombre del contacto
+						4.- Cargo del contacto
+						5.- Teléfono y e-mail del contacto
+					La cuarta y última subsección es: "Asesor en el área de estadías" la cual tiene la siguiente información:
+					Nombre: Jorge Rogelio García.
+					Correo: jorge.garcia@utng.edu.mx
+					Número de télefono: Tel:18 2 55 00 ext. 1355
+					Horario de atención: Lunes a viernes de 8:00 a 16:00
+
+					El cuarto cuadro interactivo con el título "Movilidad estudiantil", tiene una subsección, la cual es: "¿Qué necesito para postularme a la beca?" la cual tiene la siguiente información: 
+					Para postularse a la beca el alumno debe mantener los siguientes compromisos:
+						1.- Ser un alumno regular y vigente en las carreras de Técnico Superior Universitario
+						2.- Contar y mantener un promedio de 9
+						3.- Cursar y aprobar los niveles del curso de fránces que oferta la UTNG
+						4.- Acreditar el examen de francés requerido por la Coordinación de Universidades Tecnológicas.
+						5.- Acreditar la entrevista final con el comité franco-mexicano en la última etapa del proceso de selección.
+						6.- Presentar la documentación requerida paara los trámites correspondientes a su estancia en el extranjero y los que solicite la CGUTyP.
+
+					El último cuadro interactivo con el título "Titulación", tiene cuatro subsecciones, la primera de ellas es: "Requisitos para el proceso de titulación" la cual tiene la siguiente información: 
+						1.- Carta de acreditación de estadías original. (D-SAC-03)
+						2.- Un (1) reporte o memoria de estadía en formato electrónico (CD) por proyecto (firmado por el asesor académico y especificando su número de cédula profesional).
+						3.-Formato de liberación de adeudos y responsabilidades F-BSE-08(Descargar).
+						4.-2 fotografías tamaño título y 6 fotografías tamaño infantil.
+					La segunda subsección es: "Costo titulación" la cual tiene la siguiente información:
+					$2,287.00
+					La tercera subsección es: "Características de las fotografías" la cual tiene la siguiente información:
+					Tamaño título: Ovaladas (6 x 9 cm)
+					Tamaño infantil: (2 x 2.5cm)
+					Características: Recientes, blanco y negro, fondo blanco, con retoque, impresas en papel mate, con pegamento adherible, debidamente recortadas. De frente, rostro serio, frente y orejas despejadas.
+					Ojo: (NO DIGITALES, NO INSTANTÁNEAS O URGENTES)
+					La cuarta y última subsección es: "Asesor en el área de titulación" la cual tiene la siguiente información:
+					Nombre: Itzel Ivone Jiménez Gutiérrez.
+					Correo: itzel.jimenez@utng.edu.mx
+					Número de télefono: Tel:18 2 55 00 ext. 1251
+					Horario de atención: Lunes a viernes de 8:00 a 16:00
 					`,
 	'/calendario': `
 					Calendario.
-					Barra de navegación. Inicio, Becas, Estadías, Calendario, Reinscripciones, Bolsa de trabajo, Movilidad estudiantil.
-					Imagen con 2 párrafos en su interior y un botón.
-					Primer párrafo: Te damos la bienvenida al centro de ayuda de la UTNG.
-					Segundo párrafo: ¿Qué podemos hacer por ti? Botón con texto de 'Iniciar Conversación'.
-					Primera tarjeta con el título de becas
-					Primer apartado 'Uso del chat'. Descripción del apartado: 
-					Utiliza el chat para resolver alguna de tus dudas que no hayas encontrado. Nuestro equipo de asesores te brindará la información que requieras.
-					Segundo apartado '¿Comó usar el chat?'. Descripción del apartado:
-						1.- Dirigite hasta arriba y da clic en el botón 'Iniciar conversación'
-						2.- En la parte de abajo a la derecha se abrira el chat.
-						3.1.- Selecciona una opción de la cual tengas dudas.
-						3.2.- En caso de seleccionar la opción 'Otros', responder a la respuesta proporcionada por el chat.
-						4.- Proporciona un correo y serás respondido para llevar un seguimiento de tu duda.
+					En la parte superior, se encuentra un menú de navegación con una Imagen de la UTNG y opciones como Inicio, Becas, Estadías, Calendario, Reinscripciones, Bolsa de trabajo, y Movilidad estudiantil, destacados en una barra azul.
+					Debajo hay una barra de búsqueda con el texto "Buscar eventos ..." y leyendas que indican los colores asociados a diferentes tipos de eventos: rojo para 'Suspensión de labores', azul para 'Día seleccionado', gris para 'Vacaciones' y verde para 'Fin de cursos'.
+					A continuación, se muestra un calendario para noviembre de 2023, con los días marcados en colores correspondientes a los tipos de eventos. Por ejemplo, el día 2 está marcado en rojo, indicando la suspensión de labores, el día 20 marcado en rojo, indicando la suspensión de labores y por último el día 28 marcado en azul, indicando el día seleccionado.
+					Calendario, mes de noviembre año 2023, día seleccionado: 28 de noviembre, días en rojo dos, el primer día en rojo 2 de noviembre, segundo día en rojo 20 de noviembre.
+					En el lado derecho de la página, hay una sección titulada "Bienvenidos al Calendario Académico" con un texto de bienvenida que explica la utilidad del calendario para organizar actividades académicas y eventos universitarios. El texto mencionado es el siguiente: "En el lado derecho de la página, hay una sección titulada "Bienvenidos al Calendario Académico" con un texto de bienvenida que explica la utilidad del calendario para organizar actividades académicas y eventos universitarios. Se invita a los usuarios a consultar regularmente el calendario para estar informados sobre todas las actividades y plazos relevantes."
+					La parte inferior de la página detalla eventos específicos con sus fechas y actividades relacionadas, como la 'Feria de Empleo y Prácticas Profesionales' el 1 de noviembre y el 'Festival Cultural de Invierno' el 2 de noviembre, cada uno con una breve descripción de las actividades planeadas.
 
-					Navegación inferior, imagen de la UTNG, Inicio, Centro de ayuda, Términos y condiciones, Aviso de privacidad, Redes sociales: Facebook, Instagram y Twitter, Botón con el texto: mapa del siito.
 					`
 }

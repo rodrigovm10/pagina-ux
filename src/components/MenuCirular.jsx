@@ -3,15 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import { TextToSpeech } from './TextToSpeech'
 import { useLocation } from 'react-router-dom'
-import { useEffect } from 'react'
 import { TEXTS_TO_SPEECH } from '../utilities/constants'
 export const MenuCircular = () => {
 	const [isOpen, setIsOpen] = useState(false)
 	const location = useLocation()
-
-	useEffect(() => {
-		console.log(location.pathname)
-	}, [location])
 
 	const handleToggle = () => {
 		setIsOpen(!isOpen)
@@ -19,9 +14,20 @@ export const MenuCircular = () => {
 
 	return (
 		<Box
+			right={0}
+			top={20}
+			position='fixed'
 			textAlign='center'
 			mt='10'>
-			<Button onClick={handleToggle}>Toggle Menu</Button>
+			<Box
+				color='#fff'
+				bgColor='#00259A'
+				w='40px'
+				h='40px'
+				borderRadius='100%'
+				onClick={handleToggle}>
+				a
+			</Box>
 
 			<AnimatePresence>
 				{isOpen && (

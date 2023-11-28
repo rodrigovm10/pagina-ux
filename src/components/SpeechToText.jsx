@@ -1,51 +1,69 @@
-import { useState, useEffect } from 'react'
+import { Button } from '@chakra-ui/react'
+import { useRef, useState } from 'react'
 
 export const SpeechToText = () => {
-	const [transcript, setTranscript] = useState(null)
-	const [recognition, setRecognition] = useState(null)
+	const [text, setText] = useState('')
+	const [listening, setListening] = useState(false)
 
-	useEffect(() => {
-		if ('SpeechRecognition' in window) {
-			const recognitionInstance = new window.SpeechRecognition()
+	const btnStartRef = useRef(null)
+	const btnStopRef = useRef(null)
+	const textAreaRef = useRef(null)
+	const recognition = new window.webkitSpeechRecognition()
 
-			recognitionInstance.onresult = event => {
-				const result = event.results[0][0].transcript
-				setTranscript(result)
-			}
+	recognition.continuous = true
+	recognition.lang = 'es-ES'
+	recognition.interimResult = false
 
-			recognitionInstance.onerror = event => {
-				console.error('Speech recognition error:', event.error)
-				recognitionInstance.stop()
-			}
-
-			setRecognition(recognitionInstance)
-
-			return () => {
-				recognitionInstance.stop()
-			}
-		} else {
-			console.error('SpeechRecognition is not supported in this browser.')
-		}
-	}, [])
-
-	const startListeningHandler = () => {
-		if (recognition) {
-			recognition.start()
-		}
+	const handleStart = () => {
+		recognition.start()
+		setListening(true)
+		console.log('listening...')
 	}
 
-	const stopListeningHandler = () => {
-		if (recognition) {
-			recognition.stop()
-		}
+	const handleStop = () => {
+		recognition.abort()
+		setListening(false)
+		console.log(listening)
+	}
+
+	recognition.onresult = event => {
+		const texto = event.results[event.results.length - 1][0].transcript
+		setText(texto)
+		textAreaRef.current.value = texto
+		leerTexto(texto)
+		console.log(texto)
+	}
+
+	const leerTexto = text => {
+		const speech = new window.SpeechSynthesisUtterance(text)
+		console.log(text)
+		speech.volume = 1
+		speech.rate = 0.5
+		speech.pitch = 0.4
+		speech.lang = 'es-ES'
+
+		window.speechSynthesis.speak(speech)
 	}
 
 	return (
 		<div>
-			<h1>Speech to Text</h1>
-			<button onClick={startListeningHandler}>Start Listening</button>
-			<button onClick={stopListeningHandler}>Stop Listening</button>
-			<p>{transcript}</p>
+			<Button
+				ref={btnStartRef}
+				onClick={handleStart}
+				disabled={listening}>
+				Start listening
+			</Button>
+			<Button
+				ref={btnStopRef}
+				onClick={handleStop}
+				disabled={!listening}>
+				Stop listening
+			</Button>
+			<p
+				ref={textAreaRef}
+				value={text}>
+				{text}
+			</p>
 		</div>
 	)
 }

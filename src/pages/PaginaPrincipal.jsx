@@ -30,7 +30,7 @@ export function PaginaPrincipal() {
 					textAlign='center'>
 					¡Bienvenidos a la Universidad Tecnológica del Norte de Guanajuato!
 				</Heading>
-				<SpeechToText />
+				{/* <SpeechToText /> */}
 				<MenuCircular />
 				<form>
 					<Box
