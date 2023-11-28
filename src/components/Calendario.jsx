@@ -160,7 +160,15 @@ export function Calendario() {
             mb="1rem"
           />
         </InputGroup>
-        <Grid templateColumns="repeat(6, 1fr)" gap={1} mb="1rem">
+        <Grid
+          templateColumns={{
+            base: "repeat(2, 1fr)",
+            md: "repeat(3, 1fr)",
+            lg: "repeat(6, 1fr)",
+          }}
+          gap={1}
+          mb="1rem"
+        >
           <VStack spacing="4px" alignItems="center">
             <Circle size="30px" bg="red" color="white"></Circle>
             <Text>Suspensión de labores</Text>
@@ -191,9 +199,9 @@ export function Calendario() {
           mb="1.5rem"
           templateColumns={{
             base: "repeat(auto-fill, minmax(250px, 1fr))",
-            md: "repeat(auto-fill, minmax(300px, 1fr))",
+            md: "repeat(auto-fill, minmax(500px, 1fr))",
             sm: "repeat(auto-fill, minmax(250px, 1fr))",
-            lg: "repeat(auto-fill, minmax(400px, 1fr))",
+            lg: "repeat(auto-fill, minmax(500px, 1fr))",
             xl: "repeat(auto-fill, minmax(500px, 1fr))",
           }}
         >
