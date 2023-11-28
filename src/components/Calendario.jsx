@@ -11,6 +11,9 @@ import {
   Text,
   Stack,
   CardBody,
+  Circle,
+  Grid,
+  VStack,
 } from "@chakra-ui/react";
 import { Footer } from "../components/Footer.jsx";
 import { Header } from "../components/Header.jsx";
@@ -19,18 +22,34 @@ import { CardCalendario } from "./CardCalendario.jsx";
 import { Search } from "../assets/Icons.jsx";
 import Calendar from "react-calendar";
 import styled, { createGlobalStyle } from "styled-components";
+import { Tooltip } from "react-bootstrap";
 const vacaciones = [
-  "2023-12-18",
-  "2023-12-19",
-  "2023-12-20",
   "2023-12-21",
   "2023-12-22",
   "2023-12-26",
   "2023-12-27",
   "2023-12-28",
   "2023-12-29",
+  "2024-01-02",
+  "2024-01-03",
+  "2024-01-04",
+  "2024-01-05",
 ];
-const holidays = ["2023-11-01", "2023-11-02", "2023-11-20", "2023-12-25"];
+const holidays = ["2023-11-02", "2023-11-20", "2023-12-25", "2024-01-01"];
+const FinCursos = ["2023-12-20"];
+const InicioCursos = ["2024-01-08"];
+const Reinscripciones = [
+  "2024-01-08",
+  "2024-01-09",
+  "2024-01-10",
+  "2024-01-11",
+  "2024-01-12",
+  "2024-01-15",
+  "2024-01-16",
+  "2024-01-17",
+  "2024-01-18",
+  "2024-01-19",
+];
 
 export function Calendario() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -93,6 +112,21 @@ export function Calendario() {
     return vacaciones.includes(formattedDate);
   };
 
+  const isFinCursos = (date) => {
+    const formattedDate = date.toISOString().split("T")[0];
+    return FinCursos.includes(formattedDate);
+  };
+
+  const isInicioCursos = (date) => {
+    const formattedDate = date.toISOString().split("T")[0];
+    return InicioCursos.includes(formattedDate);
+  };
+
+  const isReinscripciones = (date) => {
+    const formattedDate = date.toISOString().split("T")[0];
+    return Reinscripciones.includes(formattedDate);
+  };
+
   const tileClassName = ({ date, view }) => {
     if (view === "month") {
       if (isHoliday(date)) {
@@ -100,6 +134,15 @@ export function Calendario() {
       }
       if (isVacaciones(date)) {
         return "vacaciones";
+      }
+      if (isFinCursos(date)) {
+        return "FinCursos";
+      }
+      if (isInicioCursos(date)) {
+        return "InicioCursos";
+      }
+      if (isReinscripciones(date)) {
+        return "Reinscripciones";
       }
     }
   };
@@ -117,6 +160,32 @@ export function Calendario() {
             mb="1rem"
           />
         </InputGroup>
+        <Grid templateColumns="repeat(6, 1fr)" gap={1} mb="1rem">
+          <VStack spacing="4px" alignItems="center">
+            <Circle size="30px" bg="red" color="white"></Circle>
+            <Text>Suspensión de labores</Text>
+          </VStack>
+          <VStack spacing="4px" alignItems="center">
+            <Circle size="30px" bg="blue" color="white"></Circle>
+            <Text>Día seleccionado</Text>
+          </VStack>
+          <VStack spacing="4px" alignItems="center">
+            <Circle size="30px" bg="#EEEEEE" color="white"></Circle>
+            <Text marginLeft="8px">Vacaciones</Text>
+          </VStack>
+          <VStack spacing="4px" alignItems="center">
+            <Circle size="30px" bg="#16FF00" color="white"></Circle>
+            <Text marginLeft="8px">Fin de cursos</Text>
+          </VStack>
+          <VStack spacing="4px" alignItems="center">
+            <Circle size="30px" bg="#00A9FF" color="white"></Circle>
+            <Text marginLeft="8px">Inicio de cursos</Text>
+          </VStack>
+          <VStack spacing="4px" alignItems="center">
+            <Circle size="30px" bg="#F875AA" color="white"></Circle>
+            <Text marginLeft="8px">Solicitar becas internas</Text>
+          </VStack>
+        </Grid>
         <SimpleGrid
           spacing={6}
           mb="1.5rem"
@@ -266,6 +335,32 @@ const GlobalStyles = createGlobalStyle`
     color: black;
     &:hover {
       background-color: #EEEEEE;
+    }
+  }
+  .FinCursos {
+    background-color: #16FF00; 
+    border-radius: 200px; 
+    color: black;
+    &:hover {
+      background-color: #16FF00;
+    }
+  }
+
+  .InicioCursos {
+    background-color: #00A9FF; 
+    border-radius: 200px; 
+    color: black;
+    &:hover {
+      background-color: #00A9FF;
+    }
+  }
+
+  .Reinscripciones {
+    background-color: #F875AA; 
+    border-radius: 200px; 
+    color: black;
+    &:hover {
+      background-color: #F875AA;
     }
   }
 `;
