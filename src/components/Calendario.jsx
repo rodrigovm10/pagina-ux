@@ -53,9 +53,11 @@ const Reinscripciones = [
 
 export function Calendario() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [viewMode, setViewMode] = useState("calendar");
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
+    setViewMode("search");
   };
 
   const filteredCards = CARDS_CALENDAR.filter((card) =>
@@ -70,6 +72,7 @@ export function Calendario() {
     const dayEvents = getEventsForDay(value);
     setSelectedDayEvents(dayEvents);
     setValue(value);
+    setViewMode("calendar");
   };
 
   const getEventsForDay = (selectedDay) => {
@@ -154,7 +157,7 @@ export function Calendario() {
         <InputGroup>
           <InputLeftElement pointerEvents="none" children={<Search />} />
           <Input
-            placeholder="Search events..."
+            placeholder="Buscar evento..."
             value={searchTerm}
             onChange={handleSearchChange}
             mb="1rem"
@@ -213,7 +216,7 @@ export function Calendario() {
               tileClassName={tileClassName}
             />
           </>
-          {selectedDayEvents.length > 0 ? (
+          {viewMode === "calendar" && selectedDayEvents.length > 0 ? (
             selectedDayEvents.map((event) => (
               <Card key={event.id} p="4">
                 <Text fontWeight="bold" fontSize="xl">
@@ -222,6 +225,15 @@ export function Calendario() {
                 <p>{event.date.join(" ")}</p>
                 <p>{event.description.join(" ")}</p>
               </Card>
+            ))
+          ) : viewMode === "search" && filteredCards.length > 0 ? (
+            filteredCards.map((card) => (
+              <CardCalendario
+                key={card.id}
+                title={card.title}
+                date={card.date}
+                description={card.description}
+              />
             ))
           ) : (
             <Card
