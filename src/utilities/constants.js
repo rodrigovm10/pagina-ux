@@ -255,7 +255,7 @@ export const OPTIONS_AUTOCOMPLETE_PAGINA_P = [
 export const TEXTS_TO_SPEECH = {
 	'/': `
 					Página principal.
-					En la parte superior, se encuentra un menú de navegación con una Imagen de la UTNG y opciones como Inicio, Becas, Estadías, Calendario, Reinscripciones, Bolsa de trabajo, y Movilidad estudiantil, destacados en una barra azul.
+					En la parte superior, se encuentra un menú de navegación con una Imagen de la UTNG y opciones como Inicio, Becas, Calendario y  Bolsa de trabajo, destacados en una barra azul.
 					El título principal dice "¡Bienvenidos a la Universidad Tecnológica del Norte de Guanajuato!" seguido por un campo de búsqueda.
 					La sección media muestra una imagen con letras alfabéticas dispersas y burbujas con letras 'A', 'B', 'C', y 'D' en un tono celeste más destacado, sobre un fondo de color gris claro. Justo debajo, hay una imagen de un libro abierto, simbolizando la educación.
 					Más abajo se encuentra un texto que dice lo siguiente: La educación va más allá de la memorización; es un camino para inspirar, innovar y transformar. Cada libro que abres te lleva a un nuevo mundo, y cada práctica que realizas te ayuda a moldear el tuyo. Estamos emocionados de que te unas a nuestra comunidad y compartas nuestro compromiso con la excelencia académica y los valores fundamentales que nos guían.
@@ -271,7 +271,7 @@ export const TEXTS_TO_SPEECH = {
 
 	'/centro-de-ayuda': `
 					Centro de ayuda.
-					En la parte superior, se encuentra un menú de navegación con una Imagen de la UTNG y opciones como Inicio, Becas, Estadías, Calendario, Reinscripciones, Bolsa de trabajo, y Movilidad estudiantil, destacados en una barra azul.
+					En la parte superior, se encuentra un menú de navegación con una Imagen de la UTNG y opciones como Inicio, Becas, Calendario y Bolsa de trabajo, destacados en una barra azul.
 					En el cuerpo principal, se presenta un mensaje de bienvenida que dice "Te damos la bienvenida al centro de ayuda de la UTNG" seguido por una gran pregunta en negrita: "¿Qué podemos hacer por ti?" debajo de la cual hay un botón que invita a iniciar una conversación, todo esto sobre un fondo desenfocado que muestra lo que parece ser el equipo de un centro de llamadas.
 					Más abajo, hay cuadros interactivos que ofrecen diferentes opciones de ayuda relacionadas con Becas, Chat de la UTNG, Estadías, Movilidad estudiantil y Titulación. Cada uno de estos cuadros contiene enlaces a subsecciones como "Becas con las que contamos", "Periodo de estadías", "¿Qué necesito para postularme a la beca?" y "Requisitos para el proceso de titulación".
 
@@ -359,19 +359,19 @@ export const TEXTS_TO_SPEECH = {
 					`,
 	'/becas': `
 	        Becas.
-					En la parte superior, se encuentra un menú de navegacion con una Imagen de la UTNG y opciones tales como Inicio, Becas, Estadias, Calendario, Reinscripciones y Movilidad estudantil, contenidas en una barra de color azul. 
+					En la parte superior, se encuentra un menú de navegacion con una Imagen de la UTNG y opciones tales como Inicio, Becas, Calendario y Bolsa de trabajo, contenidas en una barra de color azul. 
 					Debajo del menu se encuentra una imagen  de lado izquierdo asociada a los estudiantes y las becas, al mismo nivel de la imagen, a la derecha se encuentar el titulo de Becas, seguido de la descripción de becas y su funcionamiento de como aplican. 
-					A continuación debajo de la imagen se encuntran tres targetas con imformación que te puede interesar referente a las becas, el primero referente a Apoyo alimenticio proporcionando informacion relacionada a la beca de apoyo alimenticio, asi como el tiempo restante para poder aplicar, contando con un boton resaltado en color verde y el texto desea aplicar, posicionado en la parte inferior de la informacion de la targeta Apoyo alimenticio.
-					La segunda targeta contienen información acerca de apoyos deportivos y culturales, con información referente a los apoyos deportivos y culturales, contiendo en la parte inferior de la targeta debajo de la información un boton con el texto Aplicar, resaltado en color verde. 
-					La tercera targeta contiene información acerca del Apoyo por necesidad apremiante, seguido de informacion relacionada con el apoyo descrito, en la parte inferior de la targeta resaltado en color verde se encuatra el boton con el texto Aplicar para el apoyo. 
+					A continuación debajo de la información se encuntran tres botones con imformación referente a las becas, el primero hace referencia a las útimas becas proporcionando la informacion sobre Apoyo por rendimiento académico mostrando la fecha en que se abre y se cierra el periodo para aplicar, y una leyenda de que se encuntra abierta la beca. 
+					El segundo botón muestra  las próximas fechas de inscripción de las becas que proporcionan en la pagina, mostrando en varias targetas  el nombre de los apoyos, la información sobre los apoyos, como la fecha en que estaran activas y la leyenda de que proximamente estaran activas.
+					El tercer botón contiene información acerca de becas externas, mostranto en targetas el nombre de las becas que proporciona, asi como el nombre de las becas e información refrente a la becas proporcionadas, debajo de la informacion se encuntra la fecha en que esta disponible la beca, marcando una leyenda de que se encuatra abierta. 
 					Debajo de las tres targetas se encuentra el apartado de convocatorias y becas gubernamentales.  
 					 
 					`,
 	'/bolsa de trabajo': `
 	        Ofertas.
-					En la parte superior, se encuentra un menú de navegacion con una Imagen de la UTNG y opciones tales como Inicio, Becas, Estadias, Calendario, Reinscripciones y Movilidad estudantil, contenidas en una barra de color azul. 
+					En la parte superior, se encuentra un menú de navegacion con una Imagen de la UTNG y opciones tales como Inicio, Becas, Estadias, Calendaio y Bolsa de trabajo contenidas en una barra de color azul. 
 					Debajo del lado izquierdo se encuentra una peueña barra de búsqueda para introducir informacion relacionada con los trabajos, debajo de la barra de bús queda se listan los resultados de la búsqueda, permitiendo visualizar la información de los resultados al pulsar en cada resultado de la búsqueda.
-					Al lado de la barra de búsqueda,  a la derecha se encuentran a manera de targetas la información  relacionada con algunas ofertas de trabajo, permitiendo visualizar la información en cada una de las targetas para ver a detalle la informacion referente, de igual manera se listan en targetas los resulatdos de información ingresada en la barra de búsqueda, adicienando en cada targeta correspondiente a la oferta de trabajo sus redes sociles. 
+					Al lado de la barra de búsqueda, a la derecha se encuentran a manera de targetas la información  relacionada con algunas ofertas de trabajo, detalles como, la descripsión, horario, hubicación, pago e informacion de contacto, permitiendo visualizar la información en cada una de las targetas para ver a detalle la informacion referente, adicienando en cada targeta correspondiente a la oferta de trabajo sus redes sociles. 
 					`
 }
 
