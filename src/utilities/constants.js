@@ -237,19 +237,21 @@ export const TEXTS_CARD = [
 ]
 
 export const OPTIONS_AUTOCOMPLETE_PAGINA_P = [
-	{ text: 'Asesor área de becas(centro de ayuda)', url: '/centro-de-ayuda' },
+	{ text: 'Asesor área de becas ', url: '/centro-de-ayuda' },
 	{ text: 'Becas', url: '/becas' },
-	{ text: 'Becas con las que contamos', url: '/becas' },
 	{ text: 'Becas con las que contamos (centro de ayuda)', url: '/centro-de-ayuda' },
+	{ text: 'Bolsa de trabajo', url: '/centro-de-ayuda' },
 	{ text: 'Calendario', url: '/calendario' },
 	{ text: 'Centro de ayuda', url: '/centro-de-ayuda' },
 	{ text: 'Convocatorias gubernamentales', url: '/becas' },
 	{ text: 'Chat', url: '/centro-de-ayuda' },
 	{ text: 'Estadías', url: '/estadias' },
+	{ text: 'Eventos', url: '/calendario' },
+	{ text: 'Información de becas', url: '/becas' },
 	{ text: 'Periodo estadías (centro de ayuda)', url: '/centro-de-ayuda' },
-	{ text: 'Ofertas laborales', url: '/Bolsa de trabajo' },
+	{ text: 'Ofertas laborales', url: '/bolsa de trabajo' },
 	{ text: 'Movilidad estudiantil', url: '/movilidad-estudiantil' },
-	{ text: 'Movilidad estudiantil (centro de ayuda)', url: '/centro-de-ayuda' }
+	{ text: 'Titulación', url: '/centro-de-ayuda' }
 ]
 
 export const TEXTS_TO_SPEECH = {
@@ -367,8 +369,8 @@ export const TEXTS_TO_SPEECH = {
 					Debajo de las tres targetas se encuentra el apartado de convocatorias y becas gubernamentales.  
 					 
 					`,
-	'/bolsa de trabajo': `
-	        Ofertas.
+	'/bolsa-de-trabajo': `
+	        Bolsa de trabajo.
 					En la parte superior, se encuentra un menú de navegacion con una Imagen de la UTNG y opciones tales como Inicio, Becas, Estadias, Calendario, Reinscripciones y Movilidad estudantil, contenidas en una barra de color azul. 
 					Debajo del lado izquierdo se encuentra una peueña barra de búsqueda para introducir informacion relacionada con los trabajos, debajo de la barra de bús queda se listan los resultados de la búsqueda, permitiendo visualizar la información de los resultados al pulsar en cada resultado de la búsqueda.
 					Al lado de la barra de búsqueda,  a la derecha se encuentran a manera de targetas la información  relacionada con algunas ofertas de trabajo, permitiendo visualizar la información en cada una de las targetas para ver a detalle la informacion referente, de igual manera se listan en targetas los resulatdos de información ingresada en la barra de búsqueda, adicienando en cada targeta correspondiente a la oferta de trabajo sus redes sociles. 
