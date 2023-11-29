@@ -1,10 +1,11 @@
-import { Box, Button } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { TextToSpeech } from "./TextToSpeech";
 import { useLocation } from "react-router-dom";
 import { TEXTS_TO_SPEECH } from "../utilities/constants";
 import { Speaker } from "../assets/Icons";
+
 export const MenuCircular = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
@@ -14,7 +15,14 @@ export const MenuCircular = () => {
   };
 
   return (
-    <Box right={0} top={20} position="fixed" textAlign="center" mt="10">
+    <Box
+      right="12"
+      top={20}
+      cursor="pointer"
+      position="fixed"
+      textAlign="center"
+      mt="10"
+    >
       <Box onClick={handleToggle}>
         <Speaker />
       </Box>
