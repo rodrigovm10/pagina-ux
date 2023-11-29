@@ -21,8 +21,8 @@ import { CARDS_CALENDAR } from "../utilities/constants.js";
 import { CardCalendario } from "./CardCalendario.jsx";
 import { Search } from "../assets/Icons.jsx";
 import Calendar from "react-calendar";
-import styled, { createGlobalStyle } from "styled-components";
-import { Tooltip } from "react-bootstrap";
+import { createGlobalStyle } from "styled-components";
+
 const vacaciones = [
   "2023-12-21",
   "2023-12-22",
@@ -53,9 +53,11 @@ const Reinscripciones = [
 
 export function Calendario() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [viewMode, setViewMode] = useState("calendar");
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
+    setViewMode("search");
   };
 
   const filteredCards = CARDS_CALENDAR.filter((card) =>
@@ -70,6 +72,7 @@ export function Calendario() {
     const dayEvents = getEventsForDay(value);
     setSelectedDayEvents(dayEvents);
     setValue(value);
+    setViewMode("calendar");
   };
 
   const getEventsForDay = (selectedDay) => {
@@ -152,12 +155,17 @@ export function Calendario() {
       <Header />
       <Box p="2rem">
         <InputGroup>
-          <InputLeftElement pointerEvents="none" children={<Search />} />
+          <InputLeftElement pointerEvents="none" />
           <Input
-            placeholder="Search events..."
+            placeholder="Buscar evento..."
             value={searchTerm}
             onChange={handleSearchChange}
-            mb="1rem"
+            mb="2rem"
+            _hover={{ border: "2px solid #0B2447" }}
+            borderRadius="0"
+            border="2px solid #0B2447"
+            p="1.7rem"
+            boxShadow="7px 7px 0px 0px #0B2447"
           />
         </InputGroup>
         <Grid
@@ -213,7 +221,7 @@ export function Calendario() {
               tileClassName={tileClassName}
             />
           </>
-          {selectedDayEvents.length > 0 ? (
+          {viewMode === "calendar" && selectedDayEvents.length > 0 ? (
             selectedDayEvents.map((event) => (
               <Card key={event.id} p="4">
                 <Text fontWeight="bold" fontSize="xl">
@@ -222,6 +230,15 @@ export function Calendario() {
                 <p>{event.date.join(" ")}</p>
                 <p>{event.description.join(" ")}</p>
               </Card>
+            ))
+          ) : viewMode === "search" && filteredCards.length > 0 ? (
+            filteredCards.map((card) => (
+              <CardCalendario
+                key={card.id}
+                title={card.title}
+                date={card.date}
+                description={card.description}
+              />
             ))
           ) : (
             <Card

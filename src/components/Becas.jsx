@@ -16,60 +16,60 @@ const cardsData = [
 ]
 
 function Becas() {
-  const navigate = useNavigate();
-  const [controlNumber, setControlNumber] = useState('');
-  const [show, setShow] = useState(false);
-  const [showCul, setShowCul] = useState(false);
-  const [showAca, setShowAca] = useState(false);
+  const navigate = useNavigate()
+  const [controlNumber, setControlNumber] = useState('')
+  const [show, setShow] = useState(false)
+  const [showCul, setShowCul] = useState(false)
+  const [showAca, setShowAca] = useState(false)
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
 
-  const handleCloseCul = () => setShowCul(false);
-  const handleShowCul = () => setShowCul(true);
+  const handleCloseCul = () => setShowCul(false)
+  const handleShowCul = () => setShowCul(true)
 
-  const handleCloseAca = () => setShowAca(false);
-  const handleShowAca = () => setShowAca(true);
+  const handleCloseAca = () => setShowAca(false)
+  const handleShowAca = () => setShowAca(true)
 
-    const [timeLeft, setTimeLeft] = useState(null);
-  
-    useEffect(() => {
-      // Establecer la fecha y hora de finalización (3 días a partir de ahora)
-      const endTime = new Date();
-      endTime.setDate(endTime.getDate() + 3);
-  
-      // Actualizar el temporizador cada segundo
-      const interval = setInterval(() => {
-        const now = new Date();
-        const difference = endTime - now;
-  
-        // Convertir la diferencia de tiempo en días, horas, minutos y segundos
-        const d = Math.floor(difference / (1000 * 60 * 60 * 24));
-        const h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-        const s = Math.floor((difference % (1000 * 60)) / 1000);
-  
-        setTimeLeft(`${d} días ${h} horas ${m} minutos ${s} segundos`);
-  
-        if (difference < 0) {
-          clearInterval(interval);
-          setTimeLeft("Tiempo expirado");
-        }
-      }, 1000);
-  
-      return () => clearInterval(interval);
-    }, []);
+  const [timeLeft, setTimeLeft] = useState(null)
 
-  const handleInputChange = (e) => {
-    const { value } = e.target;
+  useEffect(() => {
+    // Establecer la fecha y hora de finalización (3 días a partir de ahora)
+    const endTime = new Date()
+    endTime.setDate(endTime.getDate() + 3)
+
+    // Actualizar el temporizador cada segundo
+    const interval = setInterval(() => {
+      const now = new Date()
+      const difference = endTime - now
+
+      // Convertir la diferencia de tiempo en días, horas, minutos y segundos
+      const d = Math.floor(difference / (1000 * 60 * 60 * 24))
+      const h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+      const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60))
+      const s = Math.floor((difference % (1000 * 60)) / 1000)
+
+      setTimeLeft(`${d} días ${h} horas ${m} minutos ${s} segundos`)
+
+      if (difference < 0) {
+        clearInterval(interval)
+        setTimeLeft('Tiempo expirado')
+      }
+    }, 1000)
+
+    return () => clearInterval(interval)
+  }, [])
+
+  const handleInputChange = e => {
+    const { value } = e.target
     // Asegúrate de que solo se acepten números y que la longitud no exceda de 10 caracteres
     if (value === '' || (value.match(/^[0-9]+$/) && value.length <= 10)) {
-      setControlNumber(value);
+      setControlNumber(value)
     }
-  };
+  }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = e => {
+    e.preventDefault()
     if (controlNumber.length === 10) {
       // Si la validación es exitosa, muestra el SweetAlert
       Swal.fire({
@@ -77,11 +77,11 @@ function Becas() {
         text: 'Tu información se guardó correctamente, te llegará un correo con los siguientes pasos',
         icon: 'success',
         confirmButtonText: 'Ok'
-      }).then((result) => {
+      }).then(result => {
         if (result.isConfirmed) {
-          navigate('/');
+          navigate('/')
         }
-      });
+      })
     } else {
       // Si la validación falla, muestra un mensaje de error
       Swal.fire({
@@ -89,10 +89,9 @@ function Becas() {
         text: 'El número de control debe tener exactamente 10 dígitos',
         icon: 'error',
         confirmButtonText: 'Ok'
-      });
+      })
     }
-  };
-  
+  }
 
   return (
     <>
@@ -103,23 +102,26 @@ function Becas() {
           templateColumns='repeat(auto-fill, minmax(500px, 1fr))'
           p='1rem'>
           <>
-          <Image
-            w='full'
-            objectFit='cover'
-            borderRadius='1rem'
-            src='https://media.istockphoto.com/id/1292319470/es/vector/concepto-de-celebraci%C3%B3n-de-graduados-con-mujer-feliz-estudiante.jpg?s=2048x2048&w=is&k=20&c=R_2Rz9KrpGWC-5vi4rMavBV449pIP-3EHcN-9IbPEmQ='
-            alt='Calendario UTNG'
-            className='zoom'
-          />
+            <Image
+              w='full'
+              objectFit='cover'
+              borderRadius='1rem'
+              src='https://media.istockphoto.com/id/1292319470/es/vector/concepto-de-celebraci%C3%B3n-de-graduados-con-mujer-feliz-estudiante.jpg?s=2048x2048&w=is&k=20&c=R_2Rz9KrpGWC-5vi4rMavBV449pIP-3EHcN-9IbPEmQ='
+              alt='Calendario UTNG'
+              className='zoom'
+            />
           </>
           <Card>
             <CardHeader>
-              <Heading size='2xl' align='center' justify='center'>
+              <Heading
+                size='2xl'
+                align='center'
+                justify='center'>
                 Becas
               </Heading>
             </CardHeader>
             <CardHeader>
-              <Text textAlign="justify">
+              <Text textAlign='justify'>
                 Las becas universitarias cumplen una función crucial en el mundo de la educación superior al desempeñar
                 múltiples roles interconectados. En primer lugar, actúan como un mecanismo efectivo para abrir las
                 puertas de la educación superior a una amplia variedad de estudiantes, independientemente de su
@@ -149,7 +151,7 @@ function Becas() {
               <Heading size='md'>APOYO ALIMENTICIO</Heading>
             </CardHeader>
             <CardBody>
-              <Text textAlign="justify">
+              <Text textAlign='justify'>
                 Consiste en la ministración de una comida al día en la Universidad a los alumnos de la modalidad
                 escolarizada, los solicitantes deberán entregar el formato de canalización del tutor académico para
                 tener derecho a la solicitud del apoyo.
@@ -159,10 +161,16 @@ function Becas() {
               </Text>
             </CardBody>
             <CardFooter>
-              <Button color="white" bg='#159b80' >Aplicar</Button>
+              <Button
+                // color='white'
+                bg='#159b80'>
+                Aplicar
+              </Button>
             </CardFooter>
           </Card>
-          <Modal show={show} onHide={handleClose}>
+          <Modal
+            show={show}
+            onHide={handleClose}>
             <Modal.Header closeButton>
               <Modal.Title>Información de Becas</Modal.Title>
             </Modal.Header>
@@ -231,14 +239,19 @@ function Becas() {
               <Heading size='md'> APOYO DEPORTIVO Y CULTURAL </Heading>
             </CardHeader>
             <CardBody>
-              <Text textAlign="justify">
+              <Text textAlign='justify'>
                 Consiste en la exención del 100% en el pago de la inscripción cuatrimestral para los alumnos del primero
                 al quinto cuatrimestre y del 50% para los alumnos del séptimo al onceavo cuatrimestre, que sean
                 seleccionados para representar a la Universidad en eventos deportivos o culturales oficiales.
               </Text>
             </CardBody>
             <CardFooter>
-              <Button onClick={handleShowCul} bg='#159b80'> Aplicar </Button>
+              <Button
+                onClick={handleShowCul}
+                bg='#159b80'>
+                {' '}
+                Aplicar{' '}
+              </Button>
             </CardFooter>
           </Card>
           <Modal
@@ -291,7 +304,9 @@ function Becas() {
                   />
                 </div>
                 <Button
-                  variant='primary' type='submit' bg='#159b80'>
+                  variant='primary'
+                  type='submit'
+                  bg='#159b80'>
                   Aplicar
                 </Button>
               </form>
@@ -309,7 +324,7 @@ function Becas() {
               <Heading size='md'> APOYO POR NECESIDAD APREMIANTE </Heading>
             </CardHeader>
             <CardBody>
-              <Text textAlign="justify">
+              <Text textAlign='justify'>
                 Consiste en la ministración mensual no reembolsable de una cantidad de dinero, a los alumnos con
                 promedio mínimo de ocho y necesidad económica extrema que ponga en riesgo la continuidad de sus estudios
                 en la Universidad.
@@ -319,7 +334,11 @@ function Becas() {
                 Tiempo Restante: {timeLeft}
               </Text>
             <CardFooter>
-              <Button onClick={handleShowAca} bg='#159b80'>Aplicar</Button>
+              <Button
+                onClick={handleShowAca}
+                bg='#159b80'>
+                Aplicar
+              </Button>
             </CardFooter>
           </Card>
           <Modal
@@ -372,7 +391,7 @@ function Becas() {
                     onChange={handleInputChange}
                   />
                 </div>
-                <br/>
+                <br />
                 <Button
                   variant='primary'
                   type='submit'
@@ -423,4 +442,4 @@ function Becas() {
   )
 }
 
-export default Becas;
+export default Becas
