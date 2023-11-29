@@ -26,6 +26,11 @@ const Autocomplete = ({ options, onSelect }) => {
 	return (
 		<Box position='relative'>
 			<Input
+				_hover={{ border: '2px solid #0B2447' }}
+				borderRadius='0'
+				border='2px solid #0B2447'
+				p='1.7rem'
+				boxShadow='7px 7px 0px 0px #0B2447'
 				w='70vw'
 				value={query}
 				onChange={handleInputChange}
@@ -33,7 +38,7 @@ const Autocomplete = ({ options, onSelect }) => {
 			/>
 			{filteredOptions.length > 0 && (
 				<List
-					borderRadius='0.5rem'
+					// borderRadius='0.5rem'
 					overflowY='scroll'
 					p='0'
 					position='absolute'
@@ -46,8 +51,8 @@ const Autocomplete = ({ options, onSelect }) => {
 							key={option.id}
 							onClick={() => handleSelectOption(option)}
 							cursor='pointer'
-							_hover={{ bg: 'gray.100' }}
-							p={2}>
+							_hover={{ bg: 'blue.100' }}
+							p={1}>
 							<Text>{option.text}</Text>
 						</ListItem>
 					))}

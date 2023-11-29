@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { TextToSpeech } from './TextToSpeech'
 import { useLocation } from 'react-router-dom'
 import { TEXTS_TO_SPEECH } from '../utilities/constants'
+import { Speaker } from '../assets/Icons'
 export const MenuCircular = () => {
 	const [isOpen, setIsOpen] = useState(false)
 	const location = useLocation()
@@ -19,14 +20,8 @@ export const MenuCircular = () => {
 			position='fixed'
 			textAlign='center'
 			mt='10'>
-			<Box
-				color='#fff'
-				bgColor='#00259A'
-				w='40px'
-				h='40px'
-				borderRadius='100%'
-				onClick={handleToggle}>
-				a
+			<Box onClick={handleToggle}>
+				<Speaker />
 			</Box>
 
 			<AnimatePresence>

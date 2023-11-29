@@ -147,16 +147,18 @@ export function Calendario() {
 			<Header />
 			<Box p='2rem'>
 				<MenuCircular />
-				<InputGroup>
-					<InputLeftElement
-						pointerEvents='none'
-						children={<Search />}
-					/>
+				<InputGroup mb='1rem'>
 					<Input
-						placeholder='Search events...'
+						// _focus={{ border: 'none' }}
+						_hover={{ border: '2px solid #0B2447' }}
+						borderRadius='0'
+						border='2px solid #0B2447'
+						p='1.7rem'
+						boxShadow='7px 7px 0px 0px #0B2447'
 						value={searchTerm}
 						onChange={handleSearchChange}
 						mb='1rem'
+						placeholder='Buscar eventos...'
 					/>
 				</InputGroup>
 				<Grid

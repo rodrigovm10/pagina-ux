@@ -2,11 +2,9 @@ import { Image, Flex, Heading, Text, Box } from '@chakra-ui/react'
 import { Footer } from '../components/Footer.jsx'
 import { Header } from '../components/Header.jsx'
 import imgPrincipal from '../assets/paginaPrincipal.png'
-import { Search } from '../assets/Icons.jsx'
 import Autocomplete from '../components/Autocomplete.jsx'
 import { OPTIONS_AUTOCOMPLETE_PAGINA_P } from '../utilities/constants.js'
 import '../styles/card.css'
-import { SpeechToText } from '../components/SpeechToText.jsx'
 import { MenuCircular } from '../components/MenuCirular.jsx'
 
 export function PaginaPrincipal() {
@@ -33,21 +31,10 @@ export function PaginaPrincipal() {
 				{/* <SpeechToText /> */}
 				<MenuCircular />
 				<form>
-					<Box
-						position='relative'
-						borderWidth='2px'>
-						<Box
-							position='absolute'
-							right={3}
-							top={2} // Ajusta la posición según tus necesidades
-						>
-							<Search />
-						</Box>
-						<Autocomplete
-							options={OPTIONS_AUTOCOMPLETE_PAGINA_P}
-							onSelect={handleSelect}
-						/>
-					</Box>
+					<Autocomplete
+						options={OPTIONS_AUTOCOMPLETE_PAGINA_P}
+						onSelect={handleSelect}
+					/>
 				</form>
 
 				<Image
