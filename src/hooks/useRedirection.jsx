@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom'
-import { toast } from 'react-toastify'
 
 export function useRedirection() {
 	const navigate = useNavigate()
@@ -12,28 +11,11 @@ export function useRedirection() {
 			'pagina principal': '/'
 		}
 
-		let commandRecognized = false
-
 		for (const [keyword, route] of Object.entries(keywordToRoute)) {
 			if (text.includes(keyword)) {
 				navigate(route)
-				commandRecognized = true
 				break
 			}
-		}
-
-		if (!commandRecognized) {
-			console.log('mal')
-			toast.error('¡Comando no reconocido!', {
-				position: 'top-right',
-				autoClose: 5000,
-				hideProgressBar: false,
-				closeOnClick: true,
-				pauseOnHover: true,
-				draggable: true,
-				progress: undefined,
-				theme: 'light'
-			})
 		}
 	}
 
