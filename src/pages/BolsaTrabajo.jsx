@@ -1,22 +1,13 @@
-import { Image, Input, Flex, Heading, Text, Box, Grid } from "@chakra-ui/react";
+import {  Input, Flex, Heading, Text, Box, Grid, Center } from "@chakra-ui/react";
 import { FaFacebook, FaYoutube, FaInstagram } from "react-icons/fa";
+import { GiEagleHead } from "react-icons/gi";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
-import { Search } from "../assets/Icons.jsx";
 import { useState } from "react";
-import {
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalCloseButton,
-  ModalBody,
-  ModalFooter,
-} from "@chakra-ui/react";
+
 
 function BolsaTrabajo() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedJob, setSelectedJob] = useState(null);
+
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredJobs, setFilteredJobs] = useState([]);
   const [isEditing, setisEditing] = useState(true);
@@ -89,14 +80,6 @@ function BolsaTrabajo() {
   };
   const handleJobClick = (job) => {
     console.log(`Clic en oferta de trabajo: ${job.title}`);
-    // Aquí puedes implementar la lógica para mostrar más detalles o abrir un modal
-    setSelectedJob(job);
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setSelectedJob(null);
   };
 
   return (
@@ -129,8 +112,10 @@ function BolsaTrabajo() {
           <Box mt="4" p="2" border="1px" borderColor="gray.200">
             Lista de resultados
           </Box>
+          {isEditing ? <></> : <></>}
           {/* Mostrar trabajos en la lista de resultados */}
-          {jobs.map((job) => (
+          {filteredJobs.length > 0
+           ? filteredJobs.map((job) => (
             <Box
               key={job.id}
               p="4"
@@ -144,152 +129,42 @@ function BolsaTrabajo() {
               </Heading>
               <Text fontSize="sm">{job.description}</Text>
             </Box>
-          ))}
+          )):( jobs.map((job) => (
+            <Box
+              key={job.id}
+              p="4"
+              borderBottom="1px"
+              borderColor="gray.200"
+              onClick={() => handleJobClick(job)}
+              cursor="pointer"
+            >
+              <Heading as="h3" size="md" mb="2">
+                {job.title}
+              </Heading>
+              <Text fontSize="sm">{job.description}</Text>
+            </Box>
+          )))}
         </Box>
 
-        {/* Parte derecha con las tarjetas */}
-        <Grid
-          gridTemplateColumns="1fr"
-          gap={4}
-          mt={{ base: "4", md: "0" }}
-          ml={{ base: "0", md: "20" }}
-          p="4"
+        {/* Parte derecha */}
+        <Flex
+          direction={{ base: "column" }}
+          justifyContent="center"
+          p="6"
+          ml={"4rem"}
+          style={{ backgroundColor: "#ffffff" }}
         >
-          <Heading as="h2" size="xl">
-            Ofertas
-          </Heading>
-          {isEditing ? <></> : <h3>Resultados Encontrados</h3>}
-
-          {/* Mapeo de trabajos */}
-          {filteredJobs.length > 0
-            ? filteredJobs.map((job) => (
-                <Flex
-                  key={job.id}
-                  borderRadius="5"
-                  sx={{ border: "1px solid #00259A" }}
-                  boxShadow="2xl"
-                  onClick={() => handleJobClick(job)}
-                  cursor="pointer"
-                  mb="1rem"
-                  width="50rem"
-                >
-                  {/* Imagen a la izquierda */}
-                  <Box flex="0 0 auto">
-                    <Image
-                      src={job.image}
-                      alt={job.title}
-                      width="90%"
-                      height="90%"
-                      objectFit="cover"
-                    />
-                  </Box>
-                  {/* Contenido a la derecha */}
-                  <Box p="4" flex="1">
-                    <Heading as="h3" size="md" mb="2">
-                      {job.title}
-                    </Heading>
-                    <Text fontSize="sm">{job.description}</Text>
-                    <Text fontSize="sm">{job.pago}</Text>
-                    {/* Iconos de redes sociales */}
-                    <Flex mt="4" justifyContent="right">
-                      <FaFacebook size={24} />
-                      &nbsp;
-                      <FaYoutube size={24} />
-                      &nbsp;
-                      <FaInstagram size={24} />
-                      {/* Agrega más íconos aquí según sea necesario */}
-                    </Flex>
-                  </Box>
-                </Flex>
-              ))
-            : jobs.map((job) => (
-                <Flex
-                  key={job.id}
-                  borderRadius="5"
-                  sx={{ border: "1px solid #00259A" }}
-                  boxShadow="2xl"
-                  onClick={() => handleJobClick(job)}
-                  cursor="pointer"
-                  mb="1rem"
-                  width="50rem"
-                >
-                  {/* Imagen a la izquierda */}
-                  <Box flex="0 0 auto">
-                    <Image
-                      src={job.image}
-                      alt={job.title}
-                      width="100%"
-                      height="100%"
-                      objectFit="cover"
-                    />
-                  </Box>
-                  {/* Contenido a la derecha */}
-                  <Box p="4" flex="1">
-                    <Heading as="h3" size="md" mb="2">
-                      {job.title}
-                    </Heading>
-                    <Text fontSize="sm">{job.description}</Text>
-                    <Text fontSize="sm">{job.pago}</Text>
-                    {/* Iconos de redes sociales */}
-                    <Flex mt="4" justifyContent="right">
-                      <FaFacebook size={24} />
-                      &nbsp;
-                      <FaYoutube size={24} />
-                      &nbsp;
-                      <FaInstagram size={24} />
-                      {/* Agrega más íconos aquí según sea necesario */}
-                    </Flex>
-                  </Box>
-                </Flex>
-              ))}
-        </Grid>
+          <div style={{ textAlign: 'center' }} >
+            <Heading as="h4" size="15rem">Encontramos estas vacantes de acuerdo a tu búsqueda</Heading>
+            <Heading as="h5" size="sm">Selecciona una de la lista para visualizar su información.</Heading>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+              <GiEagleHead size={"15rem"} />
+            </div>
+                    
+          </div>
+        </Flex>
       </Flex>
-
-      {/* Modal para mostrar detalles del trabajo */}
-      <Modal isOpen={isModalOpen} onClose={closeModal}>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>{selectedJob?.title}</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>
-            <Text>Descripción de la Vacante: {selectedJob?.description}</Text>
-            <Text>Págo: {selectedJob?.pago}</Text>
-            <Text>Ubicacion: {selectedJob?.ubicacion}</Text>
-            <Text>Contacto: {selectedJob?.contacto}</Text>
-            <Text>Horario: {selectedJob?.horario}</Text>
-            <Flex mt="4" justifyContent="center">
-              <a
-                href="https://www.facebook.com/profile.php?id=100064830062888"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaFacebook size={30} />
-              </a>
-              &nbsp;&nbsp;&nbsp;
-              <a
-                href="https://www.youtube.com/channel/UC5aD8RBROQYeDSIX54hjwBw"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaYoutube size={30} />
-              </a>
-              &nbsp;&nbsp;&nbsp;
-              <a
-                href="https://www.instagram.com/utngdoloreshidalgo_/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaInstagram size={30} />
-              </a>
-              {/* Agrega más íconos aquí según sea necesario */}
-            </Flex>
-            {/* Otros detalles del trabajo */}
-          </ModalBody>
-          <ModalFooter>
-            {/* Botones u opciones adicionales en el footer del modal */}
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
+    
       <Footer />
     </>
   );
