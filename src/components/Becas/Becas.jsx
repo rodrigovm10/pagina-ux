@@ -4,17 +4,21 @@ import { Header } from "../Header";
 import { Footer } from "../Footer";
 import ScholarshipBanner from "./Inicio";
 import Carousel from "./BecasPopulares";
+import { MenuCircular } from "../../components/MenuCirular.jsx";
+import { SpeechToText } from "../../components/SpeechToText.jsx";
 
 function Becass(params) {
-    return(
-           <Box>
-            <Header/>
-            <ScholarshipBanner/>
-            <Carousel/>
-            <Contacto/>
-            <Footer/>
-            </Box> 
-    )
+  return (
+    <Box>
+      <Header />
+      <ScholarshipBanner />
+      <SpeechToText />
+      <MenuCircular />
+      <Carousel />
+      <Contacto />
+      <Footer />
+    </Box>
+  );
 }
 
 export default Becass;
