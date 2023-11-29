@@ -10,8 +10,9 @@ import { Reinscripciones } from '../src/components/Reinscripsiones.jsx'
 import { PaginaPrincipal } from './pages/PaginaPrincipal.jsx'
 import BolsaTrabajo from './pages/BolsaTrabajo.jsx'
 import UserWayWidget from './UserWayWidget.jsx'
-import Becas from './components/becas.jsx'
+import Becas from './components/Becas.jsx';
 import { MenuCircular } from './components/MenuCirular.jsx'
+import Becass from './components/Becas/Becas.jsx'
 
 const router = createBrowserRouter([
 	{
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
 		path: '/becas',
 		element: <Becas />
 	},
+  {
+    path: '/becas2',
+    element: <Becass />
+  },
 	{
 		path: '/estadias',
 		element: <p>Pagina no existente</p>

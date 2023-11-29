@@ -1,4 +1,5 @@
-import { Card, CardBody, CardHeader, Heading, Text } from '@chakra-ui/react'
+import { Card, CardBody, CardHeader, Heading, Text } from '@chakra-ui/react';
+
 
 export function CardPPrincipal({ title, text, wBase, wLg, wMd }) {
   return (
