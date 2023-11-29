@@ -4,7 +4,7 @@ import { Header } from '../components/Header.jsx'
 import imgPrincipal from '../assets/paginaPrincipal.png'
 import { CardPPrincipal } from '../components/CardPPrincipal.jsx'
 import { Search } from '../assets/Icons.jsx'
-import { Link } from 'react-router-dom'
+//import { Link } from 'react-router-dom'
 
 export function PaginaPrincipal() {
   return (
@@ -74,7 +74,7 @@ export function PaginaPrincipal() {
             wLg='15rem'
             wBase='100%'
             title='Valores'
-            text={`Trabajo\nComunicación\nHonestidad\nRespeto`}
+            text={['Trabajo', 'Comunicación', 'Honestidad', 'Respeto']}
           />
         </Flex>
       </Flex>
