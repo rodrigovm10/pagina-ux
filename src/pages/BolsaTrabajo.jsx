@@ -210,7 +210,7 @@ function BolsaTrabajo() {
   };
 
   useEffect(() => {
-    const conteo= jobs.length;  
+    const conteo = jobs.length;  
     setnumJobs(conteo)
   }, [jobs])
   
@@ -242,7 +242,6 @@ function BolsaTrabajo() {
             value={searchTerm}
             onChange={handleInputChange}
           />
-
           <Box mt="4" p="2" border="1px" borderColor="gray.200">
             Lista de resultados  ({numJobs})
           </Box>
@@ -260,7 +259,6 @@ function BolsaTrabajo() {
               borderColor="gray.200"
               onClick={() => handleJobClick(job)}
               cursor="pointer"
-              
             >
               <Heading as="h3" size="md" mb="2">
                 {job.title}
@@ -367,13 +365,9 @@ function BolsaTrabajo() {
                   <GiEagleHead size={"15rem"} />
                 </div>
               </>
-
-            )}
-                    
+            )}   
           </div>
         </Flex>
-
-
       </Flex>
       <Footer />
     </>
