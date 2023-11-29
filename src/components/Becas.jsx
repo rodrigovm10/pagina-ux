@@ -1,26 +1,10 @@
-import {
-  Card,
-  CardBody,
-  Box,
-  SimpleGrid,
-  Image,
-  CardHeader,
-  Heading,
-  Text,
-  CardFooter,
-  Button,
-  Flex,
-  Link,
-  Icon
-} from '@chakra-ui/react'
-import { MdPhone } from 'react-icons/md'
-import Modal from 'react-bootstrap/Modal'
-import { Footer } from '../components/Footer.jsx'
-import { Header } from '../components/Header.jsx'
-import { useEffect, useState } from 'react'
-import logo from '../assets/logoutng.webp'
-import Swal from 'sweetalert2'
-import { useNavigate } from 'react-router-dom'
+import { Card, CardBody, Box, SimpleGrid, Image, CardHeader, Heading, Text, CardFooter, Button } from '@chakra-ui/react'
+import Modal from 'react-bootstrap/Modal';
+import { Footer } from '../components/Footer.jsx';
+import { Header } from '../components/Header.jsx';
+import { useEffect, useState } from 'react';
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 const cardsData = [
   { title: 'JÓVENES EMBARAZADAS Y MADRES' },
@@ -172,9 +156,7 @@ function Becas() {
                 escolarizada, los solicitantes deberán entregar el formato de canalización del tutor académico para
                 tener derecho a la solicitud del apoyo.
               </Text>
-              <Text
-                fontSize='md'
-                fontWeight='bold'>
+              <Text fontSize="md" fontWeight="bold" color='red'>
                 Tiempo Restante: {timeLeft}
               </Text>
             </CardBody>
@@ -348,6 +330,9 @@ function Becas() {
                 en la Universidad.
               </Text>
             </CardBody>
+            <Text fontSize="md" fontWeight="bold" color="red">
+                Tiempo Restante: {timeLeft}
+              </Text>
             <CardFooter>
               <Button
                 onClick={handleShowAca}
@@ -424,67 +409,6 @@ function Becas() {
             </Modal.Footer>
           </Modal>
         </SimpleGrid>
-        {/* Card de becas externas */}
-        <Box
-          bg='gray.200'
-          p={5}>
-          <Text
-            fontSize='xl'
-            mb={5}>
-            Convocatorias y becas gubernamentales
-          </Text>
-          <SimpleGrid
-            columns={[1, null, 3]}
-            spacing={5}>
-            {cardsData.map((card, index) => (
-              <Box
-                key={index}
-                borderWidth='1px'
-                borderRadius='lg'
-                overflow='hidden'
-                p={5}
-                bg='white'>
-                <Text textAlign='center'>{card.title}</Text>
-              </Box>
-            ))}
-          </SimpleGrid>
-        </Box>
-        <br />
-        {/* Card de contacto */}
-        <Box
-          maxW='100%'
-          borderWidth='1px'
-          borderRadius='lg'
-          overflow='hidden'
-          bg='#159b80'
-          p={10}>
-          <Flex
-            align='center'
-            justify='space-between'>
-            <Flex align='center'>
-              <Image
-                src={logo}
-                alt='Logo'
-              />
-              <Box ml='3'>
-                <Text fontWeight='bold'>Diana Berenice Cuellar González</Text>
-                <Link
-                  href='mailto:diana.cuellar@utng.edu.mx'
-                  isExternal>
-                  diana.cuellar@utng.edu.mx
-                </Link>
-                <Text fontSize='sm'>Atención de lunes a viernes de 8:00 a 16:00 hrs</Text>
-              </Box>
-            </Flex>
-            <Box textAlign='right'>
-              <Text>Tel:18 2 55 00 ext. 1254</Text>
-              <Icon
-                as={MdPhone}
-                boxSize='6'
-              />
-            </Box>
-          </Flex>
-        </Box>
       </Box>
       <Footer />
     </>

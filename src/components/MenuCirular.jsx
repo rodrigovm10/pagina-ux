@@ -1,43 +1,61 @@
-import { Box, Button } from '@chakra-ui/react'
+import { Box, Button, Circle, useDisclosure } from '@chakra-ui/react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useState } from 'react'
 import { TextToSpeech } from './TextToSpeech'
-import { useLocation } from 'react-router-dom'
 import { TEXTS_TO_SPEECH } from '../utilities/constants'
 import { Speaker } from '../assets/Icons'
+import { useLocation } from 'react-router-dom'
+
 export const MenuCircular = () => {
-	const [isOpen, setIsOpen] = useState(false)
+	const { isOpen, onToggle } = useDisclosure()
+	const handleToggle = () => onToggle()
 	const location = useLocation()
 
-	const handleToggle = () => {
-		setIsOpen(!isOpen)
+	const textKeys = Object.keys(TEXTS_TO_SPEECH) // Usando TEXTS_TO_SPEECH directamente
+
+	const calculatePosition = (index, total) => {
+		const angle = (360 / total) * index
+		const radius = 60
+		return {
+			x: Math.cos((angle * Math.PI) / 180) * radius,
+			y: Math.sin((angle * Math.PI) / 180) * radius
+		}
 	}
 
 	return (
 		<Box
-			right={0}
-			top={20}
 			position='fixed'
-			textAlign='center'
-			mt='10'>
-			<Box onClick={handleToggle}>
+			right='20px'
+			bottom='20px'
+			textAlign='center'>
+			<Button
+				onClick={handleToggle}
+				borderRadius='50%'
+				p='10px'
+				boxShadow='lg'>
 				<Speaker />
-			</Box>
+			</Button>
 
 			<AnimatePresence>
-				{isOpen && (
-					<motion.div
-						initial={{ opacity: 0, scale: 0 }}
-						animate={{ opacity: 1, scale: 1 }}
-						exit={{ opacity: 0, scale: 0 }}
-						transition={{ duration: 0.3 }}
-						position='absolute'
-						top='50%'
-						left='50%'
-						transform='translate(-50%, -50%)'>
-						<TextToSpeech text={TEXTS_TO_SPEECH[location.pathname]} />
-					</motion.div>
-				)}
+				{isOpen &&
+					textKeys.map((key, index) => {
+						const position = calculatePosition(index, textKeys.length)
+						return (
+							<motion.div
+								key={key}
+								initial={{ opacity: 0, scale: 0.3, x: 0, y: 0 }}
+								animate={{ opacity: 1, scale: 1, x: position.x, y: position.y }}
+								exit={{ opacity: 0, scale: 0.3, x: 0, y: 0 }}
+								transition={{ duration: 0.3 }}
+								style={{
+									position: 'absolute',
+									bottom: `calc(5% - ${position.y}px)`,
+									right: `calc(5% - ${position.x}px)`,
+									transform: 'translate(50%, 50%)'
+								}}>
+								<TextToSpeech text={TEXTS_TO_SPEECH[key]} />
+							</motion.div>
+						)
+					})}
 			</AnimatePresence>
 		</Box>
 	)
