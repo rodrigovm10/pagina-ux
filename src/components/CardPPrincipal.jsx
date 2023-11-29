@@ -1,47 +1,26 @@
-import { Card, CardBody, CardHeader, Heading, Text, UnorderedList, ListItem } from '@chakra-ui/react';
-import { Global } from '@emotion/react';
+import { Card, CardBody, CardHeader, Heading, Text } from '@chakra-ui/react';
 
-// Definir estilos globales para la animación
-const CardPPrincipalStyles = () => (
-  <Global
-    styles={`
-      @keyframes enterAnimation {
-        from { opacity: 0; transform: translateY(50px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-    `}
-  />
-);
 
-// Componente CardPPrincipal
-export function CardPPrincipal({ title, text, wBase, wLg }) {
-  const isList = Array.isArray(text);
+export function CardPPrincipal({ title, text, wBase, wLg, wMd }) {
   return (
-    <>
-      <CardPPrincipalStyles />
-      <Card
-        mb='3rem'
-        w={{ base: wBase, lg: wLg }}
-        sx={{ border: '1px solid #00259A', boxShadow: '2xl' }}
-        animation='enterAnimation 0.5s ease-out'
-      >
-        <CardHeader>
-          <Heading as='h3' size='md' fontWeight={500}>
-            {title}
-          </Heading>
-        </CardHeader>
-        <CardBody>
-          {isList ? (
-            <UnorderedList textAlign='justify'>
-              {text.map((item, index) => (
-                <ListItem key={index}>{item}</ListItem>
-              ))}
-            </UnorderedList>
-          ) : (
-            <Text textAlign='justify'>{text}</Text>
-          )}
-        </CardBody>
-      </Card>
-    </>
+    <Card
+      mb='3rem'
+      transition='transform 0.3s ease-out, box-shadow 0.3s ease-in-out'
+      w={{ base: wBase, md: wMd, lg: wLg }}
+      sx={{ border: '2px solid #00259A' }}
+      _hover={{ transform: 'translateY(-10px)', boxShadow: '5px 5px #00259A' }}
+      boxShadow='2xl'>
+      <CardHeader>
+        <Heading
+          as='h3'
+          size='md'
+          fontWeight={500}>
+          {title}
+        </Heading>
+      </CardHeader>
+      <CardBody>
+        <Text>{text}</Text>
+      </CardBody>
+    </Card>
   )
 }
