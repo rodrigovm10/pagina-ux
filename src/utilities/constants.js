@@ -361,3 +361,10 @@ export const TEXTS_TO_SPEECH = {
 
 					`
 }
+
+export const ANSWERES_RESPONSES = [
+	{
+		answer: ''
+		response: '' 
+	}
+]

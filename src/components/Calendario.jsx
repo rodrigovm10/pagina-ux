@@ -21,9 +21,8 @@ import { CARDS_CALENDAR } from '../utilities/constants.js'
 import { CardCalendario } from './CardCalendario.jsx'
 import { Search } from '../assets/Icons.jsx'
 import Calendar from 'react-calendar'
-import styled, { createGlobalStyle } from 'styled-components'
-import { Tooltip } from 'react-bootstrap'
-import { MenuCircular } from './MenuCirular.jsx'
+import { createGlobalStyle } from 'styled-components'
+
 const vacaciones = [
 	'2023-12-21',
 	'2023-12-22',
@@ -53,21 +52,13 @@ const Reinscripciones = [
 ]
 
 export function Calendario() {
-<<<<<<< HEAD
 	const [searchTerm, setSearchTerm] = useState('')
+	const [viewMode, setViewMode] = useState('calendar')
 
 	const handleSearchChange = event => {
 		setSearchTerm(event.target.value)
+		setViewMode('search')
 	}
-=======
-  const [searchTerm, setSearchTerm] = useState("");
-  const [viewMode, setViewMode] = useState("calendar");
-
-  const handleSearchChange = (event) => {
-    setSearchTerm(event.target.value);
-    setViewMode("search");
-  };
->>>>>>> 4b3e73288c679364f2cb7bade1874c6fbfdb14c4
 
 	const filteredCards = CARDS_CALENDAR.filter(card => card.title.toLowerCase().includes(searchTerm.toLowerCase()))
 
@@ -75,20 +66,12 @@ export function Calendario() {
 
 	const [selectedDayEvents, setSelectedDayEvents] = useState([])
 
-<<<<<<< HEAD
 	const handleDayClick = value => {
 		const dayEvents = getEventsForDay(value)
 		setSelectedDayEvents(dayEvents)
 		setValue(value)
+		setViewMode('calendar')
 	}
-=======
-  const handleDayClick = (value) => {
-    const dayEvents = getEventsForDay(value);
-    setSelectedDayEvents(dayEvents);
-    setValue(value);
-    setViewMode("calendar");
-  };
->>>>>>> 4b3e73288c679364f2cb7bade1874c6fbfdb14c4
 
 	const getEventsForDay = selectedDay => {
 		const formattedSelectedDay = selectedDay.toISOString().split('T')[0]
@@ -161,103 +144,137 @@ export function Calendario() {
 		}
 	}
 
-  return (
-    <>
-      <Header />
-      <Box p="2rem">
-        <InputGroup>
-          <InputLeftElement pointerEvents="none" children={<Search />} />
-          <Input
-            placeholder="Buscar evento..."
-            value={searchTerm}
-            onChange={handleSearchChange}
-            mb="1rem"
-          />
-        </InputGroup>
-        <Grid
-          templateColumns={{
-            base: "repeat(2, 1fr)",
-            md: "repeat(3, 1fr)",
-            lg: "repeat(6, 1fr)",
-          }}
-          gap={1}
-          mb="1rem"
-        >
-          <VStack spacing="4px" alignItems="center">
-            <Circle size="30px" bg="red" color="white"></Circle>
-            <Text>Suspensión de labores</Text>
-          </VStack>
-          <VStack spacing="4px" alignItems="center">
-            <Circle size="30px" bg="blue" color="white"></Circle>
-            <Text>Día seleccionado</Text>
-          </VStack>
-          <VStack spacing="4px" alignItems="center">
-            <Circle size="30px" bg="#EEEEEE" color="white"></Circle>
-            <Text marginLeft="8px">Vacaciones</Text>
-          </VStack>
-          <VStack spacing="4px" alignItems="center">
-            <Circle size="30px" bg="#16FF00" color="white"></Circle>
-            <Text marginLeft="8px">Fin de cursos</Text>
-          </VStack>
-          <VStack spacing="4px" alignItems="center">
-            <Circle size="30px" bg="#00A9FF" color="white"></Circle>
-            <Text marginLeft="8px">Inicio de cursos</Text>
-          </VStack>
-          <VStack spacing="4px" alignItems="center">
-            <Circle size="30px" bg="#F875AA" color="white"></Circle>
-            <Text marginLeft="8px">Solicitar becas internas</Text>
-          </VStack>
-        </Grid>
-        <SimpleGrid
-          spacing={6}
-          mb="1.5rem"
-          templateColumns={{
-            base: "repeat(auto-fill, minmax(250px, 1fr))",
-            md: "repeat(auto-fill, minmax(500px, 1fr))",
-            sm: "repeat(auto-fill, minmax(250px, 1fr))",
-            lg: "repeat(auto-fill, minmax(500px, 1fr))",
-            xl: "repeat(auto-fill, minmax(500px, 1fr))",
-          }}
-        >
-          <>
-            <GlobalStyles />
-            <Calendar
-              onChange={handleDayClick}
-              value={value}
-              tileClassName={tileClassName}
-            />
-          </>
-          {viewMode === "calendar" && selectedDayEvents.length > 0 ? (
-            selectedDayEvents.map((event) => (
-              <Card key={event.id} p="4">
-                <Text fontWeight="bold" fontSize="xl">
-                  {event.title}
-                </Text>
-                <p>{event.date.join(" ")}</p>
-                <p>{event.description.join(" ")}</p>
-              </Card>
-            ))
-          ) : viewMode === "search" && filteredCards.length > 0 ? (
-            filteredCards.map((card) => (
-              <CardCalendario
-                key={card.id}
-                title={card.title}
-                date={card.date}
-                description={card.description}
-              />
-            ))
-          ) : (
-            <Card
-              direction={{ base: "column", sm: "row" }}
-              overflow="hidden"
-              variant="outline"
-            >
-              <Image
-                objectFit="cover"
-                maxW={{ base: "100%", sm: "200px", xl: "250px" }}
-                src="https://media.istockphoto.com/id/1476727937/es/foto/calendario-y-agenda-del-organizador-recordatorio-de-cita-los-planificadores-de-eventos.jpg?s=612x612&w=0&k=20&c=DXc6a0XU3WTPfkJ6uYnx2zpxhxCx90Juaf0ndraDdpY="
-                alt="Calendario UTNG"
-              />
+	return (
+		<>
+			<Header />
+			<Box p='2rem'>
+				<InputGroup>
+					<InputLeftElement
+						pointerEvents='none'
+						children={<Search />}
+					/>
+					<Input
+						placeholder='Buscar evento...'
+						value={searchTerm}
+						onChange={handleSearchChange}
+						mb='1rem'
+					/>
+				</InputGroup>
+				<Grid
+					templateColumns={{
+						base: 'repeat(2, 1fr)',
+						md: 'repeat(3, 1fr)',
+						lg: 'repeat(6, 1fr)'
+					}}
+					gap={1}
+					mb='1rem'>
+					<VStack
+						spacing='4px'
+						alignItems='center'>
+						<Circle
+							size='30px'
+							bg='red'
+							color='white'></Circle>
+						<Text>Suspensión de labores</Text>
+					</VStack>
+					<VStack
+						spacing='4px'
+						alignItems='center'>
+						<Circle
+							size='30px'
+							bg='blue'
+							color='white'></Circle>
+						<Text>Día seleccionado</Text>
+					</VStack>
+					<VStack
+						spacing='4px'
+						alignItems='center'>
+						<Circle
+							size='30px'
+							bg='#EEEEEE'
+							color='white'></Circle>
+						<Text marginLeft='8px'>Vacaciones</Text>
+					</VStack>
+					<VStack
+						spacing='4px'
+						alignItems='center'>
+						<Circle
+							size='30px'
+							bg='#16FF00'
+							color='white'></Circle>
+						<Text marginLeft='8px'>Fin de cursos</Text>
+					</VStack>
+					<VStack
+						spacing='4px'
+						alignItems='center'>
+						<Circle
+							size='30px'
+							bg='#00A9FF'
+							color='white'></Circle>
+						<Text marginLeft='8px'>Inicio de cursos</Text>
+					</VStack>
+					<VStack
+						spacing='4px'
+						alignItems='center'>
+						<Circle
+							size='30px'
+							bg='#F875AA'
+							color='white'></Circle>
+						<Text marginLeft='8px'>Solicitar becas internas</Text>
+					</VStack>
+				</Grid>
+				<SimpleGrid
+					spacing={6}
+					mb='1.5rem'
+					templateColumns={{
+						base: 'repeat(auto-fill, minmax(250px, 1fr))',
+						md: 'repeat(auto-fill, minmax(500px, 1fr))',
+						sm: 'repeat(auto-fill, minmax(250px, 1fr))',
+						lg: 'repeat(auto-fill, minmax(500px, 1fr))',
+						xl: 'repeat(auto-fill, minmax(500px, 1fr))'
+					}}>
+					<>
+						<GlobalStyles />
+						<Calendar
+							onChange={handleDayClick}
+							value={value}
+							tileClassName={tileClassName}
+						/>
+					</>
+					{viewMode === 'calendar' && selectedDayEvents.length > 0 ? (
+						selectedDayEvents.map(event => (
+							<Card
+								key={event.id}
+								p='4'>
+								<Text
+									fontWeight='bold'
+									fontSize='xl'>
+									{event.title}
+								</Text>
+								<p>{event.date.join(' ')}</p>
+								<p>{event.description.join(' ')}</p>
+							</Card>
+						))
+					) : viewMode === 'search' && filteredCards.length > 0 ? (
+						filteredCards.map(card => (
+							<CardCalendario
+								key={card.id}
+								title={card.title}
+								date={card.date}
+								description={card.description}
+							/>
+						))
+					) : (
+						<Card
+							direction={{ base: 'column', sm: 'row' }}
+							overflow='hidden'
+							variant='outline'>
+							<Image
+								objectFit='cover'
+								maxW={{ base: '100%', sm: '200px', xl: '250px' }}
+								src='https://media.istockphoto.com/id/1476727937/es/foto/calendario-y-agenda-del-organizador-recordatorio-de-cita-los-planificadores-de-eventos.jpg?s=612x612&w=0&k=20&c=DXc6a0XU3WTPfkJ6uYnx2zpxhxCx90Juaf0ndraDdpY='
+								alt='Calendario UTNG'
+							/>
 
 							<Stack>
 								<CardBody>
