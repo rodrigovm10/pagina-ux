@@ -11,7 +11,8 @@ export function ChatMessages({ messages }) {
 			p='0 1rem'
 			overscrollBehavior='contain'>
 			{messages.map((message, i) => {
-				const isUserMessage = i % 2 !== 0
+				const isUserMessage = message.isUser
+
 				return (
 					<Box
 						alignSelf={isUserMessage ? 'flex-end' : 'flex-start'}
@@ -26,8 +27,8 @@ export function ChatMessages({ messages }) {
 						<Text
 							className='type'
 							textAlign={isUserMessage ? 'right' : 'left'}
-							color={isUserMessage ? '#fff' : '#rgba(0, 0,0, 0.5)'}>
-							{message}
+							color={isUserMessage ? '#fff' : 'rgba(0, 0, 0, 0.5)'}>
+							{message.text}
 						</Text>
 					</Box>
 				)

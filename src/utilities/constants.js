@@ -1,11 +1,8 @@
 export const NAV_HEADER = [
 	{ to: '/', navName: 'Inicio' },
 	{ to: '/becas', navName: 'Becas' },
-	{ to: '/estadias', navName: 'Estadías' },
 	{ to: '/calendario', navName: 'Calendario' },
-	{ to: '/reinscripciones', navName: 'Reinscripciones' },
-	{ to: '/bolsa-de-trabajo', navName: 'Bolsa de trabajo' },
-	{ to: '/movilidad-estudiantil', navName: 'Movilidad estudiantil' }
+	{ to: '/bolsa-de-trabajo', navName: 'Bolsa de trabajo' }
 ]
 
 export const NAV_FOOTER = [

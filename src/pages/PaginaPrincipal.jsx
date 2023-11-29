@@ -1,4 +1,4 @@
-import { Image, Flex, Heading, Text, Box } from '@chakra-ui/react'
+import { Image, Flex, Heading, Text } from '@chakra-ui/react'
 import { Footer } from '../components/Footer.jsx'
 import { Header } from '../components/Header.jsx'
 import imgPrincipal from '../assets/paginaPrincipal.png'
@@ -6,6 +6,7 @@ import Autocomplete from '../components/Autocomplete.jsx'
 import { OPTIONS_AUTOCOMPLETE_PAGINA_P } from '../utilities/constants.js'
 import '../styles/card.css'
 import { MenuCircular } from '../components/MenuCirular.jsx'
+import { SpeechToText } from '../components/SpeechToText.jsx'
 
 export function PaginaPrincipal() {
 	const handleSelect = selectedOption => {
@@ -28,7 +29,7 @@ export function PaginaPrincipal() {
 					textAlign='center'>
 					¡Bienvenidos a la Universidad Tecnológica del Norte de Guanajuato!
 				</Heading>
-				{/* <SpeechToText /> */}
+				<SpeechToText />
 				<MenuCircular />
 				<form>
 					<Autocomplete
