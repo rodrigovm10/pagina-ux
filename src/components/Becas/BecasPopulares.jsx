@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Flex, Text, Circle, Tabs, TabList, Tab, TabPanels, TabPanel, useColorModeValue, Link } from '@chakra-ui/react';
+import { Box, Flex, Text, Circle, Tabs, TabList, Tab, TabPanels, TabPanel, useColorModeValue, Link, Button } from '@chakra-ui/react';
 import Slider from 'react-slick';
 
 import "slick-carousel/slick/slick.css";
@@ -41,10 +41,14 @@ const settings = {
 
   const ScholarshipCard = ({ title, description, dates, status, verMas }) => {
     return (
-      <Box borderWidth="1px" borderRadius="lg" overflow="hidden" p={4} m={2} maxW="sm" h="100%">
+      <Box borderWidth="1px" borderRadius="lg" overflow="hidden" p={4} m={2} w="300px" h="350px"> {/* Establece un ancho y una altura fijos */}
         <Text fontWeight="bold" isTruncated>{title}</Text>
-        <Text noOfLines={6} align="justify">{description}</Text>
-        <Link noOfLines={6} align="justify" href={verMas} target='_blank'>Ver mas</Link>
+        <Text noOfLines={6} align="justify" overflow="hidden">{description}</Text> {/* Trunca el texto y oculta el exceso */}
+        {verMas && (
+          <Button href={verMas} target='_blank' mt={3} colorScheme="green">
+            Ver más
+          </Button>
+        )}
         <Text fontSize="sm">Inscripciones: {dates}</Text>
         <Flex align="center" mt="auto">
           <Circle size="10px" bg={status === 'Abierta' ? 'green.500' : 'red.500'} mr={2} />
@@ -91,6 +95,12 @@ const Carousel = () => {
         dates: 'del 09/01/2024 al 10/01/2024',
         status: 'Próximamente',
     },
+    {
+      title: 'APOYO POR NECESIDAD APREMIANTE',
+      description: 'Consiste en la ministración mensual no reembolsable de una cantidad de dinero, a los alumnos con promedio mínimo de ocho y necesidad económica extrema que ponga en riesgo la continuidad de sus estudios en la Universidad.',
+      dates: 'del 09/01/2024 al 10/01/2024',
+      status: 'Próximamente',
+  },
   ];
 
   const scholarshipsSet3 = [
@@ -98,10 +108,12 @@ const Carousel = () => {
         title: 'PREPARATE JUVENTUDES',
         description: 'El Gobierno del Estado de Guanajuato a través del Instituto para el Desarrollo y Atención a las Juventudes del Estado de Guanajuato convoca a personas guanajuatenses interesadas en concluir sus estudios de Educación Media Superior a través de “Prepárate JuventudEsGTO”',
         dates: 'del 09/01/2023 al 31 /12/2023',
+        verMas: 'https://juventudesgto.guanajuato.gob.mx/wp-content/uploads/prepa_in.pdf',
         status: 'Abierta',
     },
     {
         title: 'MULTIPLICADORES DE LA PAZ “5TA. GENERACIÓN”',
+        description: 'El Gobierno del Estado de Guanajuato a través del Instituto para el Desarrollo y Atención a las Juventudes del Estado de Guanajuato convoca a personas guanajuatenses interesadas en concluir sus estudios de Educación Media Superior a través de “Prepárate JuventudEsGTO”',
         verMas: 'https://juventudesgto.guanajuato.gob.mx/wp-content/uploads/multiplicadores-de-la-paz-5ta-generacion.pdf',
         dates: 'del 09/01/2023 al 31 /12/2023',
         status: 'Abierta',
@@ -117,7 +129,6 @@ const Carousel = () => {
 
   return (
     <Box overflow="hidden" borderColor={borderColor}  p={8} m={4} >
-
       <Tabs index={tabIndex} onChange={setTabIndex} variant="soft-rounded" align="center" justify="center" colorScheme="green">
         <TabList borderBottom="1px solid" borderColor={borderColor} mb={2}>
           <Tab {...tabStyle}>Últimas becas</Tab>

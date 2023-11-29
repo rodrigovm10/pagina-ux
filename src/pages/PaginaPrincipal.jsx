@@ -7,6 +7,7 @@ import { OPTIONS_AUTOCOMPLETE_PAGINA_P } from '../utilities/constants.js'
 import '../styles/card.css'
 import { MenuCircular } from '../components/MenuCirular.jsx'
 import { SpeechToText } from '../components/SpeechToText.jsx'
+import Mapa from '../components/Mapas.js/Mapa.jsx'
 
 export function PaginaPrincipal() {
 	const handleSelect = selectedOption => {
@@ -84,14 +85,8 @@ export function PaginaPrincipal() {
 						<p className='text'>Honestidad</p>
 						<p className='text'>Respeto</p>
 					</div>
-					{/* <CardPPrincipal
-						wLg='15rem'
-						wMd='100%'
-						wBase='15rem'
-						title='Valores'
-						text={`Trabajo\nComunicación\nHonestidad\nRespeto`}
-					/> */}
 				</Flex>
+				<Mapa/>
 			</Flex>
 			<Footer />
 		</>
