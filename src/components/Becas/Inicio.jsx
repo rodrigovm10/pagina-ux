@@ -6,29 +6,26 @@ const ScholarshipBanner = () => {
   return (
     <SimpleGrid
           spacing={6}
-          templateColumns='repeat(auto-fill, minmax(500px, 1fr))'
+          templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(2, 1fr)" }}
           p='1rem'>
-          <>
-            <Image
-              w='full'
-              objectFit='cover'
-              borderRadius='1rem'
-              src={beca}
-              alt='Calendario UTNG'
-              className='zoom'
-            />
-          </>
+          <Image
+            w='full'
+            objectFit='cover'
+            borderRadius='1rem'
+            src={beca}
+            alt='Calendario UTNG'
+            className='zoom'
+          />
           <Card>
             <CardHeader>
               <Heading
-                size='2xl'
-                align='center'
-                justify='center'>
+                size={{ base: "xl", md: "2xl" }}
+                textAlign='center'>
                 Becas
               </Heading>
             </CardHeader>
             <CardHeader>
-              <Text textAlign='justify'>
+            <Text textAlign='justify'>
                 Las becas universitarias cumplen una función crucial en el mundo de la educación superior al desempeñar
                 múltiples roles interconectados. En primer lugar, actúan como un mecanismo efectivo para abrir las
                 puertas de la educación superior a una amplia variedad de estudiantes, independientemente de su
