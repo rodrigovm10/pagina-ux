@@ -332,9 +332,29 @@ function BolsaTrabajo() {
                     {selectedJob.contacto}
                   </Text>
                   <Text className="d-flex justify-content-center">
-                    <FaFacebook size={"30px"}/>
-                    <FaInstagram size={"30px"}/>
-                    <FaYoutube size={"30px"}/>
+                  <a
+                    href="https://www.facebook.com/profile.php?id=100064830062888"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                      <FaFacebook size={30} />
+                  </a>
+                  &nbsp;&nbsp;&nbsp;
+                  <a
+                    href="https://www.youtube.com/channel/UC5aD8RBROQYeDSIX54hjwBw"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaYoutube size={30} />
+                  </a>
+                  &nbsp;&nbsp;&nbsp;
+                  <a
+                    href="https://www.instagram.com/utngdoloreshidalgo_/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaInstagram size={30} />
+                  </a>
                   </Text>
                   {/* Agrega más detalles de la oferta si es necesario */}
                 </CardHeader>
