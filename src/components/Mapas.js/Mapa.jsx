@@ -35,28 +35,25 @@ export default function Mapa() {
     restriction: { latLngBounds: midpointDoloresVictoria },
     styles: mapStyles,
   };
-  
+
   return (
     <>
-    <Box overflow="hidden" p={8} m={4} >
-      <Heading
-					as='h1'
-					size={{ base: 'md', lg: 'xl' }}
-					textAlign='center'>
-					Nuestros Campus
-				</Heading>
-    </Box>
-    <LoadScript googleMapsApiKey={apiKey}>
-      <GoogleMap
-        mapContainerStyle={mapContainerStyle}
-        center={midpointDoloresVictoria}
-        zoom={10}
-        options={mapOptions}
-      >
-        <MarcadorUtngDh />
-        <MarcadorUtngVic />
-      </GoogleMap>
-    </LoadScript>
+      <Box overflow="hidden" p={8} m={4}>
+        <Heading as="h1" size={{ base: "md", lg: "xl" }} textAlign="center">
+          Nuestros Campus
+        </Heading>
+      </Box>
+      <LoadScript googleMapsApiKey={apiKey}>
+        <GoogleMap
+          mapContainerStyle={mapContainerStyle}
+          center={midpointDoloresVictoria}
+          zoom={10}
+          options={mapOptions}
+        >
+          <MarcadorUtngDh />
+          <MarcadorUtngVic />
+        </GoogleMap>
+      </LoadScript>
     </>
   );
 }
