@@ -1,4 +1,4 @@
-import { Image, Flex, Heading, Text, Box } from '@chakra-ui/react'
+import { Image, Flex, Heading, Text} from '@chakra-ui/react'
 import { Footer } from '../components/Footer.jsx'
 import { Header } from '../components/Header.jsx'
 import imgPrincipal from '../assets/paginaPrincipal.png'

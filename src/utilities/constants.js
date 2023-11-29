@@ -359,7 +359,24 @@ export const TEXTS_TO_SPEECH = {
 					En el lado derecho de la página, hay una sección titulada "Bienvenidos al Calendario Académico" con un texto de bienvenida que explica la utilidad del calendario para organizar actividades académicas y eventos universitarios. El texto mencionado es el siguiente: "En el lado derecho de la página, hay una sección titulada "Bienvenidos al Calendario Académico" con un texto de bienvenida que explica la utilidad del calendario para organizar actividades académicas y eventos universitarios. Se invita a los usuarios a consultar regularmente el calendario para estar informados sobre todas las actividades y plazos relevantes."
 					La parte inferior de la página detalla eventos específicos con sus fechas y actividades relacionadas, como la 'Feria de Empleo y Prácticas Profesionales' el 1 de noviembre y el 'Festival Cultural de Invierno' el 2 de noviembre, cada uno con una breve descripción de las actividades planeadas.
 
+					`,
+	'/becas': `
+	                Becas.
+					En la parte superior, se encuentra un menú de navegacion con una Imagen de la UTNG y opciones tales como Inicio, Becas, Estadias, Calendario, Reinscripciones y Movilidad estudantil, contenidas en una barra de color azul. 
+					Debajo del menu se encuentra una imagen  de lado izquierdo asociada a los estudiantes y las becas, al mismo nivel de la imagen, a la derecha se encuentar el titulo de Becas, seguido de la descripción de becas y su funcionamiento de como aplican. 
+					A continuación debajo de la imagen se encuntran tres targetas con imformación que te puede interesar referente a las becas, el primero referente a Apoyo alimenticio proporcionando informacion relacionada a la beca de apoyo alimenticio, asi como el tiempo restante para poder aplicar, contando con un boton resaltado en color verde y el texto desea aplicar, posicionado en la parte inferior de la informacion de la targeta Apoyo alimenticio.
+					La segunda targeta contienen información acerca de apoyos deportivos y culturales, con información referente a los apoyos deportivos y culturales, contiendo en la parte inferior de la targeta debajo de la información un boton con el texto Aplicar, resaltado en color verde. 
+					La tercera targeta contiene información acerca del Apoyo por necesidad apremiante, seguido de informacion relacionada con el apoyo descrito, en la parte inferior de la targeta resaltado en color verde se encuatra el boton con el texto Aplicar para el apoyo. 
+					Debajo de las tres targetas se encuentra el apartado de convocatorias y becas gubernamentales.  
+					 
+					`,
+    '/Bolsa de trabajo':  `
+	                Ofertas.
+					En la parte superior, se encuentra un menú de navegacion con una Imagen de la UTNG y opciones tales como Inicio, Becas, Estadias, Calendario, Reinscripciones y Movilidad estudantil, contenidas en una barra de color azul. 
+					Debajo del lado izquierdo se encuentra una peueña barra de búsqueda para introducir informacion relacionada con los trabajos, debajo de la barra de bús queda se listan los resultados de la búsqueda, permitiendo visualizar la información de los resultados al pulsar en cada resultado de la búsqueda.
+					Al lado de la barra de búsqueda,  a la derecha se encuentran a manera de targetas la información  relacionada con algunas ofertas de trabajo, permitiendo visualizar la información en cada una de las targetas para ver a detalle la informacion referente, de igual manera se listan en targetas los resulatdos de información ingresada en la barra de búsqueda, adicienando en cada targeta correspondiente a la oferta de trabajo sus redes sociles. 
 					`
+
 }
 
 export const ANSWERES_RESPONSES = [
