@@ -22,6 +22,7 @@ export const MenuCircular = () => {
       position="fixed"
       textAlign="center"
       mt="10"
+      zIndex={100}
     >
       <Box onClick={handleToggle}>
         <Speaker />

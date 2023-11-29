@@ -154,11 +154,10 @@ export function Calendario() {
   return (
     <>
       <Header />
+      <SpeechToText />
+      <MenuCircular />
       <Box p="2rem">
-        <SpeechToText />
-        <MenuCircular />
         <InputGroup>
-          <InputLeftElement pointerEvents="none" />
           <Input
             placeholder="Buscar evento..."
             value={searchTerm}

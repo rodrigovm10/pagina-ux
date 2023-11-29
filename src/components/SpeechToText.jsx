@@ -16,6 +16,7 @@ export const SpeechToText = () => {
     <Box>
       <Button
         position="fixed"
+        zIndex={100}
         top={40}
         right="4"
         leftIcon={<MdMic color={isListening ? "black" : "blue"} size="24px" />}
