@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/react'
+import { Box, IconButton } from '@chakra-ui/react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import { TextToSpeech } from './TextToSpeech'
@@ -16,15 +16,22 @@ export const MenuCircular = () => {
 
 	return (
 		<Box
-			right='3'
-			top={20}
-			cursor='pointer'
 			position='fixed'
-			textAlign='center'
-			mt='10'>
-			<Box onClick={handleToggle}>
-				<Speaker />
-			</Box>
+			right='1'
+			top='6rem' // Ajustado para que no dependa del margin-top
+			zIndex={100}
+			cursor='pointer'>
+			<IconButton
+				aria-label='Toggle menu'
+				icon={<Speaker />}
+				isRound={true}
+				size='lg'
+				onClick={handleToggle}
+				backgroundColor='#00259A'
+				color='gray.200'
+				_hover={{ bg: 'gray.500' }}
+				boxShadow='0px 4px 10px rgba(0, 0, 0, 0.2)'
+			/>
 
 			<AnimatePresence>
 				{isOpen && (
@@ -44,3 +51,47 @@ export const MenuCircular = () => {
 		</Box>
 	)
 }
+
+/*   return (
+    <Box
+      position="fixed"
+      right="12"
+      top="5rem" // Ajustado para que no dependa del margin-top
+      zIndex={100}
+      cursor="pointer"
+    >
+      <IconButton
+        aria-label="Toggle menu"
+        icon={<Speaker />}
+        isRound={true}
+        size="lg"
+        onClick={handleToggle}
+        backgroundColor="white"
+        color="gray.600"
+        _hover={{ bg: "gray.100" }}
+        boxShadow="0px 4px 10px rgba(0, 0, 0, 0.2)"
+      />
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.7 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.7 }}
+            transition={{ duration: 0.2 }}
+            style={{ position: "absolute", top: "100%", left: "50%", transform: "translateX(-50%)" }}
+          >
+            <Box
+              mt="4"
+              p="4"
+              bg="white"
+              borderRadius="lg"
+              boxShadow="md"
+            >
+              <TextToSpeech text={TEXTS_TO_SPEECH[location.pathname]} />
+            </Box>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </Box>
+  ); */

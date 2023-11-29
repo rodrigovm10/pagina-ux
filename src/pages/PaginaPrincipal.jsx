@@ -8,6 +8,7 @@ import '../styles/card.css'
 import { MenuCircular } from '../components/MenuCirular.jsx'
 import { SpeechToText } from '../components/SpeechToText.jsx'
 import { CardPPrincipal } from '../components/CardPPrincipal.jsx'
+import Mapa from '../components/Mapas.js/Mapa.jsx'
 
 export function PaginaPrincipal() {
 	const handleSelect = selectedOption => {
@@ -92,6 +93,7 @@ export function PaginaPrincipal() {
 						text5='Respeto'
 					/>
 				</Flex>
+				<Mapa />
 			</Flex>
 			<Footer />
 		</>
