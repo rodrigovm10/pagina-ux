@@ -1,16 +1,19 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Input, Box, Text, List, ListItem } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 
 const Autocomplete = ({ options, onSelect }) => {
   const [query, setQuery] = useState("");
   const [filteredOptions, setFilteredOptions] = useState([]);
+  const [selectedIndex, setSelectedIndex] = useState(-1);
   const [showOptions, setShowOptions] = useState(true);
   const navigate = useNavigate();
+  const listRef = useRef(null);
 
   const handleInputChange = (event) => {
     const inputValue = event.target.value;
     setQuery(inputValue);
+    setSelectedIndex(-1);
 
     if (inputValue.trim() === "") {
       setShowOptions(false);
@@ -31,6 +34,19 @@ const Autocomplete = ({ options, onSelect }) => {
     setShowOptions(false);
   };
 
+  const handleKeyDown = (event) => {
+    if (
+      event.key === "ArrowDown" &&
+      selectedIndex < filteredOptions.length - 1
+    ) {
+      setSelectedIndex(selectedIndex + 1);
+    } else if (event.key === "ArrowUp" && selectedIndex > 0) {
+      setSelectedIndex(selectedIndex - 1);
+    } else if (event.key === "Enter" && selectedIndex !== -1) {
+      handleSelectOption(filteredOptions[selectedIndex]);
+    }
+  };
+
   useEffect(() => {
     let timer;
     if (query === "") {
@@ -41,6 +57,13 @@ const Autocomplete = ({ options, onSelect }) => {
 
     return () => clearTimeout(timer);
   }, [query]);
+
+  useEffect(() => {
+    if (selectedIndex >= 0 && listRef.current) {
+      const selectedElement = listRef.current.children[selectedIndex];
+      selectedElement.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+  }, [selectedIndex]);
 
   return (
     <Box position="relative">
@@ -53,6 +76,7 @@ const Autocomplete = ({ options, onSelect }) => {
         w="70vw"
         value={query}
         onChange={handleInputChange}
+        onKeyDown={handleKeyDown}
         placeholder="Buscar..."
       />
       {showOptions && filteredOptions.length > 0 && (
@@ -64,14 +88,16 @@ const Autocomplete = ({ options, onSelect }) => {
           boxShadow="md"
           backgroundColor="white"
           zIndex={1}
+          ref={listRef}
         >
-          {filteredOptions.map((option) => (
+          {filteredOptions.map((option, index) => (
             <ListItem
               key={option.id}
               onClick={() => handleSelectOption(option)}
               cursor="pointer"
               _hover={{ bg: "blue.100" }}
               p={1}
+              bg={selectedIndex === index ? "gray.100" : undefined}
             >
               <Text>{option.text}</Text>
             </ListItem>
