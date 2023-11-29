@@ -1,24 +1,31 @@
-import {  Input, Flex, Heading, Text, Box, Card, CardHeader,Button} from "@chakra-ui/react";
+import {
+  Input,
+  Flex,
+  Heading,
+  Text,
+  Box,
+  Card,
+  CardHeader,
+  Button,
+} from "@chakra-ui/react";
 import { FaFacebook, FaYoutube, FaInstagram, FaTimes } from "react-icons/fa";
 
 import { GiEagleHead } from "react-icons/gi";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { useEffect, useState } from "react";
+import { MenuCircular } from "../components/MenuCirular.jsx";
+import { SpeechToText } from "../components/SpeechToText.jsx";
 
-import { ListItem, UnorderedList } from '@chakra-ui/react'
-
-
+import { ListItem, UnorderedList } from "@chakra-ui/react";
 
 function BolsaTrabajo() {
-
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredJobs, setFilteredJobs] = useState([]);
   const [isEditing, setisEditing] = useState(true);
   const [selectedJob, setSelectedJob] = useState(null);
   const [showMessage, setShowMessage] = useState(true);
   const [numJobs, setnumJobs] = useState("");
-
 
   const jobs = [
     {
@@ -50,15 +57,15 @@ function BolsaTrabajo() {
       description: "Puesto de asistente administrativo medio tiempo",
       image: "/src/assets/chambaaa.jpg",
       pago: "7,000-9,000/Mes",
-      ubicacion:
-        "Avenida Principal 123, Colonia Centro, 37000 León, Gto.",
+      ubicacion: "Avenida Principal 123, Colonia Centro, 37000 León, Gto.",
       contacto: "rrhh@empresa.com",
       horario: "Medio tiempo de 9 am - 2 pm. Lunes a Viernes",
     },
     {
       id: 4,
       title: "Tutor de Matemáticas",
-      description: "Puesto de tutor de matemáticas para estudiantes de secundaria",
+      description:
+        "Puesto de tutor de matemáticas para estudiantes de secundaria",
       image: "/src/assets/chambaaa.jpg",
       pago: "150-200/Hora",
       ubicacion:
@@ -113,7 +120,8 @@ function BolsaTrabajo() {
       description: "Puesto de asistente de marketing medio tiempo",
       image: "/src/assets/chambaaa.jpg",
       pago: "6,000-8,000/Mes",
-      ubicacion: "Plaza Marketing 10, Colonia Publicidad, 37500 Guanajuato, Gto.",
+      ubicacion:
+        "Plaza Marketing 10, Colonia Publicidad, 37500 Guanajuato, Gto.",
       contacto: "marketing@empresa.com",
       horario: "Medio tiempo de 9 am - 2 pm. Lunes a Viernes",
     },
@@ -123,24 +131,28 @@ function BolsaTrabajo() {
       description: "Puesto de repartidor de alimentos para restaurante",
       image: "/src/assets/chambaaa.jpg",
       pago: "100-150/Pedido",
-      ubicacion: "Calle Repartición 789, Colonia Comida Rápida, 37800 Dolores, Gto.",
+      ubicacion:
+        "Calle Repartición 789, Colonia Comida Rápida, 37800 Dolores, Gto.",
       contacto: "delivery@restaurante.com",
       horario: "Medio tiempo, turnos flexibles",
     },
     {
       id: 11,
       title: "Diseñador Gráfico Junior",
-      description: "Posición para un diseñador gráfico junior en una agencia creativa.",
+      description:
+        "Posición para un diseñador gráfico junior en una agencia creativa.",
       image: "/src/assets/chambaaa.jpg",
       pago: "8,000-10,000/Mes",
-      ubicacion: "Calle Creativa 123, Colonia Arte, 38000 Ciudad Creativa, Gto.",
+      ubicacion:
+        "Calle Creativa 123, Colonia Arte, 38000 Ciudad Creativa, Gto.",
       contacto: "design@agenciacreativa.com",
       horario: "Tiempo completo de 9 am - 6 pm. Lunes a Viernes",
     },
     {
       id: 12,
       title: "Asistente de Marketing Digital",
-      description: "Puesto de asistente de marketing digital en una empresa de tecnología.",
+      description:
+        "Puesto de asistente de marketing digital en una empresa de tecnología.",
       image: "/src/assets/chambaaa.jpg",
       pago: "7,000-9,000/Mes",
       ubicacion: "Avenida Digital 456, Colonia Tech, 37000 Ciudad Tecno, Gto.",
@@ -150,20 +162,24 @@ function BolsaTrabajo() {
     {
       id: 13,
       title: "Repartidor de Alimentos",
-      description: "Posición para repartir alimentos a domicilio en una cadena de restaurantes.",
+      description:
+        "Posición para repartir alimentos a domicilio en una cadena de restaurantes.",
       image: "/src/assets/chambaaa.jpg",
       pago: "5,000-7,000/Mes + bonos por entrega",
-      ubicacion: "Calle de la Entrega 789, Colonia Comida, 37500 Ciudad Entregas, Gto.",
+      ubicacion:
+        "Calle de la Entrega 789, Colonia Comida, 37500 Ciudad Entregas, Gto.",
       contacto: "delivery@restaurantes.com",
       horario: "Tiempo parcial con horario flexible",
     },
     {
       id: 14,
       title: "Profesor de Idiomas",
-      description: "Puesto de profesor de idiomas para enseñar inglés a jóvenes y adultos.",
+      description:
+        "Puesto de profesor de idiomas para enseñar inglés a jóvenes y adultos.",
       image: "/src/assets/chambaaa.jpg",
       pago: "200-300/Hora",
-      ubicacion: "Calle del Idioma 567, Colonia Bilingüe, 38050 Ciudad Idiomática, Gto.",
+      ubicacion:
+        "Calle del Idioma 567, Colonia Bilingüe, 38050 Ciudad Idiomática, Gto.",
       contacto: "idiomas@academiadeidiomas.com",
       horario: "Clases particulares, horario a convenir",
     },
@@ -173,7 +189,8 @@ function BolsaTrabajo() {
       description: "Posición para atención al cliente en una tienda de retail.",
       image: "/src/assets/chambaaa.jpg",
       pago: "6,000-8,000/Mes",
-      ubicacion: "Boulevard del Cliente 890, Colonia Retail, 37060 Ciudad Servicio, Gto.",
+      ubicacion:
+        "Boulevard del Cliente 890, Colonia Retail, 37060 Ciudad Servicio, Gto.",
       contacto: "atencion@tiendaretail.com",
       horario: "Tiempo completo con turnos rotativos",
     },
@@ -200,7 +217,7 @@ function BolsaTrabajo() {
   };
   const handleJobClick = (job) => {
     console.log(`Clic en oferta de trabajo: ${job.title}`);
-    setSelectedJob(job); 
+    setSelectedJob(job);
     setShowMessage(false);
   };
 
@@ -210,10 +227,10 @@ function BolsaTrabajo() {
   };
 
   useEffect(() => {
-    const conteo = jobs.length;  
-    setnumJobs(conteo)
-  }, [jobs])
-  
+    const conteo = jobs.length;
+    setnumJobs(conteo);
+  }, [jobs]);
+
   return (
     <>
       <Header />
@@ -224,6 +241,8 @@ function BolsaTrabajo() {
         p="6"
         style={{ backgroundColor: "#ffffff" }}
       >
+        <SpeechToText />
+        <MenuCircular />
         {/* Parte izquierda con campo de búsqueda */}
         <Box
           flex={{ base: "1", md: "0 0 350px" }}
@@ -231,7 +250,11 @@ function BolsaTrabajo() {
           mt={{ base: "4", md: "0" }}
           ml={"4rem"}
           mr={"4rem"}
-          style={{ backgroundColor: "#ffffff", overflow: "auto" , maxHeight: "calc(100vh - 50px)"}}
+          style={{
+            backgroundColor: "#ffffff",
+            overflow: "auto",
+            maxHeight: "calc(100vh - 50px)",
+          }}
         >
           <Input
             _hover={{ border: "2px solid #0B2447" }}
@@ -244,50 +267,51 @@ function BolsaTrabajo() {
             onChange={handleInputChange}
           />
           <Box mt="4" p="2" border="1px" borderColor="gray.200">
-            Lista de resultados  ({numJobs})
+            Lista de resultados ({numJobs})
           </Box>
           {isEditing ? <></> : <></>}
           {/* Mostrar trabajos en la lista de resultados */}
           <UnorderedList>
-          {filteredJobs.length > 0
-           ? filteredJobs.map((job) => (
-            <>
-            <ListItem>
-            <Box
-              key={job.id}
-              p="4"
-              borderBottom="1px"
-              borderColor="gray.200"
-              onClick={() => handleJobClick(job)}
-              cursor="pointer"
-            >
-              <Heading as="h3" size="md" mb="2">
-                {job.title}
-              </Heading>
-              <Text fontSize="sm">{job.description}</Text>
-            </Box>
-            </ListItem>
-            </>
-          )):( jobs.map((job) => (
-            <>
-           <ListItem>
-             <Box
-              key={job.id}
-              p="4"
-              borderBottom="1px"
-              borderColor="gray.200"
-              onClick={() => handleJobClick(job)}
-              cursor="pointer"
-            >
-              <Heading as="h3" size="md" mb="2">
-                {job.title}
-              </Heading>
-              <Text fontSize="sm">{job.description}</Text>
-            </Box>
-            </ListItem>
-            </>
-          )))}
-        </UnorderedList>
+            {filteredJobs.length > 0
+              ? filteredJobs.map((job) => (
+                  <>
+                    <ListItem>
+                      <Box
+                        key={job.id}
+                        p="4"
+                        borderBottom="1px"
+                        borderColor="gray.200"
+                        onClick={() => handleJobClick(job)}
+                        cursor="pointer"
+                      >
+                        <Heading as="h3" size="md" mb="2">
+                          {job.title}
+                        </Heading>
+                        <Text fontSize="sm">{job.description}</Text>
+                      </Box>
+                    </ListItem>
+                  </>
+                ))
+              : jobs.map((job) => (
+                  <>
+                    <ListItem>
+                      <Box
+                        key={job.id}
+                        p="4"
+                        borderBottom="1px"
+                        borderColor="gray.200"
+                        onClick={() => handleJobClick(job)}
+                        cursor="pointer"
+                      >
+                        <Heading as="h3" size="md" mb="2">
+                          {job.title}
+                        </Heading>
+                        <Text fontSize="sm">{job.description}</Text>
+                      </Box>
+                    </ListItem>
+                  </>
+                ))}
+          </UnorderedList>
         </Box>
 
         {/* Parte derecha */}
@@ -299,17 +323,27 @@ function BolsaTrabajo() {
           ml={"2rem"}
           style={{ backgroundColor: "#ffffff" }}
         >
-          <div style={{ textAlign: 'center' }} >
-            {selectedJob ? ( 
-              <Card boxShadow='2xl' maxW={{ base: '55%', md: 'full', lg: 'full' }} mt={"1rem"} key={selectedJob.id}>
+          <div style={{ textAlign: "center" }}>
+            {selectedJob ? (
+              <Card
+                boxShadow="2xl"
+                maxW={{ base: "55%", md: "full", lg: "full" }}
+                mt={"1rem"}
+                key={selectedJob.id}
+              >
                 <CardHeader>
-                  <Heading size='md' mb='1rem'>
+                  <Heading size="md" mb="1rem">
                     {selectedJob.title}
                   </Heading>
-                  <Button onClick={handleClose} position="absolute"
-                  top={"0"}
-                  right={"0"}
-                  m={"0.5rem"}><FaTimes/></Button>
+                  <Button
+                    onClick={handleClose}
+                    position="absolute"
+                    top={"0"}
+                    right={"0"}
+                    m={"0.5rem"}
+                  >
+                    <FaTimes />
+                  </Button>
                   <Text justifyContent={"end"}>
                     <span style={{ fontWeight: 700 }}>Horario: </span>
                     {selectedJob.horario}
@@ -331,42 +365,48 @@ function BolsaTrabajo() {
                     {selectedJob.contacto}
                   </Text>
                   <Text className="d-flex justify-content-center">
-                  <a
-                    href="https://www.facebook.com/profile.php?id=100064830062888"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                    <a
+                      href="https://www.facebook.com/profile.php?id=100064830062888"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <FaFacebook size={30} />
-                  </a>
-                  &nbsp;&nbsp;&nbsp;
-                  <a
-                    href="https://www.youtube.com/channel/UC5aD8RBROQYeDSIX54hjwBw"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaYoutube size={30} />
-                  </a>
-                  &nbsp;&nbsp;&nbsp;
-                  <a
-                    href="https://www.instagram.com/utngdoloreshidalgo_/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaInstagram size={30} />
-                  </a>
+                    </a>
+                    &nbsp;&nbsp;&nbsp;
+                    <a
+                      href="https://www.youtube.com/channel/UC5aD8RBROQYeDSIX54hjwBw"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FaYoutube size={30} />
+                    </a>
+                    &nbsp;&nbsp;&nbsp;
+                    <a
+                      href="https://www.instagram.com/utngdoloreshidalgo_/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FaInstagram size={30} />
+                    </a>
                   </Text>
                   {/* Agrega más detalles de la oferta si es necesario */}
                 </CardHeader>
               </Card>
-            ) : showMessage && (
-              <>
-                <Heading as="h4" size="15rem">Encontramos estas vacantes de acuerdo a tu búsqueda</Heading>
-                <Heading as="h5" size="sm">Selecciona una de la lista para visualizar su información.</Heading>
-                <div style={{ display: 'flex', justifyContent: 'center' }}>
-                  <GiEagleHead size={"15rem"} />
-                </div>
-              </>
-            )}   
+            ) : (
+              showMessage && (
+                <>
+                  <Heading as="h4" size="15rem">
+                    Encontramos estas vacantes de acuerdo a tu búsqueda
+                  </Heading>
+                  <Heading as="h5" size="sm">
+                    Selecciona una de la lista para visualizar su información.
+                  </Heading>
+                  <div style={{ display: "flex", justifyContent: "center" }}>
+                    <GiEagleHead size={"15rem"} />
+                  </div>
+                </>
+              )
+            )}
           </div>
         </Flex>
       </Flex>

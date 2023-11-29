@@ -19,7 +19,8 @@ import { Footer } from "../components/Footer.jsx";
 import { Header } from "../components/Header.jsx";
 import { CARDS_CALENDAR } from "../utilities/constants.js";
 import { CardCalendario } from "./CardCalendario.jsx";
-import { Search } from "../assets/Icons.jsx";
+import { MenuCircular } from "../components/MenuCirular.jsx";
+import { SpeechToText } from "../components/SpeechToText.jsx";
 import Calendar from "react-calendar";
 import { createGlobalStyle } from "styled-components";
 
@@ -154,6 +155,8 @@ export function Calendario() {
     <>
       <Header />
       <Box p="2rem">
+        <SpeechToText />
+        <MenuCircular />
         <InputGroup>
           <InputLeftElement pointerEvents="none" />
           <Input
@@ -161,6 +164,12 @@ export function Calendario() {
             value={searchTerm}
             onChange={handleSearchChange}
             mb="2rem"
+            w={["83%", "87%", "90%", "90%", "95%"]}
+            templateColumns={{
+              base: "repeat(2, 1fr)",
+              md: "repeat(3, 1fr)",
+              lg: "repeat(6, 1fr)",
+            }}
             _hover={{ border: "2px solid #0B2447" }}
             borderRadius="0"
             border="2px solid #0B2447"
