@@ -23,6 +23,91 @@ export function useChat() {
 			return
 		}
 
+		if (/d[oó]nde.*est[aá]n.*las.*las becas/i.test(lastMessage) && lastIsUser) {
+			setMessages(prevMessages => [
+				...prevMessages,
+				{
+					text: `Las becas las puedes encontrar en el apartado de Becas dentro de la página, dirigite a la barra de navegación y busca el apartado "Becas", da clic y ahí encontrarás todas la información.
+					Si tienes alguna otra duda, no dudes en hacerla.`,
+					isUser: false
+				}
+			])
+			return
+		}
+
+		if (/d[oó]nde.*ver.*resultados.*becas/i.test(lastMessage) && lastIsUser) {
+			setMessages(prevMessages => [
+				...prevMessages,
+				{
+					text: `Los resultados de las becas puedes consultarlo con alguno de los asesores de las becas, para poder contactar con ellos dentro del centro de ayuda, busca el apartado que tiene como título "Becas" y da clic en la subsección que tiene como nombre "Asesores en el área de becas".
+					Si tienes alguna otra duda, no dudes en hacerla.`,
+					isUser: false
+				}
+			])
+			return
+		}
+
+		if (
+			(/d[oó]nde.*est[aá]n.*las.*ofertas laborales/i.test(lastMessage) && lastIsUser) ||
+			(/d[oó]nde.*est[aá]n.*las.*ofertas de trabajo/i.test(lastMessage) && lastIsUser)
+		) {
+			setMessages(prevMessages => [
+				...prevMessages,
+				{
+					text: `Las ofertas laborales las puedes encontrar en el apartado de bolsa de trabajo dentro de la página, dirigite a la barra de navegación busca el apartado "Bolsa de trabajo", da clic y ahí encontrarás todas la información.
+					Si tienes alguna otra duda, no dudes en hacerla.`,
+					isUser: false
+				}
+			])
+			return
+		}
+
+		if (/dd[oó]nde.*est[aá].*el.*bolsa de trabajo/i.test(lastMessage) && lastIsUser) {
+			setMessages(prevMessages => [
+				...prevMessages,
+				{
+					text: `La bolsa de trabajo la puedes encontrar en el apartado de bolsa de trabajo dentro de la página, dirigite a la barra de navegación busca el apartado "Bolsa de trabajo", da clic y ahí encontrarás todas la información.
+					Si tienes alguna otra duda, no dudes en hacerla.`,
+					isUser: false
+				}
+			])
+			return
+		}
+
+		if (/d[oó]nde.*est[aá].*el.*calendario/i.test(lastMessage) && lastIsUser) {
+			setMessages(prevMessages => [
+				...prevMessages,
+				{
+					text: `El calendario lo puedes encontrar en el apartado de calendario dentro de la página, dirigite a la barra de navegación busca el apartado "Calendario", da clic y ahí encontrarás toda la información. Si tienes alguna otra duda, no dudes en hacerla.`,
+					isUser: false
+				}
+			])
+			return
+		}
+
+		if (/d[oó]nde.*est[aá].*el.*centro de ayuda/i.test(lastMessage) && lastIsUser) {
+			setMessages(prevMessages => [
+				...prevMessages,
+				{
+					text: `Justo ahora te encuentras en el centro de ayuda.
+					Si tienes alguna otra duda, no dudes en hacerla.`,
+					isUser: false
+				}
+			])
+			return
+		}
+
+		if (lastMessage.includes('nada') && lastIsUser) {
+			setMessages(prevMessages => [
+				...prevMessages,
+				{
+					text: `No hay problema si no tienes ninuguna duda o pregunta. En caso de que en algún momento tengas una no dudes en hacerla.`,
+					isUser: false
+				}
+			])
+			return
+		}
+
 		if (lastMessage.includes('centro de ayuda') && lastIsUser) {
 			setMessages(prevMessages => [
 				...prevMessages,
@@ -41,6 +126,28 @@ export function useChat() {
 				{
 					text: `Dentro del calendario podrás encontrar todo tipo de eventos que sucedan en la UTNG, separado por mes.
 					Si tienes alguna otra duda, no dudes en hacerla.`,
+					isUser: false
+				}
+			])
+			return
+		}
+
+		if (lastMessage.includes('bolsa de trabajo') && lastIsUser) {
+			setMessages(prevMessages => [
+				...prevMessages,
+				{
+					text: `Dentro de la bolsa de trabajo podrás encontrar ofertas de empleo que algunas de las empresas asociadas a la UTNG publican. Echa un vistazo y ve si tu perfil califica a las vacantes. Si tienes alguna otra duda, no dudes en hacerla.`,
+					isUser: false
+				}
+			])
+			return
+		}
+
+		if (lastMessage.includes('becas') && lastIsUser) {
+			setMessages(prevMessages => [
+				...prevMessages,
+				{
+					text: `Dentro de las becas pordrás ver las que estan disponibles dentro de la UTNG, revisa bien las fechas para que no te pierdas de ninuguna. Si tienes alguna otra duda, no dudes en hacerla.`,
 					isUser: false
 				}
 			])
