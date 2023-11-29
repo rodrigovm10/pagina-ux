@@ -1,7 +1,7 @@
 import React from "react";
 import { GoogleMap, LoadScript } from "@react-google-maps/api";
 import { MarcadorUtngDh, MarcadorUtngVic } from "./MarcadorUtng";
-import { Box, Heading, Tabs } from "@chakra-ui/react";
+import { Box, Heading } from "@chakra-ui/react";
 
 const mapContainerStyle = {
   height: "60vh",
