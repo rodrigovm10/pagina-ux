@@ -218,6 +218,7 @@ function BolsaTrabajo() {
     <>
       <Header />
       <Flex
+        minHeight="100vh"
         direction={{ base: "column", md: "row" }}
         justifyContent="center"
         p="6"
@@ -230,7 +231,7 @@ function BolsaTrabajo() {
           mt={{ base: "4", md: "0" }}
           ml={"4rem"}
           mr={"4rem"}
-          style={{ backgroundColor: "#ffffff", overflow: "auto" , maxHeight: "calc(100vh - 200px)"}}
+          style={{ backgroundColor: "#ffffff", overflow: "auto" , maxHeight: "calc(100vh - 50px)"}}
         >
           <Input
             _hover={{ border: "2px solid #0B2447" }}
