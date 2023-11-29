@@ -14,6 +14,7 @@ import { HamburgerIcon } from '@chakra-ui/icons'
 import logo from '../assets/logoutng.webp'
 import { NAV_HEADER } from '../utilities/constants'
 import { Link, useLocation } from 'react-router-dom'
+import { MenuCircular } from './MenuCirular'
 import '../styles/animations.css'
 
 export function Header() {

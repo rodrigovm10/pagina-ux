@@ -23,7 +23,55 @@ export function useChat() {
 			return
 		}
 
-		if (/d[oó]nde.*est[aá]n.*las.*las becas/i.test(lastMessage) && lastIsUser) {
+		if (
+			(/d[oó]nde.*encuentro.*informaci[oó]n.*titulaci[oó]n/i.test(lastMessage) && lastIsUser) ||
+			(/d[oó]nde.*hay.*informaci[oó]n.*titulaci[oó]n/i.test(lastMessage) && lastIsUser) ||
+			(/d[oó]nde.*ver.*informaci[oó]n.*titulaci[oó]n/i.test(lastMessage) && lastIsUser)
+		) {
+			setMessages(prevMessages => [
+				...prevMessages,
+				{
+					text: `Para ver información sobre la titulación es dentro del centro de ayuda, busca el apartado de "Titulación", y ahí encontrarás más acerca de la titulación. En caso de requerir información extra contactate con el asesor de la titulación.
+					Si tienes alguna otra duda, no dudes en hacerla.`,
+					isUser: false
+				}
+			])
+			return
+		}
+
+		if (
+			(/d[oó]nde.*encuentro.*informaci[oó]n.*becas/i.test(lastMessage) && lastIsUser) ||
+			(/d[oó]nde.*hay.*informaci[oó]n.*becas/i.test(lastMessage) && lastIsUser) ||
+			(/d[oó]nde.*ver.*informaci[oó]n.*becas/i.test(lastMessage) && lastIsUser)
+		) {
+			setMessages(prevMessages => [
+				...prevMessages,
+				{
+					text: `Para ver información sobre las becas puedes dirigirte a la página de becas o dentro del centro de ayuda. En caso de requerir información extra contactate con el asesor de las becas.
+					Si tienes alguna otra duda, no dudes en hacerla.`,
+					isUser: false
+				}
+			])
+			return
+		}
+
+		if (
+			(/d[oó]nde.*encuentro.*informaci[oó]n.*movilidad estudiantil/i.test(lastMessage) && lastIsUser) ||
+			(/d[oó]nde.*hay.*informaci[oó]n.*movilidad estudiantil/i.test(lastMessage) && lastIsUser) ||
+			(/d[oó]nde.*ver.*informaci[oó]n.*movilidad estudiantil/i.test(lastMessage) && lastIsUser)
+		) {
+			setMessages(prevMessages => [
+				...prevMessages,
+				{
+					text: `Para ver información sobre las becas puedes dirigirte a la página de becas o dentro del centro de ayuda. En caso de requerir información extra contactate con el asesor de las becas.
+					Si tienes alguna otra duda, no dudes en hacerla.`,
+					isUser: false
+				}
+			])
+			return
+		}
+
+		if (/d[oó]nde.*est[aá]n.*las.*becas/i.test(lastMessage) && lastIsUser) {
 			setMessages(prevMessages => [
 				...prevMessages,
 				{

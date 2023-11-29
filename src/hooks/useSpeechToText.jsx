@@ -3,23 +3,34 @@ import { useRedirection } from './useRedirection'
 
 export function useSpeechToText() {
 	const [text, setText] = useState('')
+	const [isListening, setIsListening] = useState(false)
 	const { redirectWithVoice } = useRedirection()
-	const recognition = new window.webkitSpeechRecognition() || new window.SpeechRecognition()
-
-	// recognition.continuous = true
-	// recognition.lang = 'es-ES'
-	// recognition.interimResult = false
+	const recognition = new (window.webkitSpeechRecognition || window.SpeechRecognition)()
 
 	const listenToVoice = () => {
 		recognition.lang = 'es-ES'
 
+		recognition.onstart = () => {
+			setIsListening(true)
+		}
+
 		recognition.onresult = event => {
 			const command = event.results[0][0].transcript.toLowerCase()
-			setText(text)
+			setText(command)
 			redirectWithVoice(command)
 		}
+
+		recognition.onend = () => {
+			setIsListening(false)
+		}
+
 		recognition.start()
 	}
 
-	return { text, listenToVoice }
+	const stopListening = () => {
+		recognition.stop()
+		setIsListening(false)
+	}
+
+	return { text, listenToVoice, isListening, stopListening }
 }

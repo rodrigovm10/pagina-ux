@@ -6,6 +6,7 @@ import { Footer } from '../components/Footer.jsx'
 import { Header } from '../components/Header.jsx'
 import { CardInfoCentroAyuda } from '../components/CardInfoCentroAyuda.jsx'
 import { MenuCircular } from '../components/MenuCirular.jsx'
+import { SpeechToText } from '../components/SpeechToText.jsx'
 
 export function CentroAyuda() {
 	const { isOpen, handleClickOpen } = useOpenChat()
@@ -24,6 +25,7 @@ export function CentroAyuda() {
 					mb='2rem'>
 					<CardInfoCentroAyuda />
 					<MenuCircular />
+					<SpeechToText />
 					<Box
 						position={'fixed'}
 						bottom={0}

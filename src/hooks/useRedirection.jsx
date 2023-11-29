@@ -8,8 +8,12 @@ export function useRedirection() {
 			'bolsa de trabajo': '/bolsa-de-trabajo',
 			'centro de ayuda': '/centro-de-ayuda',
 			calendario: '/calendario',
-			'pagina principal': '/'
+			'pagina principal': '/',
+			'página principal': '/',
+			incio: '/'
 		}
+
+		console.log(text)
 
 		for (const [keyword, route] of Object.entries(keywordToRoute)) {
 			if (text.includes(keyword)) {

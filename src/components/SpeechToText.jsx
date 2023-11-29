@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { IconButton, Tooltip, useToast } from "@chakra-ui/react";
 import { MdMic, MdMicOff } from "react-icons/md";
 import { useSpeechToText } from "../hooks/useSpeechToText";
