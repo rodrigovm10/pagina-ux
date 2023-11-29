@@ -2,7 +2,6 @@ import { Box, Flex, Icon, Image, Link, Text } from "@chakra-ui/react"
 
 import { MdPhone } from 'react-icons/md';
 
-
 import logo from '../../assets/logoutng.webp';
 
 export const Contacto = () => {

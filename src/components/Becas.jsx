@@ -409,33 +409,6 @@ function Becas() {
             </Modal.Footer>
           </Modal>
         </SimpleGrid>
-        {/* Card de becas externas */}
-        <Box
-          bg='gray.200'
-          p={5}>
-          <Text
-            fontSize='xl'
-            mb={5}>
-            Convocatorias y becas gubernamentales
-          </Text>
-          <SimpleGrid
-            columns={[1, null, 3]}
-            spacing={5}>
-            {cardsData.map((card, index) => (
-              <Box
-                key={index}
-                borderWidth='1px'
-                borderRadius='lg'
-                overflow='hidden'
-                p={5}
-                bg='white'>
-                <Text textAlign='center'>{card.title}</Text>
-              </Box>
-            ))}
-          </SimpleGrid>
-        </Box>
-        <br />
-        
       </Box>
       <Footer />
     </>
