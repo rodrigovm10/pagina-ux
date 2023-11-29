@@ -1,5 +1,5 @@
 import { Button, Flex, Heading, Image, Stack, Text } from '@chakra-ui/react'
-import centroAyuda from '../assets/centro-ayuda.jpg'
+import centroAyuda from '../assets/centro-ayudaa.jpg'
 
 export function CardCentroAyuda({ handleClickOpen }) {
 	return (

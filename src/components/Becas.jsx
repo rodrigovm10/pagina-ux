@@ -1,4 +1,4 @@
-import { Card, CardBody, Box, SimpleGrid, Image, CardHeader, Heading, Text, CardFooter, Button } from '@chakra-ui/react'
+/* import { Card, CardBody, Box, SimpleGrid, Image, CardHeader, Heading, Text, CardFooter, Button } from '@chakra-ui/react'
 import Modal from 'react-bootstrap/Modal';
 import { Footer } from '../components/Footer.jsx';
 import { Header } from '../components/Header.jsx';
@@ -416,3 +416,4 @@ function Becas() {
 }
 
 export default Becas
+ */
