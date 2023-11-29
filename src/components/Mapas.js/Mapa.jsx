@@ -35,6 +35,7 @@ export default function Mapa() {
     restriction: { latLngBounds: midpointDoloresVictoria },
     styles: mapStyles,
   };
+  
   return (
     <>
     <Box overflow="hidden" p={8} m={4} >
