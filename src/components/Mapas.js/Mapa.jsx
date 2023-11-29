@@ -25,7 +25,7 @@ const mapStyles = [
     stylers: [{ color: "#FF0000" }, { weight: 2 }],
   },
 ];
-const apiKey = "AIzaSyDbeGjUNXpUDqjATFkrUjgxhuKKdKwzD-A";
+const apiKey = "AIzaSyDH-EKollWWYQhjR-5D4qszISUM0dR_df0";
 
 export default function Mapa() {
   const mapOptions = {
