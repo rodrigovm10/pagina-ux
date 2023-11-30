@@ -34,6 +34,7 @@ export default function Mapa() {
 		restriction: { latLngBounds: midpointDoloresVictoria },
 		styles: mapStyles
 	}
+
 	return (
 		<>
 			<Box
@@ -41,7 +42,6 @@ export default function Mapa() {
 				p={8}
 				m={4}>
 				<Heading
-					m='0'
 					as='h1'
 					size={{ base: 'md', lg: 'xl' }}
 					textAlign='center'>
