@@ -263,11 +263,11 @@ export function Calendario() {
 
               <Stack>
                 <CardBody>
-                  <Heading size="md">
-                    Bienvenidos al Calendario Académico
+                  <Heading size="md" textAlign="justify">
+                    Calendario Académico
                   </Heading>
 
-                  <Text py="2">
+                  <Text py="2" textAlign="justify">
                     Nos complace presentarles el Calendario Académico. Este
                     calendario es una herramienta esencial para planificar y
                     organizar sus actividades académicas y eventos
