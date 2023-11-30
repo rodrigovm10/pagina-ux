@@ -29,12 +29,17 @@ const ScholarshipBanner = () => {
                 Las becas universitarias cumplen una función crucial en el mundo de la educación superior al desempeñar
                 múltiples roles interconectados. En primer lugar, actúan como un mecanismo efectivo para abrir las
                 puertas de la educación superior a una amplia variedad de estudiantes, independientemente de su
-                situación económica. Esto se traduce en un acceso más inclusivo y democrático a la educación superior,
+                situación económica.
+              </Text>
+              <Text textAlign='justify'>
+                Esto se traduce en un acceso más inclusivo y democrático a la educación superior,
                 lo que a su vez promueve la igualdad de oportunidades en la sociedad. Además, las becas funcionan como
-                un sistema de reconocimiento y recompensa del mérito académico y otros logros destacados. Al otorgar
-                becas a estudiantes que demuestran excelencia académica, talento artístico, habilidades deportivas o
-                compromiso cívico, se motiva a los jóvenes a esforzarse y a destacar en sus respectivas áreas de
-                interés. Esto, a su vez, impulsa la calidad y la diversidad del talento que ingresa a la educación
+                un sistema de reconocimiento y recompensa del mérito académico y otros logros destacados.
+              </Text>
+              <Text textAlign='justufy'>
+                Al otorgar becas a estudiantes que demuestran excelencia académica, talento artístico, habilidades
+                deportivas o compromiso cívico, se motiva a los jóvenes a esforzarse y a destacar en sus respectivas
+                áreas de interés. Esto, a su vez, impulsa la calidad y la diversidad del talento que ingresa a la educación
                 superior.
               </Text>
             </CardHeader>

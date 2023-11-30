@@ -1,7 +1,7 @@
 import { Image, Flex, Heading, Text } from '@chakra-ui/react'
 import { Footer } from '../components/Footer.jsx'
 import { Header } from '../components/Header.jsx'
-import imgPrincipal from '../assets/paginaPrincipal.png'
+import imgPrincipal from '../assets/inicioUni.jpg';
 import Autocomplete from '../components/Autocomplete.jsx'
 import { OPTIONS_AUTOCOMPLETE_PAGINA_P } from '../utilities/constants.js'
 import '../styles/card.css'
@@ -43,7 +43,7 @@ export function PaginaPrincipal() {
 				<Image
 					src={imgPrincipal}
 					objectFit='contain'
-					maxW='70vw'
+					maxW='50vw'
 					w='90rem'
 				/>
 

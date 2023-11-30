@@ -27,7 +27,7 @@ export const SpeechToText = () => {
     <Tooltip label={isListening ? "Mic is on" : "Haz clic para empezar hablar"} hasArrow placement="left">
       <IconButton
         position="fixed"
-        zIndex={100}
+        zIndex={90}
         top={40}
         right="1"
         icon={isListening ? <MdMicOff /> : <MdMic />}

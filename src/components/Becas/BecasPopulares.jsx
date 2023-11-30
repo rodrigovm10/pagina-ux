@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import { Box, Flex, Text, Circle, Tabs, TabList, Tab, TabPanels, TabPanel, useColorModeValue, Link, Button } from '@chakra-ui/react';
+import { Box, Modal, Flex, Text, Circle, Tabs, TabList, Tab, TabPanels, TabPanel, useColorModeValue, Link, Button, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, FormControl, FormLabel, Input } from '@chakra-ui/react';
 import Slider from 'react-slick';
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
+
 
 const settings = {
     dots: true,
@@ -39,15 +42,20 @@ const settings = {
     ],
   };
 
-  const ScholarshipCard = ({ title, description, dates, status, verMas }) => {
+  const ScholarshipCard = ({ title, description, dates, status, verMas, onOpenModal, showMoreInfoButton }) => {
     return (
-      <Box borderWidth="1px" borderRadius="lg" overflow="hidden" p={4} m={2} w="300px" h="350px"> {/* Establece un ancho y una altura fijos */}
+      <Box borderWidth="1px" borderRadius="lg" overflow="hidden" p={4} m={2} w="300px" h="350px"> 
         <Text fontWeight="bold" isTruncated>{title}</Text>
-        <Text noOfLines={6} align="justify" overflow="hidden">{description}</Text> {/* Trunca el texto y oculta el exceso */}
+        <Text noOfLines={6} align="justify" overflow="hidden">{description}</Text>
         {verMas && (
           <Button href={verMas} target='_blank' mt={3} colorScheme="green">
             Ver más
           </Button>
+        )}
+        {showMoreInfoButton && (
+            <Button onClick={() => onOpenModal({ title, description, dates, status, verMas })} mt={3} colorScheme="blue">
+                Más Información
+            </Button>
         )}
         <Text fontSize="sm">Inscripciones: {dates}</Text>
         <Flex align="center" mt="auto">
@@ -59,14 +67,24 @@ const settings = {
   };
 
 const Carousel = () => {
+  const navigate = useNavigate()
   const [tabIndex, setTabIndex] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedScholarship, setSelectedScholarship] = useState(null);
+  const [controlNumber, setControlNumber] = useState('')
+
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedScholarship(null);
+  };
 
   const scholarshipsSet1 = [
     {
-        title: 'APOYO POR RENDIMIENTO ACADÉMICO',
-        description: 'Consiste en la exención de un porcentaje del pago de la inscripción cuatrimestral a los alumnos de la Universidad y se establece conforme a los siguientes cuatrimestres, promedios y porcentajes de excención:',
-        dates: 'del 09/01/2023 al 31 /12/2023',
-        status: 'Abierta',
+      title: 'APOYO POR NECESIDAD APREMIANTE',
+      description: 'Consiste en la ministración mensual no reembolsable de una cantidad de dinero, a los alumnos con promedio mínimo de ocho y necesidad económica extrema que ponga en riesgo la continuidad de sus estudios en la Universidad.',
+      dates: 'del 09/01/2024 al 10/01/2024',
+      status: 'Abierta',
     },
   ];
 
@@ -96,9 +114,9 @@ const Carousel = () => {
         status: 'Próximamente',
     },
     {
-      title: 'APOYO POR NECESIDAD APREMIANTE',
-      description: 'Consiste en la ministración mensual no reembolsable de una cantidad de dinero, a los alumnos con promedio mínimo de ocho y necesidad económica extrema que ponga en riesgo la continuidad de sus estudios en la Universidad.',
-      dates: 'del 09/01/2024 al 10/01/2024',
+      title: 'APOYO POR RENDIMIENTO ACADÉMICO',
+      description: 'Consiste en la exención de un porcentaje del pago de la inscripción cuatrimestral a los alumnos de la Universidad y se establece conforme a los siguientes cuatrimestres, promedios y porcentajes de excención:',
+      dates: 'del 09/01/2023 al 31 /12/2023',
       status: 'Próximamente',
   },
   ];
@@ -125,7 +143,45 @@ const Carousel = () => {
     _focus: { boxShadow: 'none' },
   };
 
+  const handleOpenModal = (scholarship) => {
+    setSelectedScholarship(scholarship);
+    setIsModalOpen(true);
+};
+
   const borderColor = useColorModeValue('gray.200', 'gray.700');
+
+  const handleInputChange = e => {
+    const { value } = e.target
+    // Asegúrate de que solo se acepten números y que la longitud no exceda de 10 caracteres
+    if (value === '' || (value.match(/^[0-9]+$/) && value.length <= 10)) {
+      setControlNumber(value)
+    }
+  }
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    if (controlNumber.length === 10) {
+      // Si la validación es exitosa, muestra el SweetAlert
+      Swal.fire({
+        title: '¡Éxito!',
+        text: 'Tu información se guardó correctamente, te llegará un correo con los siguientes pasos',
+        icon: 'success',
+        confirmButtonText: 'Ok'
+      }).then(result => {
+        if (result.isConfirmed) {
+          navigate('/')
+        }
+      })
+    } else {
+      // Si la validación falla, muestra un mensaje de error
+      Swal.fire({
+        title: 'Error',
+        text: 'El número de control debe tener exactamente 10 dígitos',
+        icon: 'error',
+        confirmButtonText: 'Ok'
+      })
+    }
+  }
 
   return (
     <Box overflow="hidden" borderColor={borderColor}  p={8} m={4} >
@@ -138,11 +194,11 @@ const Carousel = () => {
 
         <TabPanels>
           <TabPanel>
-            <Slider key={tabIndex} {...settings}>
-            {scholarshipsSet1.map((scholarship) => (
-                <ScholarshipCard key={scholarship.id} {...scholarship} />
-              ))}
-            </Slider>
+          <Slider key={tabIndex} {...settings}>
+          {scholarshipsSet1.map((scholarship) => (
+              <ScholarshipCard key={scholarship.id} {...scholarship} onOpenModal={handleOpenModal} showMoreInfoButton={true} />
+            ))}
+          </Slider>
           </TabPanel>
           <TabPanel>
             <Slider key={tabIndex} {...settings}>
@@ -158,7 +214,52 @@ const Carousel = () => {
               ))}
             </Slider>
           </TabPanel>
+          {isModalOpen && (
+            <Modal isOpen={isModalOpen} onClose={handleCloseModal} isCentered>
+              <ModalOverlay />
+              <ModalContent>
+                  <ModalHeader>{selectedScholarship?.title}</ModalHeader>
+                  <ModalCloseButton />
+                  <ModalBody>
+      <p><strong>Requisitos:</strong></p>
+      <ul>
+        <li>Ser alumno regular del cuatrimestre</li>
+        <li>No contar con otro tipo de estímulo o apoyo económico</li>
+        <li>Obtener un promedio mínimo de ocho en el cuatrimestre anterior sin adeudo de materias al momento de realizar la solicitud</li>
+        <li>Realizar una entrevista con el Subdirector de Servicios Escolares.</li>
+        <li>
+          Solicitud debidamente llenada y firmada por el director del área académica correspondiente, con los siguientes documentos:
+          <ul>
+            <li>Comprobante de ingresos económicos familiares;</li>
+            <li>Carta redactada por el alumno donde exponga las principales razones por las que solicita el apoyo por necesidad apremiante firmada por el solicitante y por el padre o jefe de familia.</li>
+          </ul>
+        </li>
+      </ul>
+      <p><strong>Nota:</strong></p>
+      <p>Una vez concluido el periodo de la convocatoria el área de Servicios Escolares solicitara al director de área académica correspondiente, la realización de la visita de campo por parte del tutor académico entregando un reporte que valide o no la necesidad del apoyo.</p>
+      {/* Aquí puedes agregar tu formulario como antes */}
+      <FormControl>
+        <FormLabel htmlFor='inputField'>Ingresa aquí tu número de control para aplicar a la beca</FormLabel>
+        <Input
+          id='inputField'
+          placeholder='Ingresa tu número de control'
+          value={controlNumber}
+          onChange={handleInputChange}
+        />
+      </FormControl>
+      <Button
+        colorScheme='teal'
+        mt={4}
+        type='submit'
+        onClick={handleSubmit}>
+        Aplicar
+      </Button>
+    </ModalBody>
+              </ModalContent>
+          </Modal>
+          )}
         </TabPanels>
+        
       </Tabs>
     </Box>
   );

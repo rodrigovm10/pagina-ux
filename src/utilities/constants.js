@@ -259,7 +259,7 @@ export const TEXTS_TO_SPEECH = {
 					Página principal.
 					En la parte superior, se encuentra un menú de navegación con una Imagen de la UTNG y opciones como Inicio, Becas, Calendario y  Bolsa de trabajo, destacados en una barra azul.
 					El título principal dice "¡Bienvenidos a la Universidad Tecnológica del Norte de Guanajuato!" seguido por un campo de búsqueda.
-					La sección media muestra una imagen con letras alfabéticas dispersas y burbujas con letras 'A', 'B', 'C', y 'D' en un tono celeste más destacado, sobre un fondo de color gris claro. Justo debajo, hay una imagen de un libro abierto, simbolizando la educación.
+					La sección media muestra una imagen con tres jovenes que representan la union entre los estudiantes de la universidad con el color caracter de la universidad.
 					Más abajo se encuentra un texto que dice lo siguiente: La educación va más allá de la memorización; es un camino para inspirar, innovar y transformar. Cada libro que abres te lleva a un nuevo mundo, y cada práctica que realizas te ayuda a moldear el tuyo. Estamos emocionados de que te unas a nuestra comunidad y compartas nuestro compromiso con la excelencia académica y los valores fundamentales que nos guían.
 					Seguido del texto anterior hay tres columnas que habla sobre la Misión, Visión y los valores de la institución.
 					Primera columna: Misión: Somos una institución de Educación Superior Tecnológica dedicada a la formación integral de profesionales líderes en los niveles de Técnico Superior Universitario y Licenciatura, ofreciendo programas educativos de excelencia.
@@ -372,8 +372,8 @@ export const TEXTS_TO_SPEECH = {
 	'/bolsa-de-trabajo': `
 	        Bolsa de trabajo.
 					En la parte superior, se encuentra un menú de navegacion con una Imagen de la UTNG y opciones tales como Inicio, Becas, Estadias, Calendario, Reinscripciones y Movilidad estudantil, contenidas en una barra de color azul. 
-					Debajo del lado izquierdo se encuentra una peueña barra de búsqueda para introducir informacion relacionada con los trabajos, debajo de la barra de bús queda se listan los resultados de la búsqueda, permitiendo visualizar la información de los resultados al pulsar en cada resultado de la búsqueda.
-					Al lado de la barra de búsqueda, a la derecha se encuentran a manera de targetas la información  relacionada con algunas ofertas de trabajo, detalles como, la descripsión, horario, hubicación, pago e informacion de contacto, permitiendo visualizar la información en cada una de las targetas para ver a detalle la informacion referente, adicienando en cada targeta correspondiente a la oferta de trabajo sus redes sociles. 
+					Debajo del lado izquierdo se encuentra una peueña barra de búsqueda para introducir informacion relacionada con los trabajos, debajo de la barra de búsqueda se listan los resultados de la búsqueda, permitiendo visualizar la información de los resultados al pulsar en cada resultado de la búsqueda.
+					Al lado de la barra de búsqueda, a la derecha se encuentran a manera de targetas la información  relacionada con algunas ofertas de trabajo, detalles como, la descripsión, horario, ubicación, pago e informacion de contacto, permitiendo visualizar la información en cada una de las targetas para ver a detalle la informacion referente, adicienando en cada targeta correspondiente a la oferta de trabajo sus redes sociles. 
 					`
 }
 
