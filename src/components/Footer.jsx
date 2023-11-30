@@ -8,6 +8,7 @@ export function Footer() {
 	const location = useLocation()
 	return (
 		<Flex
+			mt='2rem'
 			w='100%'
 			bg='#00A887'
 			p='1.5rem'

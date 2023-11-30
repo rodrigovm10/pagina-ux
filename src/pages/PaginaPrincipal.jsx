@@ -59,8 +59,7 @@ export function PaginaPrincipal() {
 				<Flex
 					flexDir={{ base: 'column', lg: 'row' }}
 					gap={{ base: '1rem', lg: '2rem' }}
-					alignItems={{ base: 'center', lg: 'stretch' }}
-					mb='2rem'>
+					alignItems={{ base: 'center', lg: 'stretch' }}>
 					<CardPPrincipal
 						title={'Misión'}
 						wLg='15rem'
