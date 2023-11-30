@@ -1,5 +1,6 @@
 export const NAV_HEADER = [
 	{ to: '/', navName: 'Inicio' },
+	{ to: '/centro-de-ayuda', navName: 'Centro de ayuda' },
 	{ to: '/becas', navName: 'Becas' },
 	{ to: '/calendario', navName: 'Calendario' },
 	{ to: '/bolsa-de-trabajo', navName: 'Bolsa de trabajo' }
@@ -302,10 +303,7 @@ export const CARDS_CALENDAR = [
 		id: 28,
 		title: 'Cena y Gala de Fin de Año',
 		date: ['Fecha: ', '8 diciembre'],
-		description: [
-			'Actividades: ',
-			'Cena de gala para celebrar el fin del año, con música en vivo y baile.'
-		],
+		description: ['Actividades: ', 'Cena de gala para celebrar el fin del año, con música en vivo y baile.'],
 		lugar: 'Edificio F, Interior Sala Audiovisual',
 		hora: '4:00 p.m. a 8:00 p.m.'
 	},
@@ -368,10 +366,7 @@ export const CARDS_CALENDAR = [
 		id: 34,
 		title: 'Retiro de Yoga y Bienestar',
 		date: ['Fecha: ', '18 diciembre'],
-		description: [
-			'Actividades: ',
-			'Sesiones de yoga, meditación y talleres sobre bienestar y salud mental.'
-		],
+		description: ['Actividades: ', 'Sesiones de yoga, meditación y talleres sobre bienestar y salud mental.'],
 		lugar: 'Edificio V, Interior Sala Audiovisual',
 		hora: '4:00 p.m. a 8:00 p.m.'
 	},

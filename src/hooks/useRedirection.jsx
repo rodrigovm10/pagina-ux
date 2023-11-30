@@ -10,7 +10,8 @@ export function useRedirection() {
 			calendario: '/calendario',
 			'pagina principal': '/',
 			'página principal': '/',
-			incio: '/'
+			incio: '/',
+			ínicio: '/'
 		}
 
 		console.log(text)
