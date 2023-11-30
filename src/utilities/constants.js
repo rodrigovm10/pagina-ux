@@ -17,7 +17,9 @@ export const CARDS_CALENDAR = [
 		id: 1,
 		title: 'Feria de Empleo y Prácticas Profesionales',
 		date: ['Fecha: ', '1 noviembre'],
-		description: ['Actividades: ', ' Stands de empresas, entrevistas en el lugar, talleres de desarrollo profesional.']
+		description: ['Actividades: ', ' Stands de empresas, entrevistas en el lugar, talleres de desarrollo profesional.'],
+		lugar: 'Edificio V, Interior Sala Audiovisual',
+		hora: '4:00 p.m. a 8:00 p.m.'
 	},
 	{
 		id: 2,
@@ -26,13 +28,17 @@ export const CARDS_CALENDAR = [
 		description: [
 			'Actividades: ',
 			' Puestos de comida internacional, actuaciones musicales y danzas, exposiciones de arte.'
-		]
+		],
+		lugar: 'Edificio A, Interior Sala Audiovisual',
+		hora: '4:00 p.m. a 8:00 p.m.'
 	},
 	{
 		id: 3,
-		title: 'Seminario de Estrés y Manejo del Tiempo',
+		title: 'Manejo del Tiempo',
 		date: ['Fecha: ', '3 noviembre'],
-		description: ['Actividades: ', 'Sesiones de asesoramiento, técnicas de relajación, planificación del tiempo']
+		description: ['Actividades: ', 'Sesiones de asesoramiento, técnicas de relajación, planificación del tiempo'],
+		lugar: 'Edificio A, Interior Sala Audiovisual',
+		hora: '4:00 p.m. a 8:00 p.m.'
 	},
 	{
 		id: 4,
@@ -41,7 +47,9 @@ export const CARDS_CALENDAR = [
 		description: [
 			'Actividades: ',
 			'Competencias en diferentes deportes, ceremonia de premiación, actividades recreativas.'
-		]
+		],
+		lugar: 'Edificio C, Interior Sala Audiovisual',
+		hora: '4:00 p.m. a 8:00 p.m.'
 	},
 	{
 		id: 5,
@@ -50,7 +58,9 @@ export const CARDS_CALENDAR = [
 		description: [
 			'Actividades: ',
 			'Presentaciones de proyectos, demostraciones prácticas, sesiones de retroalimentación.'
-		]
+		],
+		lugar: 'Edificio F, Interior Sala Audiovisual',
+		hora: '4:00 p.m. a 8:00 p.m.'
 	},
 	{
 		id: 6,
@@ -59,7 +69,9 @@ export const CARDS_CALENDAR = [
 		description: [
 			'Actividades: ',
 			'Puestos de comida internacional, actuaciones musicales y danzas, exposiciones de arte.'
-		]
+		],
+		lugar: 'Edificio A, Interior Sala Audiovisual',
+		hora: '4:00 p.m. a 8:00 p.m.'
 	},
 	{
 		id: 7,
@@ -68,13 +80,17 @@ export const CARDS_CALENDAR = [
 		description: [
 			'Actividades: ',
 			'Desarrollo de proyectos de software, talleres de programación, premiación a las mejores soluciones.'
-		]
+		],
+		lugar: 'Edificio F, Interior Sala Audiovisual',
+		hora: '4:00 p.m. a 8:00 p.m.'
 	},
 	{
 		id: 8,
 		title: 'Conferencia Sobre React por la Empresa Optimen',
 		date: ['Fecha: ', '10 noviembre'],
-		description: ['Actividades: ', 'Presentaciones técnicas, sesión de preguntas y respuestas, y un taller práctico.']
+		description: ['Actividades: ', 'Presentaciones técnicas, sesión de preguntas y respuestas, y un taller práctico.'],
+		lugar: 'Edificio F, Interior Sala Audiovisual',
+		hora: '4:00 p.m. a 8:00 p.m.'
 	},
 	{
 		id: 9,
@@ -83,13 +99,17 @@ export const CARDS_CALENDAR = [
 		description: [
 			'Actividades: ',
 			'Conferencias sobre las últimas tendencias tecnológicas, paneles de discusión, y networking.'
-		]
+		],
+		lugar: 'Edificio F, Interior Sala Audiovisual',
+		hora: '4:00 p.m. a 8:00 p.m.'
 	},
 	{
 		id: 10,
 		title: 'Encuentro de Juegos de Mesa',
 		date: ['Fecha: ', '14 noviembre'],
-		description: ['Actividades: ', 'Torneos de juegos de mesa, zona de juego libre, venta de juegos y accesorios.']
+		description: ['Actividades: ', 'Torneos de juegos de mesa, zona de juego libre, venta de juegos y accesorios.'],
+		lugar: 'Edificio V, Interior Sala Audiovisual',
+		hora: '4:00 p.m. a 8:00 p.m.'
 	},
 	{
 		id: 11,
@@ -98,7 +118,9 @@ export const CARDS_CALENDAR = [
 		description: [
 			'Actividades: ',
 			'Charlas de expertos en IA, workshops de machine learning, paneles de discusión sobre ética en IA.'
-		]
+		],
+		lugar: 'Edificio F, Interior Sala Audiovisual',
+		hora: '4:00 p.m. a 8:00 p.m.'
 	},
 	{
 		id: 12,
@@ -107,7 +129,9 @@ export const CARDS_CALENDAR = [
 		description: [
 			'Actividades: ',
 			'Presentaciones de proyectos estudiantiles, charlas sobre sostenibilidad, paneles de discusión con expertos.'
-		]
+		],
+		lugar: 'Edificio D, Interior Sala Audiovisual',
+		hora: '4:00 p.m. a 8:00 p.m.'
 	},
 	{
 		id: 13,
@@ -116,7 +140,9 @@ export const CARDS_CALENDAR = [
 		description: [
 			'Actividades: ',
 			'Sesiones educativas sobre blockchain, debates sobre el futuro de las criptomonedas, casos prácticos de uso.'
-		]
+		],
+		lugar: 'Edificio F, Interior Sala Audiovisual',
+		hora: '4:00 p.m. a 8:00 p.m.'
 	},
 	{
 		id: 14,
@@ -125,7 +151,9 @@ export const CARDS_CALENDAR = [
 		description: [
 			'Actividades: ',
 			'Nuestra universidad se une a la pausa nacional para conmemorar un día de gran importancia histórica y cultural. En esta fecha, recordamos un momento clave en nuestra historia, un tiempo de cambio y evolución que refleja el espíritu de innovación y progreso que nos caracteriza como institución. En este día, nos alejamos de las aulas y laboratorios no solo para descansar, sino también para reflexionar sobre nuestro legado y nuestra responsabilidad hacia la sociedad.'
-		]
+		],
+		lugar: 'Edificio V, Interior Sala Audiovisual',
+		hora: '4:00 p.m. a 8:00 p.m.'
 	},
 	{
 		id: 15,
@@ -134,7 +162,9 @@ export const CARDS_CALENDAR = [
 		description: [
 			'Actividades: ',
 			'Demostraciones de VR/AR, talleres de desarrollo, paneles sobre aplicaciones futuras de estas tecnologías.'
-		]
+		],
+		lugar: 'Edificio F, Interior Sala Audiovisual',
+		hora: '4:00 p.m. a 8:00 p.m.'
 	},
 	{
 		id: 16,
@@ -143,7 +173,9 @@ export const CARDS_CALENDAR = [
 		description: [
 			'Actividades: ',
 			'Pitches de startups, sesiones de networking, talleres sobre emprendimiento tecnológico.'
-		]
+		],
+		lugar: 'Edificio A, Interior Sala Audiovisual',
+		hora: '4:00 p.m. a 8:00 p.m.'
 	},
 	{
 		id: 17,
@@ -152,7 +184,9 @@ export const CARDS_CALENDAR = [
 		description: [
 			'Actividades: ',
 			' Competencias de hacking ético, talleres sobre seguridad en la red, paneles sobre tendencias en ciberseguridad.'
-		]
+		],
+		lugar: 'Edificio F, Interior Sala Audiovisual',
+		hora: '4:00 p.m. a 8:00 p.m.'
 	},
 	{
 		id: 18,
@@ -161,7 +195,9 @@ export const CARDS_CALENDAR = [
 		description: [
 			'Actividades: ',
 			' Exposición de gadgets y tecnologías emergentes, conferencias sobre avances tecnológicos, competencias de robótica.'
-		]
+		],
+		lugar: 'Edificio F, Interior Sala Audiovisual',
+		hora: '4:00 p.m. a 8:00 p.m.'
 	},
 	{
 		id: 19,
@@ -170,7 +206,185 @@ export const CARDS_CALENDAR = [
 		description: [
 			'Actividades: ',
 			'Competencias de videojuegos populares, charlas sobre la industria del gaming, área de juegos libres.'
-		]
+		],
+		lugar: 'Edificio F, Interior Sala Audiovisual',
+		hora: '4:00 p.m. a 8:00 p.m.'
+	},
+	{
+		id: 20,
+		title: 'Gala de Invierno de Artes Escénicas',
+		date: ['Fecha: ', '28 noviembre'],
+		description: [
+			'Actividades: ',
+			'Presentación de talentos estudiantiles en música, danza y teatro, seguida de una recepción.'
+		],
+		lugar: 'Edificio A, Interior Sala Audiovisual',
+		hora: '4:00 p.m. a 8:00 p.m.'
+	},
+	{
+		id: 21,
+		title: 'Conferencia sobre Innovación Tecnológica',
+		date: ['Fecha: ', '29 noviembre'],
+		description: [
+			'Actividades: ',
+			' Charlas y paneles sobre las últimas tendencias en tecnología, con invitados especiales del sector.'
+		],
+		lugar: 'Edificio F, Interior Sala Audiovisual',
+		hora: '4:00 p.m. a 8:00 p.m.'
+	},
+	{
+		id: 22,
+		title: 'Taller de Estrategias de Estudio para Exámenes Finales',
+		date: ['Fecha: ', '30 noviembre'],
+		description: [
+			'Actividades: ',
+			'Sesiones dirigidas por expertos en educación para mejorar técnicas de estudio y manejo del tiempo.'
+		],
+		lugar: 'Edificio F, Interior Sala Audiovisual',
+		hora: '4:00 p.m. a 8:00 p.m.'
+	},
+	{
+		id: 23,
+		title: 'Festival Cultural Internacional',
+		date: ['Fecha: ', '1 diciembre'],
+		description: [
+			'Actividades: ',
+			'Sesiones dirigidas por expertos en educación para mejorar técnicas de estudio y manejo del tiempo.'
+		],
+		lugar: 'Edificio C, Interior Sala Audiovisual',
+		hora: '4:00 p.m. a 8:00 p.m.'
+	},
+	{
+		id: 24,
+		title: 'Feria de Proyectos de Emprendimiento Estudiantil',
+		date: ['Fecha: ', '4 diciembre'],
+		description: [
+			'Actividades: ',
+			'Presentación de proyectos de negocios de estudiantes, con oportunidades de networking.'
+		],
+		lugar: 'Edificio C, Interior Sala Audiovisual',
+		hora: '4:00 p.m. a 8:00 p.m.'
+	},
+	{
+		id: 25,
+		title: 'Maratón de Programación(Hackathon) ',
+		date: ['Fecha: ', '5 diciembre'],
+		description: [
+			'Actividades: ',
+			'Desarrollo de software en equipos, mentores disponibles, presentación de proyectos.'
+		],
+		lugar: 'Edificio F, Interior Sala Audiovisual',
+		hora: '4:00 p.m. a 8:00 p.m.'
+	},
+	{
+		id: 26,
+		title: 'Torneo de Ajedrez Universitario',
+		date: ['Fecha: ', '6 diciembre'],
+		description: [
+			'Actividades: ',
+			'Competencia de ajedrez abierta a todos los niveles, con premios para los ganadores.'
+		],
+		lugar: 'Cancha del auditorio UTNG',
+		hora: '4:00 p.m. a 8:00 p.m.'
+	},
+	{
+		id: 27,
+		title: 'Concierto de Música Navideña (Posada)',
+		date: ['Fecha: ', '7 diciembre'],
+		description: [
+			'Actividades: ',
+			'Actuaciones de coros y músicos, interpretando clásicos navideños y canciones festivas.'
+		],
+		lugar: 'Edificio F, Interior Sala Audiovisual',
+		hora: '4:00 p.m. a 8:00 p.m.'
+	},
+	{
+		id: 28,
+		title: 'Cena y Gala de Fin de Año',
+		date: ['Fecha: ', '8 diciembre'],
+		description: [
+			'Actividades: ',
+			'Cena de gala para celebrar el fin del año, con música en vivo y baile.'
+		],
+		lugar: 'Edificio F, Interior Sala Audiovisual',
+		hora: '4:00 p.m. a 8:00 p.m.'
+	},
+	{
+		id: 29,
+		title: 'Exposición Anual de Arte Estudiantil',
+		date: ['Fecha: ', '11 diciembre'],
+		description: [
+			'Actividades: ',
+			'Muestra de trabajos de arte creados por estudiantes, incluyendo pintura, escultura y fotografía.'
+		],
+		lugar: 'Edificio V, Interior Sala Audiovisual',
+		hora: '4:00 p.m. a 8:00 p.m.'
+	},
+	{
+		id: 30,
+		title: 'Campaña de Voluntariado Comunitario',
+		date: ['Fecha: ', '12 diciembre'],
+		description: [
+			'Actividades: ',
+			'Jornada de voluntariado para apoyar proyectos locales, como limpieza de parques o asistencia en bancos de alimentos.'
+		],
+		lugar: 'Edificio V, Interior Sala Audiovisual',
+		hora: '4:00 p.m. a 8:00 p.m.'
+	},
+	{
+		id: 31,
+		title: 'Taller de Escritura Creativa',
+		date: ['Fecha: ', '13 diciembre'],
+		description: [
+			'Actividades: ',
+			'Sesiones interactivas de escritura, con la participación de autores invitados y actividades de redacción grupal.'
+		],
+		lugar: 'Edificio E, Interior Sala Audiovisual',
+		hora: '4:00 p.m. a 8:00 p.m.'
+	},
+	{
+		id: 32,
+		title: 'Noche de Observación Astronómica',
+		date: ['Fecha: ', '14 diciembre'],
+		description: [
+			'Actividades: ',
+			'Evento de astronomía con telescopios disponibles, charlas de expertos y observación de estrellas.'
+		],
+		lugar: 'Edificio C, Interior Sala Audiovisual',
+		hora: '4:00 p.m. a 8:00 p.m.'
+	},
+	{
+		id: 33,
+		title: 'Foro de Debate Estudiantil',
+		date: ['Fecha: ', '15 diciembre'],
+		description: [
+			'Actividades: ',
+			'Competencia de debate sobre temas actuales, fomentando habilidades de oratoria y pensamiento crítico.'
+		],
+		lugar: 'Edificio V, Interior Sala Audiovisual',
+		hora: '4:00 p.m. a 8:00 p.m.'
+	},
+	{
+		id: 34,
+		title: 'Retiro de Yoga y Bienestar',
+		date: ['Fecha: ', '18 diciembre'],
+		description: [
+			'Actividades: ',
+			'Sesiones de yoga, meditación y talleres sobre bienestar y salud mental.'
+		],
+		lugar: 'Edificio V, Interior Sala Audiovisual',
+		hora: '4:00 p.m. a 8:00 p.m.'
+	},
+	{
+		id: 35,
+		title: 'Simposio sobre Derechos Humanos',
+		date: ['Fecha: ', '19 diciembre'],
+		description: [
+			'Actividades: ',
+			'Conferencias y paneles de discusión sobre temas de derechos humanos y justicia social.'
+		],
+		lugar: 'Edificio A, Interior Sala Audiovisual',
+		hora: '4:00 p.m. a 8:00 p.m.'
 	}
 ]
 

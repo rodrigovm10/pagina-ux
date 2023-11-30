@@ -237,6 +237,8 @@ export function Calendario() {
                 </Text>
                 <p>{event.date.join(" ")}</p>
                 <p>{event.description.join(" ")}</p>
+                <p>{event.lugar}</p>
+                <p>{event.hora}</p>
               </Card>
             ))
           ) : viewMode === "search" && filteredCards.length > 0 ? (
@@ -297,6 +299,8 @@ export function Calendario() {
               title={card.title}
               date={card.date}
               description={card.description}
+              lugar={card.lugar}
+              hora={card.hora}
             />
           ))}
         </SimpleGrid>
