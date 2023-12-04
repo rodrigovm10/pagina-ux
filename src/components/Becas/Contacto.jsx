@@ -26,8 +26,13 @@ export const Contacto = () => {
             spacing={4}
             align='start'
             m={2} // Margen para separar las tarjetas
+            mb='3rem'
+			transition='transform 0.3s ease-out, box-shadow 0.3s ease-in-out'
+			sx={{ border: '2px solid #00259A' }}
+			_hover={{ transform: 'translateY(-10px)', boxShadow: '5px 5px #00259A' }}
+			boxShadow='2xl'
           >
-            <Flex align='center'>
+            <Flex align='center' >
               <Image
                 boxSize='100px'
                 objectFit='cover'
@@ -35,7 +40,7 @@ export const Contacto = () => {
                 alt='Logo'
                 mr={5}
               />
-              <VStack align='start' spacing={2}>
+              <VStack align='start' spacing={2} >
                 <Flex align='center'>
                   <Icon as={MdPerson} mr={2} color='green.500' />
                   <Text fontWeight='bold'>Diana Berenice Cuellar González</Text>
@@ -64,6 +69,12 @@ export const Contacto = () => {
             spacing={4}
             align='start'
             m={2}
+            mb='3rem'
+			      transition='transform 0.3s ease-out, box-shadow 0.3s ease-in-out'
+			      sx={{ border: '2px solid #00259A' }}
+			      _hover={{ transform: 'translateY(-10px)',
+            boxShadow: '5px 5px #00259A' }}
+			      boxShadow='2xl'
           >
             <Flex align='center'>
               <Image

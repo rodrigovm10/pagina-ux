@@ -1,21 +1,37 @@
 import React from 'react';
-import { Text, Image, SimpleGrid, Card, CardHeader, Heading } from '@chakra-ui/react';
+import { Text, Image, SimpleGrid, Card, CardHeader, Heading, Box } from '@chakra-ui/react';
+
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 import beca from '../../assets/Conoce-las-becas.jpg';
+import beca1 from '../../assets/beca1.jpg';
+import beca2 from '../../assets/beca2.jpg';
+import Slider from 'react-slick';
 
 const ScholarshipBanner = () => {
+
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 60,
+    slidesToShow: 1,
+    slidesToScroll: 2,
+    autoplay: true,
+  };
+
   return (
     <SimpleGrid
           spacing={6}
           templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(2, 1fr)" }}
           p='1rem'>
-          <Image
-            w='full'
-            objectFit='cover'
-            borderRadius='1rem'
-            src={beca}
-            alt='Calendario UTNG'
-            className='zoom'
-          />
+          <Box w='full' borderRadius='1rem' overflow='hidden'>
+            <Slider {...settings}>
+             <Image src={beca} alt='Beca 1' />
+             <Image src={beca1} alt='Beca 2' />
+             <Image src={beca2} alt='Beca 3' />
+            </Slider>
+          </Box>
           <Card>
             <CardHeader>
               <Heading
