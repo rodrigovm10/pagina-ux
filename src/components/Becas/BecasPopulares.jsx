@@ -42,16 +42,18 @@ const settings = {
     ],
   };
 
-  const ScholarshipCard = ({ title, description, dates, status, verMas, onOpenModal, showMoreInfoButton }) => {
+  const ScholarshipCard = ({ title, description, dates, status, verMas, onOpenModal, showMoreInfoButton, openLink  }) => {
+    console.log(verMas);
+
     return (
       <Box borderWidth="1px" borderRadius="lg" overflow="hidden" p={4} m={2} w="320px" h="350px" mb='3rem'
 			transition='transform 0.3s ease-out, box-shadow 0.3s ease-in-out' sx={{ border: '2px solid #00259A' }} _hover={{ transform: 'translateY(-10px)', boxShadow: '5px 5px #00259A' }} boxShadow='2xl'> 
         <Text fontWeight="bold" isTruncated>{title}</Text>
         <Text noOfLines={6} align="justify" overflow="hidden">{description}</Text>
         {verMas && (
-          <Button href={verMas} target='_blank' mt={3} colorScheme="green">
-            Ver más
-          </Button>
+            <Button onClick={() => openLink(verMas)} target='_blank' mt={3} colorScheme="green">
+                Ver más
+            </Button>
         )}
         {showMoreInfoButton && (
             <Button onClick={() => onOpenModal({ title, description, dates, status, verMas })} mt={3} colorScheme="blue">
@@ -74,6 +76,10 @@ const Carousel = () => {
   const [selectedScholarship, setSelectedScholarship] = useState(null);
   const [controlNumber, setControlNumber] = useState('')
 
+  const openLink = (url) => {
+    console.log(url);
+    window.open(url, '_blank');
+  };
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
@@ -193,26 +199,25 @@ const Carousel = () => {
           <Tab {...tabStyle} borderWidth="2px" mr={2}>Próxima fecha de inscripción</Tab>
           <Tab {...tabStyle} borderWidth="2px" mr={2}>Externas</Tab>
         </TabList>
-
         <TabPanels>
           <TabPanel>
           <Slider key={tabIndex} {...settings}>
           {scholarshipsSet1.map((scholarship) => (
-              <ScholarshipCard key={scholarship.id} {...scholarship} onOpenModal={handleOpenModal} showMoreInfoButton={true} />
+              <ScholarshipCard key={scholarship.id} {...scholarship} onOpenModal={handleOpenModal} showMoreInfoButton={true} openLink={openLink} />
             ))}
           </Slider>
           </TabPanel>
           <TabPanel>
             <Slider key={tabIndex} {...settings}>
               {scholarshipsSet2.map((scholarship, index) => (
-                <ScholarshipCard key={index} {...scholarship} />
+                <ScholarshipCard key={index} {...scholarship}  openLink={openLink}/>
               ))}
             </Slider>
           </TabPanel>
           <TabPanel>
             <Slider key={tabIndex} {...settings}>
               {scholarshipsSet3.map((scholarship, index) => (
-                <ScholarshipCard key={index} {...scholarship} />
+                <ScholarshipCard key={index} {...scholarship} openLink={openLink} />
               ))}
             </Slider>
           </TabPanel>
@@ -261,7 +266,6 @@ const Carousel = () => {
           </Modal>
           )}
         </TabPanels>
-        
       </Tabs>
     </Box>
   );
