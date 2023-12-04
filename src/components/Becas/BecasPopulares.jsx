@@ -45,8 +45,7 @@ const settings = {
   const ScholarshipCard = ({ title, description, dates, status, verMas, onOpenModal, showMoreInfoButton }) => {
     return (
       <Box borderWidth="1px" borderRadius="lg" overflow="hidden" p={4} m={2} w="320px" h="350px" mb='3rem'
-			transition='transform 0.3s ease-out, box-shadow 0.3s ease-in-out' sx={{ border: '2px solid #00259A' }} _hover={{ transform: 'translateY(-10px)', boxShadow: '5px 5px #00259A' }}
-			boxShadow='2xl'> 
+			transition='transform 0.3s ease-out, box-shadow 0.3s ease-in-out' sx={{ border: '2px solid #00259A' }} _hover={{ transform: 'translateY(-10px)', boxShadow: '5px 5px #00259A' }} boxShadow='2xl'> 
         <Text fontWeight="bold" isTruncated>{title}</Text>
         <Text noOfLines={6} align="justify" overflow="hidden">{description}</Text>
         {verMas && (
