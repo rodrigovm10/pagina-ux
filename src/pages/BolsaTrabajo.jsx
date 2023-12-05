@@ -26,6 +26,8 @@ function BolsaTrabajo() {
   const [selectedJob, setSelectedJob] = useState(null);
   const [showMessage, setShowMessage] = useState(true);
   const [numJobs, setnumJobs] = useState("");
+  const [selectedOfferId, setSelectedOfferId] = useState(null);
+
 
   const jobs = [
     {
@@ -219,11 +221,13 @@ function BolsaTrabajo() {
     console.log(`Clic en oferta de trabajo: ${job.title}`);
     setSelectedJob(job);
     setShowMessage(false);
+    setSelectedOfferId(job.id);
   };
 
   const handleClose = () => {
     setSelectedJob(null); // Vuelve al estado inicial (ningún trabajo seleccionado)
     setShowMessage(true); // Muestra el mensaje nuevamente
+    setSelectedOfferId("");
   };
 
   useEffect(() => {
@@ -275,39 +279,45 @@ function BolsaTrabajo() {
             {filteredJobs.length > 0
               ? filteredJobs.map((job) => (
                   <>
-                    <ListItem>
-                      <Box
+                    <ListItem mt={"10px"}>
+                      <Card
                         key={job.id}
                         p="4"
                         borderBottom="1px"
-                        borderColor="gray.200"
                         onClick={() => handleJobClick(job)}
-                        cursor="pointer"
+                        mb={"7px"}
+                        transition='transform 0.3s ease-out, box-shadow 0.3s ease-in-out'
+                        sx={{ border: `5px solid ${selectedOfferId === job.id ? '#00259A' : 'transparent'}` }}
+                        _hover={{ transform: 'translateY(-10px)', boxShadow: '5px 5px #00259A' }}
+                        boxShadow='2xl'
                       >
                         <Heading as="h3" size="md" mb="2">
                           {job.title}
                         </Heading>
                         <Text fontSize="sm">{job.description}</Text>
-                      </Box>
+                      </Card>
                     </ListItem>
                   </>
                 ))
               : jobs.map((job) => (
                   <>
                     <ListItem>
-                      <Box
+                    <Card
                         key={job.id}
                         p="4"
                         borderBottom="1px"
-                        borderColor="gray.200"
                         onClick={() => handleJobClick(job)}
-                        cursor="pointer"
+                        mb={"7px"}
+                        transition='transform 0.3s ease-out, box-shadow 0.3s ease-in-out'
+                        sx={{  border: `5px solid ${selectedOfferId === job.id ? '#00259A' : 'transparent'}` }}
+                        _hover={{ transform: 'translateY(-10px)', boxShadow: '5px 5px #00259A' }}
+                        boxShadow='2xl'
                       >
                         <Heading as="h3" size="md" mb="2">
                           {job.title}
                         </Heading>
                         <Text fontSize="sm">{job.description}</Text>
-                      </Box>
+                      </Card>
                     </ListItem>
                   </>
                 ))}
@@ -330,6 +340,9 @@ function BolsaTrabajo() {
                 maxW={{ base: "55%", md: "full", lg: "full" }}
                 mt={"1rem"}
                 key={selectedJob.id}
+                sx={{ border: '2px solid #00259A' }}
+                transition='transform 0.3s ease-out, box-shadow 0.3s ease-in-out'
+                _hover={{ transform: 'translateY(-10px)', boxShadow: '5px 5px #00259A' }} 
               >
                 <CardHeader>
                   <Heading size="md" mb="1rem">
@@ -402,7 +415,7 @@ function BolsaTrabajo() {
                     Selecciona una de la lista para visualizar su información.
                   </Heading>
                   <div style={{ display: "flex", justifyContent: "center" }}>
-                    <GiEagleHead size={"15rem"} />
+                    <GiEagleHead size={"15rem"} className="eagle-icon"/>
                   </div>
                 </>
               )
