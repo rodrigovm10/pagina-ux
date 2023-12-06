@@ -1,44 +1,117 @@
-import { useState } from 'react'
-import { Box, Image, Flex, Button } from '@chakra-ui/react'
+import React, { useState } from 'react'
+import { Button, Flex, Heading, Image, Stack, Text, ButtonGroup } from '@chakra-ui/react'
+import centroAyuda from '../assets/centro-ayudaa.jpg'
+import utng from '../assets/utng.jpeg'
 
-export const SliderA = ({ images }) => {
+export function CardCentroAyuda({ handleClickOpen }) {
+	const images = [centroAyuda, utng]
+
 	const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
 	const nextImage = () => {
 		setCurrentImageIndex(prevIndex => (prevIndex + 1) % images.length)
 	}
 
-	const prevImage = () => {
+	const previousImage = () => {
 		setCurrentImageIndex(prevIndex => (prevIndex - 1 + images.length) % images.length)
 	}
 
 	return (
-		<Flex
-			direction='column'
-			align='center'
-		>
-			<Image
-				src={images[currentImageIndex]}
-				alt={`Image ${currentImageIndex}`}
-				backdropFilter='blur(100px)'
-				w='100%'
-				h='50rem'
-				objectFit='cover'
-				position='relative'
-				zIndex='0'
-			/>
+		<>
 			<Flex
-				justify='center'
-				mt={4}
+				position='relative'
+				alignItems='flex-end'
+				gap='2rem'
 			>
-				<Button
-					onClick={prevImage}
-					mr={2}
+				<Stack
+					position='absolute'
+					top='0'
+					p='3rem'
+					w='24rem'
+					left='70'
+					zIndex='1'
+					justifyContent='center'
+					alignItems='center'
 				>
-					Anterior
-				</Button>
-				<Button onClick={nextImage}>Siguiente</Button>
+					<Text
+						fontSize='1.2rem'
+						fontWeight='500'
+					>
+						Te damos la bienvenida al centro de ayuda de la UTNG
+					</Text>
+					<Heading
+						opacity={{ base: 0, sm: 1, md: 1, lg: 1, xl: 1 }}
+						as='h2'
+						size='2xl'
+						lineHeight='60px'
+						wordBreak='break-word'
+						color='#3e3e3'
+					>
+						¿Qué podemos hacer por ti?
+					</Heading>
+					<Button
+						opacity={{ base: 0, sm: 1, md: 1, lg: 1, xl: 1 }}
+						onClick={handleClickOpen}
+						p='1rem 5rem'
+						textAlign='center'
+						bg='#00259A'
+						_hover={{
+							color: 'rgba(255, 255, 255,1)',
+							backgroundColor: '#00259A',
+							boxShadow: '0 4px 16px #001F7E',
+							transition: 'all 0.2s ease'
+						}}
+						color='#fff'
+					>
+						Iniciar Conversación
+					</Button>
+				</Stack>
 			</Flex>
-		</Flex>
+			<>
+				<Image
+					src={images[currentImageIndex]}
+					alt={`Imagen ${currentImageIndex + 1}`}
+					w='full'
+					h='30rem'
+					objectFit='cover'
+					transition='opacity 0.5s ease' // Agregamos la propiedad de transición aquí
+					opacity='1' // Aseguramos que la imagen sea inicialmente visible
+				/>
+			</>
+			<Flex justifyContent='center'>
+				<ButtonGroup
+					size='lg'
+					colorScheme='teal'
+					variant='ghost'
+					mt={3}
+					mb={3}
+				>
+					<Text
+						as='button'
+						onClick={previousImage}
+						mr={4}
+						color='#00259A'
+						fontWeight='700'
+						_hover={{
+							transition: 'all 0.2s ease'
+						}}
+					>
+						Atrás
+					</Text>
+					<Text
+						as='button'
+						onClick={nextImage}
+						mr={4}
+						color='#00259A'
+						fontWeight='700'
+						_hover={{
+							transition: 'all 0.2s ease'
+						}}
+					>
+						Siguiente
+					</Text>
+				</ButtonGroup>
+			</Flex>
+		</>
 	)
 }
