@@ -16,6 +16,7 @@ import { Header } from "../components/Header";
 import { useEffect, useState } from "react";
 import { MenuCircular } from "../components/MenuCirular.jsx";
 import { SpeechToText } from "../components/SpeechToText.jsx";
+import { motion } from "framer-motion";
 
 import { ListItem, UnorderedList } from "@chakra-ui/react";
 
@@ -274,42 +275,40 @@ function BolsaTrabajo() {
           <UnorderedList>
             {filteredJobs.length > 0
               ? filteredJobs.map((job) => (
-                  <>
-                    <ListItem>
-                      <Box
-                        key={job.id}
-                        p="4"
-                        borderBottom="1px"
-                        borderColor="gray.200"
-                        onClick={() => handleJobClick(job)}
-                        cursor="pointer"
-                      >
-                        <Heading as="h3" size="md" mb="2">
-                          {job.title}
-                        </Heading>
-                        <Text fontSize="sm">{job.description}</Text>
-                      </Box>
-                    </ListItem>
-                  </>
+                  <ListItem>
+                    <Card
+                      key={job.id}
+                      borderBottom="1px"
+                      borderColor="gray.200"
+                      onClick={() => handleJobClick(job)}
+                      cursor="pointer"
+                    >
+                      <Heading as="h3" size="md" mb="2">
+                        {job.title}
+                      </Heading>
+                      <Text fontSize="sm">{job.description}</Text>
+                    </Card>
+                  </ListItem>
                 ))
               : jobs.map((job) => (
-                  <>
-                    <ListItem>
-                      <Box
-                        key={job.id}
-                        p="4"
-                        borderBottom="1px"
-                        borderColor="gray.200"
-                        onClick={() => handleJobClick(job)}
-                        cursor="pointer"
-                      >
-                        <Heading as="h3" size="md" mb="2">
-                          {job.title}
-                        </Heading>
-                        <Text fontSize="sm">{job.description}</Text>
-                      </Box>
-                    </ListItem>
-                  </>
+                  <ListItem key={job.id}>
+                    <Box
+                      borderBottom="1px"
+                      borderColor="gray.200"
+                      onClick={() => handleJobClick(job)}
+                      cursor="pointer"
+                      border={
+                        selectedJob && selectedJob.id === job.id
+                          ? "2px solid #00259A"
+                          : ""
+                      }
+                    >
+                      <Heading as="h3" size="md" mb="2">
+                        {job.title}
+                      </Heading>
+                      <Text fontSize="sm">{job.description}</Text>
+                    </Box>
+                  </ListItem>
                 ))}
           </UnorderedList>
         </Box>
@@ -325,73 +324,86 @@ function BolsaTrabajo() {
         >
           <div style={{ textAlign: "center" }}>
             {selectedJob ? (
-              <Card
-                boxShadow="2xl"
-                maxW={{ base: "55%", md: "full", lg: "full" }}
-                mt={"1rem"}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 5 }}
                 key={selectedJob.id}
               >
-                <CardHeader>
-                  <Heading size="md" mb="1rem">
-                    {selectedJob.title}
-                  </Heading>
-                  <Button
-                    onClick={handleClose}
-                    position="absolute"
-                    top={"0"}
-                    right={"0"}
-                    m={"0.5rem"}
-                  >
-                    <FaTimes />
-                  </Button>
-                  <Text justifyContent={"end"}>
-                    <span style={{ fontWeight: 700 }}>Horario: </span>
-                    {selectedJob.horario}
-                  </Text>
-                  <Text>
-                    <span style={{ fontWeight: 700 }}>Descripción: </span>
-                    {selectedJob.description}
-                  </Text>
-                  <Text>
-                    <span style={{ fontWeight: 700 }}>Pago: </span>
-                    {selectedJob.pago}
-                  </Text>
-                  <Text>
-                    <span style={{ fontWeight: 700 }}>Ubicacion: </span>
-                    {selectedJob.ubicacion}
-                  </Text>
-                  <Text>
-                    <span style={{ fontWeight: 700 }}>Contacto: </span>
-                    {selectedJob.contacto}
-                  </Text>
-                  <Text className="d-flex justify-content-center">
-                    <a
-                      href="https://www.facebook.com/profile.php?id=100064830062888"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                <Card
+                  boxShadow="2xl"
+                  maxW={{ base: "55%", md: "full", lg: "full" }}
+                  mt={"1rem"}
+                  mb="3rem"
+                  transition="transform 0.3s ease-out, box-shadow 0.3s ease-in-out"
+                  sx={{ border: "2px solid #00259A" }}
+                  _hover={{
+                    transform: "translateY(-10px)",
+                    boxShadow: "5px 5px #00259A",
+                  }}
+                >
+                  <CardHeader>
+                    <Heading size="md" mb="1rem">
+                      {selectedJob.title}
+                    </Heading>
+                    <Button
+                      onClick={handleClose}
+                      position="absolute"
+                      top={"0"}
+                      right={"0"}
+                      m={"0.5rem"}
                     >
-                      <FaFacebook size={30} />
-                    </a>
-                    &nbsp;&nbsp;&nbsp;
-                    <a
-                      href="https://www.youtube.com/channel/UC5aD8RBROQYeDSIX54hjwBw"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <FaYoutube size={30} />
-                    </a>
-                    &nbsp;&nbsp;&nbsp;
-                    <a
-                      href="https://www.instagram.com/utngdoloreshidalgo_/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <FaInstagram size={30} />
-                    </a>
-                  </Text>
-                  {/* Agrega más detalles de la oferta si es necesario */}
-                </CardHeader>
-              </Card>
+                      <FaTimes />
+                    </Button>
+                    <Text justifyContent={"end"}>
+                      <span style={{ fontWeight: 700 }}>Horario: </span>
+                      {selectedJob.horario}
+                    </Text>
+                    <Text>
+                      <span style={{ fontWeight: 700 }}>Descripción: </span>
+                      {selectedJob.description}
+                    </Text>
+                    <Text>
+                      <span style={{ fontWeight: 700 }}>Pago: </span>
+                      {selectedJob.pago}
+                    </Text>
+                    <Text>
+                      <span style={{ fontWeight: 700 }}>Ubicacion: </span>
+                      {selectedJob.ubicacion}
+                    </Text>
+                    <Text>
+                      <span style={{ fontWeight: 700 }}>Contacto: </span>
+                      {selectedJob.contacto}
+                    </Text>
+                    <Text className="d-flex justify-content-center">
+                      <a
+                        href="https://www.facebook.com/profile.php?id=100064830062888"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <FaFacebook size={30} />
+                      </a>
+                      &nbsp;&nbsp;&nbsp;
+                      <a
+                        href="https://www.youtube.com/channel/UC5aD8RBROQYeDSIX54hjwBw"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <FaYoutube size={30} />
+                      </a>
+                      &nbsp;&nbsp;&nbsp;
+                      <a
+                        href="https://www.instagram.com/utngdoloreshidalgo_/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <FaInstagram size={30} />
+                      </a>
+                    </Text>
+                    {/* Agrega más detalles de la oferta si es necesario */}
+                  </CardHeader>
+                </Card>
+              </motion.div>
             ) : (
               showMessage && (
                 <>

@@ -3,7 +3,14 @@ import { Heading, Text } from "@chakra-ui/layout";
 
 export function CardCalendario({ title, date, description, lugar, hora }) {
   return (
-    <Card boxShadow="2xl" maxW={{ base: "55%", md: "full", lg: "full" }}>
+    <Card
+      boxShadow="2xl"
+      maxW={{ base: "55%", md: "full", lg: "full" }}
+      mb="3rem"
+      transition="transform 0.3s ease-out, box-shadow 0.3s ease-in-out"
+      sx={{ border: "2px solid #00259A" }}
+      _hover={{ transform: "translateY(-10px)", boxShadow: "5px 5px #00259A" }}
+    >
       <CardHeader>
         <Heading size="md" mb="1rem" textAlign="justify">
           {title}
