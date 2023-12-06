@@ -27,6 +27,7 @@ function BolsaTrabajo() {
   const [selectedJob, setSelectedJob] = useState(null);
   const [showMessage, setShowMessage] = useState(true);
   const [numJobs, setnumJobs] = useState("");
+  const [selectedOfferId, setSelectedOfferId] = useState(null);
 
   const jobs = [
     {
@@ -220,11 +221,13 @@ function BolsaTrabajo() {
     console.log(`Clic en oferta de trabajo: ${job.title}`);
     setSelectedJob(job);
     setShowMessage(false);
+    setSelectedOfferId(job.id);
   };
 
   const handleClose = () => {
     setSelectedJob(null); // Vuelve al estado inicial (ningún trabajo seleccionado)
     setShowMessage(true); // Muestra el mensaje nuevamente
+    setSelectedOfferId("");
   };
 
   useEffect(() => {
@@ -329,6 +332,7 @@ function BolsaTrabajo() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 5 }}
                 key={selectedJob.id}
+                sx={{ border: "2px solid #00259A" }}
               >
                 <Card
                   boxShadow="2xl"
@@ -414,7 +418,7 @@ function BolsaTrabajo() {
                     Selecciona una de la lista para visualizar su información.
                   </Heading>
                   <div style={{ display: "flex", justifyContent: "center" }}>
-                    <GiEagleHead size={"15rem"} />
+                    <GiEagleHead size={"15rem"} className="eagle-icon" />
                   </div>
                 </>
               )

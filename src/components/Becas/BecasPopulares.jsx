@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Modal, Flex, Text, Circle, Tabs, TabList, Tab, TabPanels, TabPanel, useColorModeValue, Link, Button, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, FormControl, FormLabel, Input } from '@chakra-ui/react';
+import { Box, Modal, Flex, Text, Circle, Tabs, TabList, Tab, TabPanels, TabPanel, useColorModeValue, Button, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, FormControl, FormLabel, Input } from '@chakra-ui/react';
 import Slider from 'react-slick';
 
 import "slick-carousel/slick/slick.css";
@@ -42,15 +42,18 @@ const settings = {
     ],
   };
 
-  const ScholarshipCard = ({ title, description, dates, status, verMas, onOpenModal, showMoreInfoButton }) => {
+  const ScholarshipCard = ({ title, description, dates, status, verMas, onOpenModal, showMoreInfoButton, openLink  }) => {
+    console.log(verMas);
+
     return (
-      <Box borderWidth="1px" borderRadius="lg" overflow="hidden" p={4} m={2} w="300px" h="350px"> 
+      <Box borderWidth="1px" borderRadius="lg" overflow="hidden" p={4} m={2} w="320px" h="350px" mb='3rem'
+			transition='transform 0.3s ease-out, box-shadow 0.3s ease-in-out' sx={{ border: '2px solid #00259A' }} _hover={{ transform: 'translateY(-10px)', boxShadow: '5px 5px #00259A' }} boxShadow='2xl'> 
         <Text fontWeight="bold" isTruncated>{title}</Text>
         <Text noOfLines={6} align="justify" overflow="hidden">{description}</Text>
         {verMas && (
-          <Button href={verMas} target='_blank' mt={3} colorScheme="green">
-            Ver más
-          </Button>
+            <Button onClick={() => openLink(verMas)} target='_blank' mt={3} colorScheme="green">
+                Ver más
+            </Button>
         )}
         {showMoreInfoButton && (
             <Button onClick={() => onOpenModal({ title, description, dates, status, verMas })} mt={3} colorScheme="blue">
@@ -73,6 +76,10 @@ const Carousel = () => {
   const [selectedScholarship, setSelectedScholarship] = useState(null);
   const [controlNumber, setControlNumber] = useState('')
 
+  const openLink = (url) => {
+    console.log(url);
+    window.open(url, '_blank');
+  };
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
@@ -141,6 +148,7 @@ const Carousel = () => {
   const tabStyle = {
     _selected: { color: 'white', bg: 'teal.500', mb: '3' },
     _focus: { boxShadow: 'none' },
+    
   };
 
   const handleOpenModal = (scholarship) => {
@@ -184,33 +192,32 @@ const Carousel = () => {
   }
 
   return (
-    <Box overflow="hidden" borderColor={borderColor}  p={8} m={4} >
+    <Box overflow="hidden" borderColor={borderColor}  p={4} m={4} >
       <Tabs index={tabIndex} onChange={setTabIndex} variant="soft-rounded" align="center" justify="center" colorScheme="green">
-        <TabList borderBottom="1px solid" borderColor={borderColor} mb={2}>
-          <Tab {...tabStyle}>Últimas becas</Tab>
-          <Tab {...tabStyle}>Próxima fecha de inscripción</Tab>
-          <Tab {...tabStyle}>Externas</Tab>
+        <TabList borderBottom="1px solid" borderColor={borderColor}>
+          <Tab {...tabStyle} borderWidth="2px" mr={2}>Últimas becas</Tab>
+          <Tab {...tabStyle} borderWidth="2px" mr={2}>Próxima fecha de inscripción</Tab>
+          <Tab {...tabStyle} borderWidth="2px" mr={2}>Externas</Tab>
         </TabList>
-
         <TabPanels>
           <TabPanel>
           <Slider key={tabIndex} {...settings}>
           {scholarshipsSet1.map((scholarship) => (
-              <ScholarshipCard key={scholarship.id} {...scholarship} onOpenModal={handleOpenModal} showMoreInfoButton={true} />
+              <ScholarshipCard key={scholarship.id} {...scholarship} onOpenModal={handleOpenModal} showMoreInfoButton={true} openLink={openLink} />
             ))}
           </Slider>
           </TabPanel>
           <TabPanel>
             <Slider key={tabIndex} {...settings}>
               {scholarshipsSet2.map((scholarship, index) => (
-                <ScholarshipCard key={index} {...scholarship} />
+                <ScholarshipCard key={index} {...scholarship}  openLink={openLink}/>
               ))}
             </Slider>
           </TabPanel>
           <TabPanel>
             <Slider key={tabIndex} {...settings}>
               {scholarshipsSet3.map((scholarship, index) => (
-                <ScholarshipCard key={index} {...scholarship} />
+                <ScholarshipCard key={index} {...scholarship} openLink={openLink} />
               ))}
             </Slider>
           </TabPanel>
@@ -259,7 +266,6 @@ const Carousel = () => {
           </Modal>
           )}
         </TabPanels>
-        
       </Tabs>
     </Box>
   );
