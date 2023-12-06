@@ -231,7 +231,16 @@ export function Calendario() {
           </>
           {viewMode === "calendar" && selectedDayEvents.length > 0 ? (
             selectedDayEvents.map((event) => (
-              <Card key={event.id} p="4">
+              <Card
+                key={event.id}
+                p="4"
+                transition="transform 0.3s ease-out, box-shadow 0.3s ease-in-out"
+                _hover={{
+                  transform: "translateY(-10px)",
+                  boxShadow: "5px 5px #00259A",
+                }}
+                boxShadow="2xl"
+              >
                 <Text fontWeight="bold" fontSize="xl">
                   {event.title}
                 </Text>
