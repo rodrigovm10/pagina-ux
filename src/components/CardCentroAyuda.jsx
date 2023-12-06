@@ -6,7 +6,8 @@ export function CardCentroAyuda({ handleClickOpen }) {
 		<Flex
 			position='relative'
 			alignItems='flex-end'
-			gap='2rem'>
+			gap='2rem'
+		>
 			<Stack
 				// bg={{
 				//   base: 'rgba(255, 255, 255, 0)',
@@ -22,10 +23,12 @@ export function CardCentroAyuda({ handleClickOpen }) {
 				left='70'
 				zIndex='1'
 				justifyContent='center'
-				alignItems='center'>
+				alignItems='center'
+			>
 				<Text
 					fontSize='1.2rem'
-					fontWeight='500'>
+					fontWeight='500'
+				>
 					Te damos la bienvenida al centro de ayuda de la UTNG
 				</Text>
 				<Heading
@@ -34,7 +37,8 @@ export function CardCentroAyuda({ handleClickOpen }) {
 					size='2xl'
 					lineHeight='60px'
 					wordBreak='break-word'
-					color='#3e3e3'>
+					color='#3e3e3'
+				>
 					¿Qué podemos hacer por ti?
 				</Heading>
 				<Button
@@ -50,15 +54,15 @@ export function CardCentroAyuda({ handleClickOpen }) {
 						boxShadow: '0 4px 16px #001F7E',
 						transition: 'all 0.2s ease'
 					}}
-					color='#fff'>
+					color='#fff'
+				>
 					Iniciar Conversación
 				</Button>
 			</Stack>
 			<Image
-				border='1px solid #000'
-				backdropFilter='blur(100px)'
 				src={centroAyuda}
-				alt='centroAyuda'
+				alt='centro de ayuda'
+				backdropFilter='blur(100px)'
 				w='100%'
 				h={{ sm: '10vh', md: '50vh', lg: '75vh' }}
 				objectFit='cover'
